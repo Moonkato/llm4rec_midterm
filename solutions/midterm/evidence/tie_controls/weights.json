@@ -1,9 +1,0 @@
-{
-  "rows": 319174,
-  "users": 4721,
-  "mean_weight": 1.0,
-  "query_weight_sum": 67.60728659182377,
-  "hard_positive_rows": 15674,
-  "fractional_positive_mass": 14290.4130859375,
-  "fractional_boundary_rows": 8248
-}
