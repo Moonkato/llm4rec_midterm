@@ -1,0 +1,57 @@
+{
+  "windows_origin_cutoff_end": {
+    "early": [
+      "2020-03-09",
+      "2020-04-13",
+      "2020-05-18"
+    ],
+    "recent": [
+      "2020-03-09",
+      "2020-05-18",
+      "2020-06-22"
+    ],
+    "later": [
+      "2020-03-09",
+      "2020-06-22",
+      "2020-07-27"
+    ]
+  },
+  "features": "Samebase19+weekly5, full historical originMarch9 for every snapshot,35day forecast",
+  "primary": "pooled_early_recent",
+  "diagnostic": "recent_only",
+  "frozen_control": "v3 on EXACT SAME original full-history later features/candidates/fallback",
+  "separate_reference": "Original v3 on105day history equals controlled comparator exactly",
+  "target": "Full-universe top5_count80 before shortlist, numeric ties",
+  "parameters": {
+    "objective": "lambdarank",
+    "metric": "None",
+    "n_estimators": 417,
+    "learning_rate": 0.03,
+    "random_state": 20261023,
+    "n_jobs": 1,
+    "verbosity": -1,
+    "deterministic": true,
+    "force_col_wise": true,
+    "label_gain": [
+      0,
+      1
+    ],
+    "lambdarank_truncation_level": 10,
+    "lambdarank_norm": true
+  },
+  "config": {
+    "num_leaves": 15,
+    "max_depth": 4,
+    "min_child_samples": 100,
+    "reg_lambda": 10.0
+  },
+  "fits": 2,
+  "threads": 1,
+  "wall_limit_seconds": 300,
+  "rss_limit_bytes": 1610612736,
+  "ranker_weighting": "lambdarank_norm=True; constant weight per query, NOT inverse query size. Pooled each query weight total_queries/(2*queries_in_snapshot); sums of query coefficients equal across snapshots. No claim exactly equal gradient norms.",
+  "selection": "Fixed model/iteration, no grid. Evaluate only Jun22-Jul27, never overlapping May18-Jul27.",
+  "fallback": "All comparisons share original105day historical unique-viewer popularity and cold flags",
+  "limitations": "All observations previously explored.35day forecast diagnostic does not validate84day forecast; historical length35/70/105days differs by snapshot, as actual cumulative-history deployment.",
+  "submissions": 0
+}

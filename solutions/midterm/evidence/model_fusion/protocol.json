@@ -1,0 +1,25 @@
+{
+  "selection": "exploratory same-holdout selection; no independent confirmation",
+  "source": "round1 immutable saved scores",
+  "cbf_weights": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "cbf_formula": "(1-w)*popularity/max(popularity)+w*cosine; nonfinite cosine becomes zero",
+  "als_weights": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "als_formula": "(1-w)*(.75*RRF(personal_frequency)+.25*RRF(popularity))+w*RRF(als_f32_a1)",
+  "rrf": "1/(60+rank), rank starts at 1; nonfinite component scores contribute zero",
+  "truth": "round1 split=1, distinct programme IDs with >=180s per user-airing",
+  "cohort": "all 1260 round1 users; empty truth AP=0",
+  "candidate_pool": "unchanged round1 validation-airing catalogue",
+  "repeats": "allowed",
+  "ties": "ascending numeric programme ID",
+  "cold": "no split=0 qualifying history; common historical popularity fallback",
+  "training_runs": 0,
+  "kaggle_submissions": 0
+}

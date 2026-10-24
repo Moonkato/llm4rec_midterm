@@ -1,0 +1,11 @@
+{
+  "score_source": "user pasted Kaggle result",
+  "score_column_order_confirmed": false,
+  "assumed_public": 0.42693,
+  "assumed_private": 0.44458,
+  "local_main": 0.5756011904761904,
+  "local_later": 0.4823276014109347,
+  "main_minus_assumed_public": 0.14867119047619043,
+  "later_minus_assumed_public": 0.05539760141093475,
+  "interpretation": "One submission cannot measure local/Kaggle rank correlation. Different periods, horizon lengths and user subsets prevent attribution of gap. Strict target is participant-described proxy, not verified official scorer."
+}

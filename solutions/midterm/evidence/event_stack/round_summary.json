@@ -1,0 +1,45 @@
+{
+  "status": "complete; retain v4, no material consistent improvement",
+  "approval": "user: \u0441\u043e\u0431\u0435\u0440\u0438 \u043b\u0443\u0447\u0448\u0438\u0435 \u0438\u0434\u0435\u0438 \u0438 \u0437\u0430\u043f\u0443\u0441\u0442\u0438 \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u0435 - \u0434\u0430",
+  "budget": {
+    "max_fits": 6,
+    "compute_minutes": 30,
+    "ram_gb": 4,
+    "cpu_threads": 2,
+    "submissions": 0
+  },
+  "sequence": [
+    "two fixed hard/soft cross-entropy controls on same all-fit rows",
+    "three user-fold original event fits and OOF feature scoring",
+    "one fixed original hard-target LambdaRank plus6OOFfeatures"
+  ],
+  "objective_selection": "No adaptive choice of final stack target from control results",
+  "inference": "Existing frozen all-training event model at heldout cutoffs; standard OOF/full-fit sample-size shift reported",
+  "fits_recorded": 6,
+  "compute_started_utc": "2026-10-22T23:29:22.502686+00:00",
+  "tie_controls": {
+    "results": "evidence/tie_controls/results.json",
+    "fits": 2,
+    "wall_seconds": 55.26272533299925,
+    "peak_rss_bytes": 370032640
+  },
+  "event_oof": {
+    "fits": 3,
+    "fits_evidence": "evidence/event_oof/fits.json",
+    "features_status": "complete",
+    "results": "evidence/event_oof/results.json",
+    "wall_seconds": 695.0263111249988,
+    "peak_rss_bytes": 897826816,
+    "heldout_expected_count_parity": "exact zero on both windows"
+  },
+  "stack": {
+    "results": "evidence/event_stack/results.json",
+    "fits": 1,
+    "wall_seconds": 53.659375834002276,
+    "peak_rss_bytes": 418136064
+  },
+  "compute_wall_seconds": 803.9484122920003,
+  "peak_rss_bytes": 897826816,
+  "comparison": "evidence/event_stack/comparison.json",
+  "decision": "No new submission candidate. Primary stack hardtop5 point estimate below v4 on both windows; paired intervals include zero. Soft-label control small gains do not outperform v4 consistently."
+}

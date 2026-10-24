@@ -1,0 +1,44 @@
+{
+  "result": {
+    "method": "filtered_raw_context22",
+    "fit_rows": 292457,
+    "fit_users": 4266,
+    "fit_seconds": 6.87511108399849,
+    "eval": {
+      "map5": 0.5890324074074074
+    },
+    "later": {
+      "map5": 0.4919118165784832
+    }
+  },
+  "raw_rows": 5821987,
+  "context_summary": [
+    {
+      "window": "fit",
+      "users_with_raw_context": 4721,
+      "raw_weighted_sessions": 2166643,
+      "rows": 319174
+    },
+    {
+      "window": "eval",
+      "users_with_raw_context": 1256,
+      "raw_weighted_sessions": 3945173,
+      "rows": 120172
+    },
+    {
+      "window": "later",
+      "users_with_raw_context": 1257,
+      "raw_weighted_sessions": 4778832,
+      "rows": 126221
+    }
+  ],
+  "wall_seconds": 55.57638845800102,
+  "peak_rss_bytes": 373424128,
+  "sha256": {
+    "midterm/data/dataset11-30.csv": "8c9e5f058157041e5c33f13e64dc1625a5177cc6d5e434ba18cd8a69afafb53b",
+    "solutions/midterm/tools/check_raw_context.py": "39332de73fae034dbdd46326417ace5e666ab1f76af310a445de07ff21043419",
+    "solutions/midterm/cache/context_features/fit.npz": "0ed8052cb26e51db7fe7842c551964122549244e5a2d627931494ffb9d150080",
+    "solutions/midterm/cache/context_features/eval.npz": "691303bc06e39ef01577a3a9bd9bb3079de49325cddadc331b658a18ceb133e7",
+    "solutions/midterm/cache/context_features/later.npz": "bfda6b3cd049fab056a8ba241d6a5fa8bdfadbd7d6937636ffc6f1964a655896"
+  }
+}

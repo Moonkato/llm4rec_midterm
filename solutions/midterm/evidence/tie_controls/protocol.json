@@ -1,0 +1,37 @@
+{
+  "variants": [
+    "hard_numeric_top5",
+    "fractional_boundary_membership"
+  ],
+  "parameters": {
+    "objective": "cross_entropy",
+    "metric": "cross_entropy",
+    "n_estimators": 417,
+    "learning_rate": 0.03,
+    "random_state": 20261023,
+    "n_jobs": 1,
+    "verbosity": -1,
+    "deterministic": true,
+    "force_col_wise": true,
+    "num_leaves": 15,
+    "max_depth": 4,
+    "min_child_samples": 100,
+    "reg_lambda": 10.0
+  },
+  "features": "Identical original19+weekly5, fixed original candidate rows/users",
+  "fit_rows": "ALL original fit rows, including queries with no positive candidates; no variant-dependent filtering",
+  "weights": "Constant per user1/nrows, globally normalized to mean1; equal total row-weight per original user",
+  "labels": "Full-universe counts before shortlist; >80% single stored overlap proxy. Fractional labels1 for strictly above fifthcount, remaining_slots/tie_group_size at boundary,0 below.",
+  "expected_metric": "Exact expectation of ordinary AP under uniformly sampled boundary-tie subsets without replacement; fulltruth denominator and pairwise inclusion probabilities",
+  "fixed_diagnostics": "Each standalone and equalRRF60 with frozen original event model; no blend search",
+  "baseline": "Frozen v3 and original equalRRF60 event+v3 (v4), same cold fallback",
+  "selection": "Controls secondary; final OOF stack remains prespecified hardtop5 LambdaRank irrespective control results",
+  "limits": {
+    "fits": 2,
+    "wall_seconds": 300,
+    "rss_bytes": 1610612736,
+    "threads": 1
+  },
+  "caveat": "Exploratory reused overlapping holdouts; tie metric is sensitivity, not verified official Kaggle scorer",
+  "submissions": 0
+}

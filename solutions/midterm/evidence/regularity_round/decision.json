@@ -1,0 +1,7 @@
+{
+  "decision": "retain v3; do not use final submission for this round",
+  "reason": "Combined regularity model top5 proxy rises.001406 main but falls.001869 later; bootstrap intervals coverzero; both ablations fail consistent improvement",
+  "submissions_added": 0,
+  "submissions_remaining": 1,
+  "next_hypothesis": "Improve candidate retrieval;23-25%top5truth absent from current shortlist. Previous CF expansion weak; assess schedule-aware candidate recall with fixed comparison rather than repeat same expansion."
+}

@@ -1,0 +1,227 @@
+{
+  "status": "complete",
+  "protocol": {
+    "selection": "10 evenly spaced activity order statistics incl light/heavy; activity uses historical >30% counts strictly beforeMay18; numeric user ID ties",
+    "users": [
+      "319675768840678676",
+      "789186504315385960",
+      "17330165649577443380",
+      "17401622293244716443",
+      "11829901505320498891",
+      "5320904966383632701",
+      "11275826934316998950",
+      "9574176344099640366",
+      "4558249534785348973",
+      "10500740270951698446"
+    ],
+    "seed": 20261023,
+    "schedule_sample": 100,
+    "no_model_fitting": true,
+    "no_test_views": true
+  },
+  "selected_user_train_counts": {
+    "9574176344099640366": 246.0,
+    "17330165649577443380": 71.0,
+    "17401622293244716443": 101.0,
+    "319675768840678676": 0.0,
+    "789186504315385960": 44.0,
+    "5320904966383632701": 162.0,
+    "11275826934316998950": 199.0,
+    "11829901505320498891": 131.0,
+    "4558249534785348973": 333.0,
+    "10500740270951698446": 1441.0
+  },
+  "raw_selected_rows": 22925,
+  "duration_mismatches": 0,
+  "schedule_check": {
+    "requested": 100,
+    "matched": 100,
+    "missing_ids": [],
+    "mismatches": []
+  },
+  "comparison": {
+    "history_may18": {
+      "different_max_overlap_groups": 0,
+      "thresholds": {
+        "0.3": {
+          "raw_positive_airings": 2728,
+          "cached_positive_airings": 2728,
+          "raw_only_airings": 0,
+          "cache_only_airings": 0,
+          "raw_only_user_items": 0,
+          "cache_only_user_items": 0
+        },
+        "0.8": {
+          "raw_positive_airings": 1198,
+          "cached_positive_airings": 1198,
+          "raw_only_airings": 0,
+          "cache_only_airings": 0,
+          "raw_only_user_items": 0,
+          "cache_only_user_items": 0
+        }
+      },
+      "examples": []
+    },
+    "forecast_may18": {
+      "different_max_overlap_groups": 0,
+      "thresholds": {
+        "0.3": {
+          "raw_positive_airings": 1842,
+          "cached_positive_airings": 1842,
+          "raw_only_airings": 0,
+          "cache_only_airings": 0,
+          "raw_only_user_items": 0,
+          "cache_only_user_items": 0
+        },
+        "0.8": {
+          "raw_positive_airings": 803,
+          "cached_positive_airings": 803,
+          "raw_only_airings": 0,
+          "cache_only_airings": 0,
+          "raw_only_user_items": 0,
+          "cache_only_user_items": 0
+        }
+      },
+      "examples": []
+    },
+    "history_june22": {
+      "different_max_overlap_groups": 2,
+      "thresholds": {
+        "0.3": {
+          "raw_positive_airings": 3517,
+          "cached_positive_airings": 3517,
+          "raw_only_airings": 0,
+          "cache_only_airings": 0,
+          "raw_only_user_items": 0,
+          "cache_only_user_items": 0
+        },
+        "0.8": {
+          "raw_positive_airings": 1547,
+          "cached_positive_airings": 1547,
+          "raw_only_airings": 0,
+          "cache_only_airings": 0,
+          "raw_only_user_items": 0,
+          "cache_only_user_items": 0
+        }
+      },
+      "examples": [
+        {
+          "user": "4558249534785348973",
+          "event_id": 3023,
+          "item": "90074576",
+          "channel": "5",
+          "civil_start": "2020-05-17 22:35:00",
+          "duration": 5400,
+          "raw_max_overlap": 2315,
+          "cached_max_fragment": 2015,
+          "event_crosses_original_may18_boundary": true
+        },
+        {
+          "user": "789186504315385960",
+          "event_id": 88226,
+          "item": "90080635",
+          "channel": "935",
+          "civil_start": "2020-05-17 23:00:00",
+          "duration": 6300,
+          "raw_max_overlap": 3313,
+          "cached_max_fragment": 1990,
+          "event_crosses_original_may18_boundary": true
+        }
+      ]
+    },
+    "forecast_june22": {
+      "different_max_overlap_groups": 0,
+      "thresholds": {
+        "0.3": {
+          "raw_positive_airings": 1053,
+          "cached_positive_airings": 1053,
+          "raw_only_airings": 0,
+          "cache_only_airings": 0,
+          "raw_only_user_items": 0,
+          "cache_only_user_items": 0
+        },
+        "0.8": {
+          "raw_positive_airings": 454,
+          "cached_positive_airings": 454,
+          "raw_only_airings": 0,
+          "cache_only_airings": 0,
+          "raw_only_user_items": 0,
+          "cache_only_user_items": 0
+        }
+      },
+      "examples": []
+    }
+  },
+  "sessions": {
+    "exact_duplicate_extra_rows": 0,
+    "different_channel_overlapping_session_pairs": 10321,
+    "same_channel_nonidentical_overlapping_session_pairs": 556,
+    "examples": [
+      {
+        "user": "4558249534785348973",
+        "channel_a": "5",
+        "channel_b": "108",
+        "overlap_seconds": 305
+      },
+      {
+        "user": "4558249534785348973",
+        "channel_a": "108",
+        "channel_b": "18",
+        "overlap_seconds": 134
+      },
+      {
+        "user": "4558249534785348973",
+        "channel_a": "108",
+        "channel_b": "5",
+        "overlap_seconds": 177
+      },
+      {
+        "user": "4558249534785348973",
+        "channel_a": "5",
+        "channel_b": "108",
+        "overlap_seconds": 332
+      },
+      {
+        "user": "4558249534785348973",
+        "channel_a": "108",
+        "channel_b": "7",
+        "overlap_seconds": 4
+      },
+      {
+        "user": "4558249534785348973",
+        "channel_a": "7",
+        "channel_b": "108",
+        "overlap_seconds": 206
+      },
+      {
+        "user": "4558249534785348973",
+        "channel_a": "7",
+        "channel_b": "108",
+        "overlap_seconds": 24
+      },
+      {
+        "user": "4558249534785348973",
+        "channel_a": "108",
+        "channel_b": "7",
+        "overlap_seconds": 79
+      },
+      {
+        "user": "4558249534785348973",
+        "channel_a": "108",
+        "channel_b": "5",
+        "overlap_seconds": 132
+      },
+      {
+        "user": "4558249534785348973",
+        "channel_a": "5",
+        "channel_b": "108",
+        "overlap_seconds": 433
+      }
+    ]
+  },
+  "interpretation": "MAX cached fragments can underestimate a raw session crossing originalMay18 split in later historical windows; disconnected sessions are never unioned. Multi-channel overlaps may be household/device concurrency, not automatically corrupt data. Sample audit cannot establish global completeness or geographic timezone.",
+  "wall_seconds": 41.28405670900247,
+  "code_sha256": "92025f2603cf21d6616cf3b2559d082d01670ff859c72449eaeadda790ce318a",
+  "fits": 0,
+  "submissions": 0
+}

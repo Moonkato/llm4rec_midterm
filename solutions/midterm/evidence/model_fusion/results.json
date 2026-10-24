@@ -1,0 +1,76 @@
+{
+  "results": [
+    {
+      "method": "reference_popularity",
+      "map5": 0.752994708994709,
+      "map5_nonempty_truth": 0.7614553237025147,
+      "cold_map5": 0.441,
+      "cold_users": 10
+    },
+    {
+      "method": "reference_frozen_personal75_pop25_rrf60",
+      "map5": 0.7924656084656084,
+      "map5_nonempty_truth": 0.8013697164258962,
+      "cold_map5": 0.441,
+      "cold_users": 10
+    },
+    {
+      "method": "pop_content_w0.05",
+      "map5": 0.753005291005291,
+      "map5_nonempty_truth": 0.761466024612092,
+      "cold_map5": 0.441,
+      "cold_users": 10,
+      "content_weight": 0.05
+    },
+    {
+      "method": "pop_content_w0.10",
+      "map5": 0.7527936507936508,
+      "map5_nonempty_truth": 0.7612520064205457,
+      "cold_map5": 0.441,
+      "cold_users": 10,
+      "content_weight": 0.1
+    },
+    {
+      "method": "pop_content_w0.20",
+      "map5": 0.7528888888888889,
+      "map5_nonempty_truth": 0.7613483146067416,
+      "cold_map5": 0.441,
+      "cold_users": 10,
+      "content_weight": 0.2
+    },
+    {
+      "method": "frozen_als_w0.05",
+      "map5": 0.794494708994709,
+      "map5_nonempty_truth": 0.8034216158373462,
+      "cold_map5": 0.441,
+      "cold_users": 10,
+      "als_weight": 0.05
+    },
+    {
+      "method": "frozen_als_w0.10",
+      "map5": 0.7970132275132276,
+      "map5_nonempty_truth": 0.805968432316747,
+      "cold_map5": 0.441,
+      "cold_users": 10,
+      "als_weight": 0.1
+    },
+    {
+      "method": "frozen_als_w0.20",
+      "map5": 0.7995449735449734,
+      "map5_nonempty_truth": 0.8085286249331194,
+      "cold_map5": 0.441,
+      "cold_users": 10,
+      "als_weight": 0.2
+    }
+  ],
+  "wall_seconds": 4.506780292002077,
+  "status": "complete",
+  "interpretation": "exploratory same-holdout selection; no independent confirmation",
+  "source_score_sha256": {
+    "popularity_unique_viewers": "7ff3f7ccf24da4e7ee8591fb6fa27d82b9272c777d44b4716273608cb0dd78ae",
+    "personal_frequency": "c1ec6f2e61e53aaa39097ccd2c94ffc252314d0806baa4a80348c25fec694099",
+    "content_tfidf": "75afa031e4f674c5f114d5610d2868208de48ee72deae9cb7de1838f090dccd6",
+    "als_f32_a1": "ba0eb4bbe024f44f3287d92cfcd2cd740324f42f54ea3acc27e2d5c8042d5a6b"
+  },
+  "code_sha256": "3800e958f2a889bf20eee518c9fd4e4b1e7b6704c01f3238ede466731a34e7fe"
+}

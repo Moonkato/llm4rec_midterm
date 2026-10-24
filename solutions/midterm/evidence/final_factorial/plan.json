@@ -1,0 +1,25 @@
+{
+  "status": "comparison prepared before final fits completed",
+  "primary": "combined: newidentity + newreplay equalRRF60",
+  "controls": [
+    "v4: v3+oldevent",
+    "replay_only: v3+newreplay",
+    "identity_only: newidentity+oldevent"
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "rank_constant": 60,
+  "bootstrap_replicates": 5000,
+  "seed": 20261023,
+  "gate": {
+    "hard_delta_main": 0.01,
+    "hard_delta_later": 0.005,
+    "hard95_lower": "positive both",
+    "tie_expected_delta": "positive both",
+    "all80_delta_min": -0.002
+  },
+  "run_guard": "Both final_identity and final_replay completionmarkers required",
+  "selection_caveat": "All arms fixed; combined is primary. No posthocweights or substitution of another winning arm."
+}

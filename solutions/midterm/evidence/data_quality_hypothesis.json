@@ -1,0 +1,149 @@
+{
+  "raw_view_session_tails": {
+    "all": {
+      "sessions": 5821987,
+      "seconds": 8619215224,
+      "maximum_seconds": 342145,
+      "gt6h_sessions": 21811,
+      "gt6h_seconds": 685868263,
+      "gt12h_sessions": 2635,
+      "gt12h_seconds": 145788423,
+      "gt6h_fraction_sessions": 0.0037463154761424237,
+      "gt6h_fraction_seconds": 0.07957432842496102,
+      "gt12h_fraction_sessions": 0.00045259462104604495,
+      "gt12h_fraction_seconds": 0.01691434999720805
+    },
+    "template": {
+      "sessions": 2173313,
+      "seconds": 2931764935,
+      "maximum_seconds": 250877,
+      "gt6h_sessions": 6163,
+      "gt6h_seconds": 197556299,
+      "gt12h_sessions": 861,
+      "gt12h_seconds": 47356800,
+      "gt6h_fraction_sessions": 0.0028357627272279696,
+      "gt6h_fraction_seconds": 0.06738476766726184,
+      "gt12h_fraction_sessions": 0.0003961693506641703,
+      "gt12h_fraction_seconds": 0.016153000342778164
+    }
+  },
+  "labelled_event_durations": {
+    "count": 381892,
+    "ge6h": 399,
+    "ge12h": 0,
+    "max_seconds": 32700,
+    "scope": "all cached labelled events (not restricted to historical training split)"
+  },
+  "current_joined_max_fragment_statistics": {
+    "historical_gt30": {
+      "qualifying_user_airings": 670587,
+      "airing_duration_ge6h": 423,
+      "max_fragment_gt6h": 7
+    },
+    "validation_gt80_template": {
+      "qualifying_user_airings": 87589,
+      "max_fragment_gt6h": 21,
+      "airing_duration_ge6h": 23
+    },
+    "scope": "historical: cached split0 all users >30%; validation: cached split1 template users >80%; positive user-airings, not distinct user-item truths"
+  },
+  "most_frequent_historical_qualifying_items": [
+    {
+      "item": "2400480",
+      "qualifying_user_airings": 69164,
+      "title": "'ТСН. Неделя'.",
+      "category": "Инфо"
+    },
+    {
+      "item": "240081",
+      "qualifying_user_airings": 50277,
+      "title": "Факты. День.",
+      "category": "Инфо"
+    },
+    {
+      "item": "12001682",
+      "qualifying_user_airings": 37383,
+      "title": "М/с 'Губка Боб Квадратные Штаны'.",
+      "category": "Детям"
+    },
+    {
+      "item": "20088",
+      "qualifying_user_airings": 24053,
+      "title": "'Завтрак с 1+1'. Информационно-развлекательная программа.",
+      "category": "Развлечения"
+    },
+    {
+      "item": "2400508",
+      "qualifying_user_airings": 23603,
+      "title": "Сегодня. Итоги с Олегом Панютой.",
+      "category": "Инфо"
+    },
+    {
+      "item": "2400467",
+      "qualifying_user_airings": 19053,
+      "title": "'Викна-Новости'.",
+      "category": "Инфо"
+    },
+    {
+      "item": "12001734",
+      "qualifying_user_airings": 9464,
+      "title": "М/с 'Волшебные покровители', 154 с. 'Хочу это вырезать / Мэрский день'.",
+      "category": "Детям"
+    },
+    {
+      "item": "12002955",
+      "qualifying_user_airings": 8988,
+      "title": "М/с 'Свинка Пеппа'.",
+      "category": "Детям"
+    },
+    {
+      "item": "6500479",
+      "qualifying_user_airings": 8777,
+      "title": "'Мир наизнанку. Бразилия', 36 эп.",
+      "category": "Познавательное"
+    },
+    {
+      "item": "200344",
+      "qualifying_user_airings": 8619,
+      "title": "'Чистоnews'.",
+      "category": "Развлечения"
+    },
+    {
+      "item": "12002856",
+      "qualifying_user_airings": 8316,
+      "title": "М/с 'Элвин и бурундуки'.",
+      "category": "Детям"
+    },
+    {
+      "item": "200337",
+      "qualifying_user_airings": 8039,
+      "title": "'Утро с 'Интером'.",
+      "category": "Развлечения"
+    },
+    {
+      "item": "6700482",
+      "qualifying_user_airings": 7720,
+      "title": "'Секретные материалы'.",
+      "category": "Другое"
+    },
+    {
+      "item": "12002201",
+      "qualifying_user_airings": 7195,
+      "title": "М/с 'Маша и Медведь'.",
+      "category": "Детям"
+    },
+    {
+      "item": "12002805",
+      "qualifying_user_airings": 6969,
+      "title": "М/с 'Моланг'.",
+      "category": "Детям"
+    }
+  ],
+  "interpretation": {
+    "source_session_duration_not_recoverable_from_fragment": "Current overlaps lacks source view ID and full source duration. A small programme overlap may originate from a very long session, so fragment tails undercount positives attributable to idle-TV-length sessions. Exact attribution requires raw-log rejoin retaining duration/session identity.",
+    "long_session_means_idle": "Hypothesis only; no engagement or device-state labels establish inactivity.",
+    "proposed_experiment": "Keep current >80% truth and cohort unchanged. Rebuild training interactions excluding source views longer than 6h, retain >30% full-airing threshold, compare same personal-frequency baseline and existing model features on fixed validation. This isolates training-noise filtering; do not change validation truth to improve score.",
+    "truth_effect": "No change proposed. Filtering validation labels would change evaluated task and invalidate paired comparison."
+  },
+  "wall_seconds": 42.49808406829834
+}

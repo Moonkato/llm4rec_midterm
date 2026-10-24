@@ -1,0 +1,51 @@
+{
+  "windows": [
+    [
+      "inner_fit",
+      "2020-04-13 00:00:00",
+      "2020-05-04 00:00:00",
+      true
+    ],
+    [
+      "inner_stop",
+      "2020-05-04 00:00:00",
+      "2020-05-18 00:00:00",
+      false
+    ]
+  ],
+  "history_origin": "2020-03-09",
+  "features": [
+    "log_count30",
+    "log_count80",
+    "log_decay60_count30",
+    "log_future_airings_per_day",
+    "log_past_airings_per_day",
+    "log_personal_schedule_score",
+    "log_pop_viewers",
+    "log_user_count",
+    "days_since_last_watch30",
+    "log_count10",
+    "log_count50",
+    "log_decay7_count30",
+    "log_decay28_count30",
+    "log_distinct_watched_airing_days",
+    "log_user_distinct_items",
+    "channel_affinity",
+    "hour_affinity",
+    "channel_hour_product",
+    "log_exposure_ratio_smoothed10"
+  ],
+  "purpose": "Chronologically nonoverlapping fitting labels and inner stopping labels, both before outerMay18 evaluation.",
+  "fit_cohort": "all users with usable preApr13 history",
+  "stop_cohort": "1260 template users; empty truth retained",
+  "labels": "maximum clipped single stored fragment >80% full airing duration",
+  "candidate_generation": "unchanged context builder: personal100+popularity30+context30",
+  "caveats": [
+    "OldMay18 fragment identity limitation retained.",
+    "Inner fit and stopping horizons differ:21days and14days.",
+    "Previously explored outer evaluation is still not an untouched final test."
+  ],
+  "training_runs": 0,
+  "submissions": 0,
+  "builder_sha256": "b5fb0ff94a716ff8dfe875cc332b7ec3fd858ccea3e325681be5e87bf1836d5c"
+}

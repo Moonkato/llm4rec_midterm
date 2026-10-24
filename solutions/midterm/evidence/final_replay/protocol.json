@@ -1,0 +1,101 @@
+{
+  "model": "one fixed binary37 event model; original33 plus replay4",
+  "windows": [
+    [
+      "fit",
+      "2020-04-13 00:00:00",
+      "2020-05-18 00:00:00"
+    ],
+    [
+      "eval",
+      "2020-05-18 00:00:00",
+      "2020-07-27 00:00:00"
+    ],
+    [
+      "later",
+      "2020-06-22 00:00:00",
+      "2020-07-27 00:00:00"
+    ]
+  ],
+  "features": "original33 plus ['weekly_replay_p30', 'weekly_replay_p80', 'recent28_replay_p80', 'log_replay_dates']",
+  "parameters": {
+    "objective": "binary",
+    "num_leaves": 15,
+    "learning_rate": 0.05,
+    "min_data_in_leaf": 100,
+    "lambda_l2": 10,
+    "num_iterations": 300,
+    "max_bin": 63,
+    "num_threads": 1,
+    "seed": 20261023
+  },
+  "universe": "each original v3 user-item candidate crossed with its supplied forecast airings; keep all recorded qualifying positives inside this universe",
+  "target": "one MAX clipped stored overlap strictly>80% full airing duration; artificial split fragments not rejoined; absence means no recorded qualifying airing, not dislike",
+  "negative_sampling": "independent Bernoulli q=.01 implemented binomial sample count then uniform without replacement among negatives; positive event indices excluded",
+  "sample_weights": "positive1, sampled negative100; no class balancing, no is_unbalance, no scale_pos_weight",
+  "duration": "Original33 use ceil(duration/300)*300; added replay uses exact physical duration and exact civil start second; labels exact duration",
+  "historical_exposure_rates": "(count80+0.1)/(pastairings+1), (count30+0.1)/(pastairings+1), usercount30/historydays; pastairings=expm1(base4)*historydays",
+  "context": "history only: user-channel raw session length distribution uncapped, clipped before cutoff; joint channel/weekday/hour seconds use proportional3600s session cap and propensity<=1",
+  "collapse_key": [
+    "item",
+    "channel",
+    "weekday",
+    "civil_start_hour",
+    "duration_bin_seconds",
+    "exact_boundary_overlap_fraction",
+    "civil_second_of_day",
+    "exact_duration_seconds"
+  ],
+  "exactness": "All varying event features use this tuple; sum probabilities multiplied by identical-tuple multiplicity equals full event scoring for chosen features.",
+  "hard_constraint": "event probability forced0 when exact forecast-clipped/full-duration fraction<=.8; recorded strict80 completion impossible within window",
+  "aggregation": "sum event probabilities = expected qualifying airing count; no independence assumption and no probability-any claim",
+  "primary": "replace only event branch in fixed equal RRF60 event+v3, compared directly with submitted v4",
+  "diagnostic": "standalone event expected count; original candidates/cold fallback",
+  "calibration": "inverse-inclusion weights correct sampled objective; weighted training logloss is descriptive only, not heldout calibration",
+  "fits": 1,
+  "submissions": 0,
+  "budget": "30min4GB1CPU; preprocessing guard before fitting",
+  "replay": "Exact historical civil weekday/start-second shifted intervals of actual forecast duration; one Boolean per fully observed historical date; MAX single original raw session, no union or cap; nonexistent DST hour excluded",
+  "replay_features": [
+    "weekly_replay_p30",
+    "weekly_replay_p80",
+    "recent28_replay_p80",
+    "log_replay_dates"
+  ],
+  "recurrence_features": [],
+  "success_gate": {
+    "main_top5_delta_min": 0.01,
+    "later_top5_delta_min": 0.005,
+    "tie_marginal_delta": "positive both",
+    "paired_user95_lower_bounds": "positive both windows",
+    "all80_delta_min_each": -0.002
+  },
+  "frozen_v4_baselines": {
+    "eval": {
+      "all80": 0.5876186067019401,
+      "top5_count80": 0.41723765432098764
+    },
+    "later": {
+      "all80": 0.4972674162257496,
+      "top5_count80": 0.3654499559082892
+    }
+  },
+  "recent_replay_window": "28 civil calendar days before cutoff, then mapped to normalized tick",
+  "helper_sha256": "4b917af490467dd44152c663cca9b1f931f4666ffecc4dffdd62abbea737bbf1",
+  "source_sha256": "6c83fbfd43607a830f6e5a190c697e2d53f3f591113e4e2bf7c35443ede8678f",
+  "input_hashes": {
+    "midterm/data/dataset11-30.csv": "8c9e5f058157041e5c33f13e64dc1625a5177cc6d5e434ba18cd8a69afafb53b",
+    "solutions/midterm/cache/interactions.sqlite": "631498c231bb1aec21583b6dd0c811b296c5993361ebcb3b7fc2e6e871c51a18",
+    "solutions/midterm/tools/run_airing_model.py": "b64e1928fd0f665d4eb6eb9536a229a5dbff06432f479c2515a1f34476054b35",
+    "solutions/midterm/tools/airing_inference_features.py": "c2f1c7a0c947bc347a2269e9a61a1d5b54a66be8ca93fc9e74ec63d1509d82eb",
+    "solutions/midterm/tools/airing_v2_features.py": "1d638c2af23bf1ee5414b42db6a68981ed0d0e11d4cc179be1d1d47622ed3943",
+    "solutions/midterm/tools/final_replay_features.py": "4b917af490467dd44152c663cca9b1f931f4666ffecc4dffdd62abbea737bbf1",
+    "solutions/midterm/cache/deep_temporal/top5_count80_24features.txt": "4baaa2ce66d3e5706f7171e2d5b8902f1dbba052ecb31bf034e04cc138034cb3",
+    "solutions/midterm/evidence/airing_model/results.json": "c9577505770872ca59fd62103f08893493cd1a43a0282db8dbd7c3b6db5eb7eb",
+    "solutions/midterm/cache/context_features/fit.npz": "0ed8052cb26e51db7fe7842c551964122549244e5a2d627931494ffb9d150080",
+    "solutions/midterm/cache/context_features/eval.npz": "691303bc06e39ef01577a3a9bd9bb3079de49325cddadc331b658a18ceb133e7",
+    "solutions/midterm/cache/context_features/later.npz": "bfda6b3cd049fab056a8ba241d6a5fa8bdfadbd7d6937636ffc6f1964a655896",
+    "solutions/midterm/cache/deep_temporal/top5_count80_24features_eval_scores.npy": "34b2bcdbf18bfd76808c0622a905748746faaeeabe9bcaf4432a10c774fb5573",
+    "solutions/midterm/cache/deep_temporal/top5_count80_24features_later_scores.npy": "7d74002d5d594a43f8a1e42dfdc710ba49d8dee724e3262d39e6fa2718880625"
+  }
+}

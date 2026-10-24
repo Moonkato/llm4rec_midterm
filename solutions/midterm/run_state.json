@@ -1,0 +1,532 @@
+{
+  "phase": "final_v5_scored_report_updated",
+  "competition": "sweettv-tv-program-recommender",
+  "submission_budget": 5,
+  "submissions_made": 5,
+  "training_runs": 53,
+  "approval_policy": {
+    "ordinary_local_checks": "authorized",
+    "training_and_heavy_computation": "explicit approval required after scope and resource summary",
+    "submissions": "agree naming and selection rules before first submission",
+    "small_preprocessing": "authorized without repeated approval for comparable 5-15 minute/1-2 GB work",
+    "network": "User performs VPN-blocked Kaggle operations; do not retry network workarounds"
+  },
+  "deliverables": [
+    "PDF report",
+    "instructor-authorized reference dialogue grounded in actual work",
+    "implementation",
+    "final submission CSV",
+    "Kaggle score screenshot"
+  ],
+  "input_audit": "evidence/input_audit.json",
+  "duration_audit": "evidence/duration_discrepancies.json",
+  "unresolved": [
+    "Public versus private score requirement conflicts between Markdown and PDF; record both",
+    "Official Kaggle target construction and AP denominator/empty-truth policy not verified",
+    "Full homework guidelines referenced elsewhere are absent locally"
+  ],
+  "proposed_next_phase": {
+    "task": "First model comparison on fixed chronological holdout",
+    "models": [
+      "popularity",
+      "personal frequency/recency",
+      "content-based",
+      "implicit matrix factorization"
+    ],
+    "approval": "approved by user",
+    "estimated_wall_minutes": "20-40 preliminary budget",
+    "estimated_peak_ram_gb": "2-4",
+    "gpu": false
+  },
+  "interaction_audit": "evidence/interaction_audit.json",
+  "preprocessing_checks": "evidence/preprocessing_checks.json",
+  "resolved": [
+    "All normalized viewing durations match recorded seconds after empirical March29 civil-clock correction",
+    "No timestamps inside proposed missing hour",
+    "No overlapping same-item events or conflicting labelled events found",
+    "No watched seconds exceed airing duration",
+    "Coverage merge correction has no effect on this dataset"
+  ],
+  "training_budget": {
+    "als_runs": 4,
+    "iterations_each": 10,
+    "factors": [
+      32,
+      64
+    ],
+    "max_estimated_minutes": 40,
+    "submissions": 0
+  },
+  "round1_results": "evidence/round1/results.json",
+  "fusion_results": "evidence/fusion/results.json",
+  "strict_label_results": "evidence/strict_labels/results.json",
+  "temporal_robustness": "evidence/temporal/results.json",
+  "model_fusion_results": "evidence/model_fusion/results.json",
+  "target_evidence": {
+    "source": "https://medium.com/data-science/two-layered-recommender-system-methodology-a-prize-winning-solution-c4bdb815b156",
+    "claim": "participant describes >80% single session",
+    "authority": "first-hand participant, not confirmed official scorer",
+    "impact": "prior 180sec MAP must not be treated as Kaggle estimate"
+  },
+  "schedule_results": "evidence/schedule/results.json",
+  "best_strict_local_map5": 0.5756011904761904,
+  "next_training_request": {
+    "method": "context features and 2-3 small histogram gradient boosting models",
+    "budget_minutes": 20,
+    "ram_gb": 4,
+    "status": "completed_three_context_models",
+    "submissions": 0
+  },
+  "simple_reranker_results": "evidence/simple_reranker/results.json",
+  "simple_formula_results": "evidence/simple_improvements/results.json",
+  "candidate": "candidates/logistic_v1.csv",
+  "candidate_checks": "evidence/candidate_logistic_v1.json",
+  "later_strict_map5": 0.4823276014109347,
+  "proposed_submission_rules": {
+    "limit": 4,
+    "first_name": "midterm_01_logistic_schedule",
+    "first_file": "candidates/logistic_v1.csv",
+    "further_candidates": "require meaningful local improvement or distinct justified hypothesis; discuss before sending",
+    "record": "file hash, configuration, public and private scores",
+    "approval": "approved by user"
+  },
+  "first_submission": {
+    "file": "candidates/logistic_v1.csv",
+    "description": "gleb-alektorov-midterm-01-logistic-schedule",
+    "status": "Complete (after deadline)",
+    "scores_in_user_order": [
+      0.42693,
+      0.44458
+    ],
+    "public_score_assumed": 0.42693,
+    "private_score_assumed": 0.44458,
+    "source": "user pasted result; screenshot not yet supplied",
+    "score_column_order": "assumed public then private, needs screenshot confirmation"
+  },
+  "context_boosting_results": "evidence/context_boosting/results.json",
+  "context_fusion_results": "evidence/context_fusion/results.json",
+  "context_candidate_decision": {
+    "status": "not submitted; modest exploratory improvement",
+    "equal_rank_fusion_map5_main": 0.5843095238095238,
+    "equal_rank_fusion_map5_later": 0.4881082451499118,
+    "components": [
+      "frozen_logistic",
+      "boost_context"
+    ],
+    "validation_caveat": "weights examined on both overlapping temporal windows; not independent confirmation",
+    "next_hypothesis": "normalize historical counts by observed history length; assess temporal training drift"
+  },
+  "normalization_results": "evidence/history_normalization/results.json",
+  "normalized_fusion_results": "evidence/normalized_fusion/results.json",
+  "normalization_decision": {
+    "finding": "tradeoff rather than consistent win",
+    "unscaled_equal_fusion": [
+      0.5843095238095238,
+      0.4881082451499118
+    ],
+    "normalized_equal_fusion": [
+      0.5798163580246913,
+      0.4894373897707231
+    ],
+    "training_runs_added": 0,
+    "submissions_added": 0,
+    "recommendation": "keep original equal fusion as comparator; no second submission yet"
+  },
+  "multiwindow_results": "evidence/multiwindow/results.json",
+  "target_cohort_results": "evidence/target_cohort/results.json",
+  "multiwindow_decision": {
+    "recent_only": 0.4674325396825396,
+    "pooled": 0.4628311287477954,
+    "target_cohort_pooled": 0.4643346560846561,
+    "metric": "strict later MAP@5",
+    "conclusion": "none improves original frozen logistic or existing fusion; reject these candidates",
+    "new_submissions": 0
+  },
+  "parallel_round": {
+    "pairwise": "evidence/pairwise/results.json",
+    "training_filter": "evidence/training_filter/results.json",
+    "ambiguous_negatives": "evidence/ambiguous_negatives/results.json",
+    "raw_quality_audit": "evidence/data_quality_hypothesis.json",
+    "filtered_fusion": "evidence/filtered_fusion/results.json",
+    "raw_context": "evidence/raw_context/results.json",
+    "filtered_multiwindow": "evidence/filtered_multiwindow/results.json",
+    "submissions_added": 0
+  },
+  "second_candidate": {
+    "file": "candidates/filtered_context_v2.csv",
+    "manifest": "evidence/candidate_filtered_context_v2.json",
+    "proposed_name": "midterm_02_filtered_context_rrf",
+    "status": "Complete (after deadline), user reported",
+    "local_main": 0.5854757495590829,
+    "local_later": 0.49270568783068786
+  },
+  "second_submission": {
+    "description": "gleb_alektorov_midterm_02_filtered_context_rrf",
+    "file": "candidates/filtered_context_v2.csv",
+    "scores_in_user_order": [
+      0.42939,
+      0.44481
+    ],
+    "public_score_assumed": 0.42939,
+    "private_score_assumed": 0.44481,
+    "source": "user pasted result; headings not independently confirmed",
+    "delta_vs_first": [
+      0.00246,
+      0.00023
+    ]
+  },
+  "collaborative_results": "evidence/collaborative_reranker/results.json",
+  "official_target_excerpt": "evidence/official_target_user_excerpt.json",
+  "lambdarank_results": "evidence/lambdarank_targets/results.json",
+  "top5_target_audit": "evidence/top5_target_audit/results.json",
+  "next_candidate_decision": {
+    "decision": "Retain already-submitted v4; final experiment finished",
+    "submissions_used": 4,
+    "remaining_authorized": 1,
+    "new_submission_recommended": false
+  },
+  "deep_round": {
+    "join_audit": "evidence/deep_join_audit.json",
+    "submission_reproduction": "evidence/submissions/reproduction_checks.json",
+    "ranker_uncertainty": "evidence/ranker_uncertainty.json",
+    "inner_context": "evidence/deep_context/results.json",
+    "weekly_context": "evidence/weekly_context/results.json",
+    "training_status": "complete",
+    "requested_budget": {
+      "minutes": 45,
+      "ram_gb": 4,
+      "cpu_threads": 2,
+      "max_fits": 12,
+      "submissions": 0
+    },
+    "protocol": "evidence/deep_temporal/protocol.json",
+    "results": "evidence/deep_temporal/results.json",
+    "comparison": "evidence/deep_temporal/comparison.json",
+    "fits": 10,
+    "wall_seconds": 319.0352655829993,
+    "peak_rss_bytes": 328269824,
+    "submissions_added": 0
+  },
+  "third_candidate": {
+    "file": "candidates/weekly_ranker_v3.csv",
+    "manifest": "evidence/candidate_weekly_ranker_v3.json",
+    "proposed_name": "gleb_alektorov_midterm_03_weekly_lambdarank",
+    "status": "Complete (after deadline), user reported"
+  },
+  "third_submission": {
+    "description": "gleb_alektorov_midterm_03_weekly_lambdarank",
+    "file": "candidates/weekly_ranker_v3.csv",
+    "status": "Complete (after deadline)",
+    "scores_in_user_order": [
+      0.43519,
+      0.44966
+    ],
+    "public_score_assumed": 0.43519,
+    "private_score_assumed": 0.44966,
+    "source": "user pasted result; headings not independently confirmed",
+    "delta_vs_second": [
+      0.0058,
+      0.00485
+    ],
+    "delta_vs_first": [
+      0.00826,
+      0.00508
+    ],
+    "sha256": "d89ae53ef29f7981d322204a77c98bf144c266280642d3be25b04fe2596263a5"
+  },
+  "regularity_round": {
+    "scope": "3 fixed417-tree top5count80 rankers, regularity/trend, completion/share, union",
+    "budget": "10min,1.5GiB,1CPU training; small preprocessing",
+    "submissions": 0,
+    "headroom_audit": "evidence/v3_headroom.json",
+    "status": "complete; no replacement for v3",
+    "results": "evidence/regularity_round/results.json",
+    "comparison": "evidence/regularity_round/comparison.json",
+    "review": "evidence/regularity_review.json",
+    "fits": 3,
+    "wall_seconds": 118.26441754199914,
+    "peak_rss_bytes": 412745728
+  },
+  "weekly_retrieval_round": {
+    "scope": "top30 weekly-all and top30 weekly-recent schedule candidates; frozen v3 diagnostic and one expanded-pool refit",
+    "training_budget": "one417treefit,10min1.5GiB1CPU",
+    "candidate_selection": "history and future schedule only",
+    "submissions": 0,
+    "status": "complete; rejected",
+    "results": "evidence/weekly_retrieval/results.json",
+    "coverage": "evidence/weekly_retrieval/coverage.json",
+    "review": "evidence/weekly_retrieval_review.json",
+    "fits": 1,
+    "wall_seconds": 152.70274816700112,
+    "peak_rss_bytes": 767279104
+  },
+  "objective_diversity_round": {
+    "scope": "2fixedfits,rank_xendcg and equalqueryweighted binary; primary equalRRF60 of these plusv3",
+    "budget": "5min1GB1CPU",
+    "submissions": 0,
+    "status": "complete; rejected",
+    "results": "evidence/objective_diversity/results.json",
+    "comparison": "evidence/objective_diversity/comparison.json",
+    "review": "evidence/objective_diversity_review.json",
+    "fits": 2,
+    "wall_seconds": 81.14249899999777,
+    "peak_rss_bytes": 354893824
+  },
+  "grooming": "evidence/grooming/decision.json",
+  "warp_experiment": {
+    "user_authorization": "User selected most promising and ordered experiment after45min4GB2CPU scope proposal",
+    "scope": "3 compact observed-only historical WARP fits plus1 fixed417tree conditional reranker",
+    "dependency": "lightfm absent; installation requested from user under standing network agreement",
+    "refinements": [
+      "Exclude future-only zero columns from negative sampling",
+      "Keep v3 candidatepool and24features fixed",
+      "Scalar latent scores/biases/norms with unknownflags, no rotatedfactorcoordinates",
+      "Knownuserseen and user-new APcredit evaluation",
+      "Nohyperparamgrid/no submissions"
+    ],
+    "status": "replaced by user-approved EASE after LightFM installation failure; no WARP fits",
+    "plan": "evidence/warp_ablation/plan.json",
+    "review": "evidence/warp_review.json",
+    "horizon_diagnostic": "evidence/target_horizon_diagnostic.json",
+    "feature_command": "solutions/midterm/.venv/bin/python solutions/midterm/tools/build_warp_features.py --run",
+    "ranker_command": "solutions/midterm/.venv/bin/python solutions/midterm/tools/run_warp_ablation.py"
+  },
+  "ease_experiment": {
+    "status": "complete; meaningful gain gate not met",
+    "parameters": {
+      "lambda": 500,
+      "interactions": "binary historical >30percent",
+      "dense_dtype": "float64",
+      "threads": 2
+    },
+    "memory_estimate_largest_dense_matrix_mb": 102.6,
+    "feature_count": 4,
+    "candidate_pool": "original v3 unchanged",
+    "max_submissions": 0,
+    "success_gate": "main top5MAPdelta>=.01 and laterdelta>=0",
+    "factor_fits": 3,
+    "ranker_fits": 1,
+    "features_results": "evidence/ease_features/results.json",
+    "ablation_results": "evidence/ease_ablation/results.json",
+    "feature_wall_seconds": 5.909363416998531,
+    "ablation_wall_seconds": 32.71980179199818,
+    "peak_rss_bytes": 760283136
+  },
+  "structural_round": {
+    "status": "complete; candidate prepared, not submitted",
+    "overall_budget": "45min4GB2CPU",
+    "temporal": {
+      "status": "complete",
+      "results": "evidence/rolling_temporal/results.json",
+      "fits": 2,
+      "wall_seconds": 198.05451804100085,
+      "peak_rss_bytes": 629374976
+    },
+    "airing": {
+      "status": "complete",
+      "results": "evidence/airing_model/results.json",
+      "fits": 1,
+      "wall_seconds": 293.70560708300036,
+      "peak_rss_bytes": 771342336
+    },
+    "submissions": 0,
+    "training_runs_recorded": true,
+    "full_history_companion": {
+      "status": "complete",
+      "results": "evidence/full_history_temporal/results.json",
+      "fits": 2,
+      "wall_seconds": 120.0771119159981,
+      "peak_rss_bytes": 741654528
+    },
+    "decision": {
+      "candidate": "equal_rrf60_v3_and_airing",
+      "candidate_export": "complete",
+      "main_top5_delta": 0.00982473544973545,
+      "later_top5_delta": 0.003574735449735448,
+      "limitations": "Prespecified diagnostic fusion improves reused overlapping windows; late interval lower bound nearly zero; official target formula still uncertain. Primary event-only model not consistently better. No promise of Kaggle improvement."
+    },
+    "experiment_wall_seconds": 611.8372370399993,
+    "candidate": {
+      "file": "candidates/event_v3_rrf_v4.csv",
+      "manifest": "evidence/candidate_event_v3_rrf_v4/manifest.json",
+      "sha256": "f2b802ac394e35d1999754a461848479f3bbc5abb5cd8a7b6dad80196c783e5a",
+      "inference_wall_seconds": 106.14991141700011,
+      "rows": 1260,
+      "status": "Complete (after deadline), user reported",
+      "proposed_description": "gleb_alektorov_midterm_04_airing_v3_rrf"
+    }
+  },
+  "fourth_submission": {
+    "file": "candidates/event_v3_rrf_v4.csv",
+    "description": "gleb_alektorov_midterm_04_airing_v3_rrf",
+    "sha256": "f2b802ac394e35d1999754a461848479f3bbc5abb5cd8a7b6dad80196c783e5a",
+    "status": "Complete (after deadline), user reported",
+    "user_approval": "давай",
+    "scores_in_user_order": [
+      0.44394,
+      0.45348
+    ],
+    "score_column_order": "unconfirmed; user pasted no headings",
+    "delta_vs_third": [
+      0.00875,
+      0.00382
+    ],
+    "source": "user pasted result; screenshot not yet supplied"
+  },
+  "reported_external_benchmark": {
+    "score": 0.65,
+    "source": "user reports colleague result",
+    "comparability": "competition/metric/score column not yet confirmed"
+  },
+  "airing_v2": {
+    "status": "recurrence-only completed; no improvement over v4; replay deferred",
+    "plan": "evidence/airing_v2/plan.json",
+    "diagnostic": "evidence/post_v4_diagnostic.json",
+    "training_started": true,
+    "approved_fits": 1,
+    "recurrence_fit_recorded": true,
+    "results": "evidence/airing_recurrence/results.json",
+    "comparison": "evidence/airing_recurrence/comparison.json",
+    "fits": 1,
+    "wall_seconds": 346.4294935420003,
+    "peak_rss_bytes": 954122240
+  },
+  "deep_reassessment": "evidence/grooming/deep_reassessment.json",
+  "event_stack_round": {
+    "status": "complete; retain v4, no material consistent improvement",
+    "approval": "user: собери лучшие идеи и запусти обучение - да",
+    "budget": {
+      "max_fits": 6,
+      "compute_minutes": 30,
+      "ram_gb": 4,
+      "cpu_threads": 2,
+      "submissions": 0
+    },
+    "sequence": [
+      "two fixed hard/soft cross-entropy controls on same all-fit rows",
+      "three user-fold original event fits and OOF feature scoring",
+      "one fixed original hard-target LambdaRank plus6OOFfeatures"
+    ],
+    "objective_selection": "No adaptive choice of final stack target from control results",
+    "inference": "Existing frozen all-training event model at heldout cutoffs; standard OOF/full-fit sample-size shift reported",
+    "fits_recorded": 6,
+    "compute_started_utc": "2026-10-22T23:29:22.502686+00:00",
+    "tie_controls": {
+      "results": "evidence/tie_controls/results.json",
+      "fits": 2,
+      "wall_seconds": 55.26272533299925,
+      "peak_rss_bytes": 370032640
+    },
+    "event_oof": {
+      "fits": 3,
+      "fits_evidence": "evidence/event_oof/fits.json",
+      "features_status": "complete",
+      "results": "evidence/event_oof/results.json",
+      "wall_seconds": 695.0263111249988,
+      "peak_rss_bytes": 897826816,
+      "heldout_expected_count_parity": "exact zero on both windows"
+    },
+    "stack": {
+      "results": "evidence/event_stack/results.json",
+      "fits": 1,
+      "wall_seconds": 53.659375834002276,
+      "peak_rss_bytes": 418136064
+    },
+    "compute_wall_seconds": 803.9484122920003,
+    "peak_rss_bytes": 897826816,
+    "comparison": "evidence/event_stack/comparison.json",
+    "decision": "No new submission candidate. Primary stack hardtop5 point estimate below v4 on both windows; paired intervals include zero. Soft-label control small gains do not outperform v4 consistently."
+  },
+  "final_replay": {
+    "status": "proposed expanded final scope; awaiting confirmation of updated budget",
+    "plan": "evidence/final_replay/plan.json",
+    "fits": 0,
+    "submissions": 0,
+    "review": "evidence/final_replay_review.json",
+    "expanded_plan": "evidence/final_replay/expanded_plan.json"
+  },
+  "final_submission_authorization": {
+    "maximum_total": 5,
+    "already_used": 4,
+    "additional_allowed": 1,
+    "source": "User explicitly requested this be our last experiment and last submission",
+    "upload": "manual by user; choose one validated final file; no upload executed"
+  },
+  "final_two_branch": {
+    "status": "complete; all new arms fail consistent gain, frozen v4 selected",
+    "approval": "user: давай запускать",
+    "budget": {
+      "fits": 2,
+      "minutes": 35,
+      "ram_gb": 4,
+      "max_cpu_threads": 2
+    },
+    "started_utc": "2026-10-24T08:51:21.488363+00:00",
+    "fits_recorded": 2,
+    "submissions": 0,
+    "identity": {
+      "results": "evidence/final_identity/results.json",
+      "wall_seconds": 66.45371812499798,
+      "peak_rss_bytes": 432291840,
+      "fits": 1
+    },
+    "replay": {
+      "fit_seconds": 47.54435029200249,
+      "evaluation_status": "complete",
+      "fit_evidence": "evidence/final_replay/fit.json",
+      "results": "evidence/final_replay/results.json",
+      "wall_seconds": 725.1383357090017,
+      "peak_rss_bytes": 1025523712
+    },
+    "further_training": "none in this final experiment",
+    "compute_wall_seconds": 791.5920538339997,
+    "peak_rss_bytes": 1025523712,
+    "comparison": "evidence/final_factorial/results.json",
+    "selection": "evidence/final_factorial/selection.json",
+    "new_export": false
+  },
+  "final_model_selection": {
+    "selected_arm": "v3_old_event",
+    "selected_file": "candidates/event_v3_rrf_v4.csv",
+    "sha256": "f2b802ac394e35d1999754a461848479f3bbc5abb5cd8a7b6dad80196c783e5a",
+    "decision": "Retain already-submitted frozen v4 as final solution. Every new arm improved first-window hard MAP slightly but worsened later window; combined primary fails prespecified screen. No new export or duplicate submission recommended.",
+    "evidence": "evidence/final_factorial/results.json",
+    "scores_in_user_order": [
+      0.44394,
+      0.45348
+    ],
+    "score_column_order": "not confirmed from screenshot",
+    "additional_submission_used": false,
+    "reason_for_no_new_csv": "Selected exact existing file already validated and Kaggle-scored; no need to relabel identical predictions as a new model",
+    "training_complete": true,
+    "new_fits": 2,
+    "further_training": "none in final experiment"
+  },
+  "fifth_submission": {
+    "status": "Complete (after deadline)",
+    "file": "candidates/final_factorial_v5.csv",
+    "arm": "identity_replay",
+    "description": "gleb_alektorov_midterm_05_identity_replay_rrf",
+    "selection_evidence": "evidence/final_factorial/submission_selection.json",
+    "sha256": "662620aafd8df3aaf1230f7653c0910708d5fe8fbc056b28b78bb8ddd34a88a3",
+    "manifest": "evidence/candidate_final_factorial_v5/manifest.json",
+    "private_score": 0.44559,
+    "public_score": 0.45546,
+    "score_column_order": "Private, Public; visually confirmed",
+    "source": "midterm/image.png",
+    "screenshot_sha256": "307efda209521308d76d11e6a4908ede599f08b30d932056b37eff08694165ad",
+    "delta_vs_v4": {
+      "private": 0.00165,
+      "public": 0.00198
+    },
+    "designated_final": true
+  },
+  "report_artifacts": {
+    "directory": "submission",
+    "status": "PDF and session updated to screenshot-confirmed v5; GitHub publication by owner",
+    "validation": "evidence/report_validation.json",
+    "session_validation": "evidence/session_validation.json",
+    "latest_audit": "evidence/final_compliance_audit.json"
+  },
+  "designated_final_submission": "candidates/final_factorial_v5.csv"
+}

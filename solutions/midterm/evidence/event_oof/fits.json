@@ -1,0 +1,32 @@
+[
+  {
+    "fold": 0,
+    "train_users": 3113,
+    "heldout_users": 1608,
+    "train_rows": 308561,
+    "heldout_sample_rows": 165347,
+    "user_overlap": 0,
+    "fit_seconds": 31.938168457996653,
+    "model_sha256": "ba76abfa18c7ae522c96c46ea49dfc2cee5053872aa93e788e7240cea88d53bb"
+  },
+  {
+    "fold": 1,
+    "train_users": 3157,
+    "heldout_users": 1564,
+    "train_rows": 317012,
+    "heldout_sample_rows": 156896,
+    "user_overlap": 0,
+    "fit_seconds": 36.13316695899994,
+    "model_sha256": "abefddcc079696f697b254929a880bc5c22a3755cd0279a349286db8af3eadac"
+  },
+  {
+    "fold": 2,
+    "train_users": 3172,
+    "heldout_users": 1549,
+    "train_rows": 322243,
+    "heldout_sample_rows": 151665,
+    "user_overlap": 0,
+    "fit_seconds": 31.07295379199786,
+    "model_sha256": "d7cb52ae568c671fd623b7518c57771952b30783904fff6b94111bdb06d52e46"
+  }
+]

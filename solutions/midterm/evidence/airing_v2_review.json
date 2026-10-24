@@ -1,0 +1,34 @@
+{
+  "status": "cleared; real execution pending user approval",
+  "reviewed": [
+    "tools/airing_v2_features.py",
+    "tools/run_airing_v2.py"
+  ],
+  "blockers": [],
+  "fixture": {
+    "single_interval_cases_passed": 89800,
+    "description": "Random intervals plus explicit equality/start-boundary cases versus brute maximum single overlap with exact rational30/80percent thresholds.",
+    "seed": 20261023
+  },
+  "findings": [
+    "Prefix maximum end and range maximum duration implement exact MAXsingle interval predicate; no unions.",
+    "Full historical date denominator excludes incomplete intervals and nonexistent March29civil03hour.",
+    "Recent28 elapsed-time mismatch identified and fixed to28civil calendar days; fix statically reviewed.",
+    "Historical recurrence numerator and airing exposure denominator both use full events before cutoff; shrinkage5 uses only historical parents.",
+    "Expandedtuple includes exactduration and startsecond required for replay; original33 helper parity/hash guarded.",
+    "Same sampled positives/negatives and weights across39/43features; no hidden labels.",
+    "Frozen v4 baseline recorded explicitly, workload measured before fit."
+  ],
+  "caveats": [
+    "Dates without recorded viewing count as failures; monitoring/user presence is not established.",
+    "Recurrence retains storedfragment MAX labels, replay uses raw original sessions and can differ at old split.",
+    "Calendar replay independent end-to-end fixture not completed; static conversion inspected.",
+    "No real data preparation or fitting executed by reviewer."
+  ],
+  "source_hashes": {
+    "tools/airing_v2_features.py": "c133ef7ffc8c98d88e5fa71d33822cc236a9c3d004be15217b5bfc2cf45aefe9",
+    "tools/run_airing_v2.py": "7d60540f2023e67df263475c8368f3fc4d6aa3c430d2e3a0759bd10a18c59b98"
+  },
+  "reviewer_fits": 0,
+  "submissions": 0
+}

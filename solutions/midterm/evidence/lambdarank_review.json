@@ -1,0 +1,21 @@
+{
+  "status": "read-only review complete",
+  "script": "tools/run_lambdarank_targets.py",
+  "blockers": [],
+  "verified": [
+    "Training top5 truth uses only Apr13-May18 outcome labels; historical feature arrays remain cutoff-specific. Evaluation labels are not passed to fitting.",
+    "Airing query groups user/event before programme counts, using max clipped single-fragment overlap and strict >80percent full airing duration.",
+    "Top5 truth is selected across all qualifying programmes before intersecting retrieved candidates; descending qualified-airing count ties break by numeric item ID.",
+    "ytop<=fit.y explicitly verifies top5 fitting labels are a subset of broad strict labels.",
+    "Boolean keep removes complete original groups and preserves row order; group sizes sum to retained rows, so LightGBM query contiguity is correct.",
+    "Broad evaluation uses full truth_counts, not only retrieved positives; each proxy uses its full saved truth through apk. Empty users remain AP0; cold fallback is unchanged.",
+    "Protocol correctly distinguishes NDCG-weighted LambdaRank from exact MAP optimization and leaves hidden target construction unconfirmed."
+  ],
+  "caveats": [
+    "The two label variants can retain different user groups because no-positive groups are removed separately; differences therefore include label choice and retained fitting population, not a perfectly isolated label-only effect.",
+    "Both evaluation windows and multiple target proxies have already been explored; selecting the best observed metric does not verify the official target.",
+    "Feature schema equality and full input hashes would strengthen reproducibility, although current source alignment was reviewed previously."
+  ],
+  "reviewer_fits": 0,
+  "submissions": 0
+}

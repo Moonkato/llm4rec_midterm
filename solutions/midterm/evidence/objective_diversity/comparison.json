@@ -1,0 +1,56 @@
+{
+  "primary_candidate": "rrf60_all3, fixed before results",
+  "results": {
+    "eval": {
+      "all80": {
+        "v3": 0.5864922839506174,
+        "combined_candidate": 0.5878185626102292,
+        "delta": 0.0013262786596119932,
+        "paired_user_interval95": [
+          -0.0012795414462081125,
+          0.0040345679012345655
+        ],
+        "users_improved": 124,
+        "users_worsened": 113
+      },
+      "top5_count80": {
+        "v3": 0.40741291887125225,
+        "combined_candidate": 0.4072444885361552,
+        "delta": -0.00016843033509700165,
+        "paired_user_interval95": [
+          -0.00264212962962963,
+          0.0023748677248677233
+        ],
+        "users_improved": 130,
+        "users_worsened": 148
+      }
+    },
+    "later": {
+      "all80": {
+        "v3": 0.4954440035273369,
+        "combined_candidate": 0.49147663139329806,
+        "delta": -0.003967372134038801,
+        "paired_user_interval95": [
+          -0.007056266534391535,
+          -0.0010354772927689611
+        ],
+        "users_improved": 115,
+        "users_worsened": 167
+      },
+      "top5_count80": {
+        "v3": 0.3618752204585538,
+        "combined_candidate": 0.3571565255731923,
+        "delta": -0.004718694885361552,
+        "paired_user_interval95": [
+          -0.007371329365079366,
+          -0.0022572530864197545
+        ],
+        "users_improved": 111,
+        "users_worsened": 163
+      }
+    }
+  },
+  "fits": 0,
+  "submissions": 0,
+  "limitations": "Exploratory reused overlapping periods; user dependence and model selection not covered by bootstrap. Not Kaggle intervals."
+}

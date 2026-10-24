@@ -1,0 +1,492 @@
+{
+  "status": "complete",
+  "primary": "combined",
+  "results": {
+    "eval": {
+      "v4": {
+        "all80": {
+          "score": 0.5876186067019401,
+          "v4_score": 0.5876186067019401,
+          "mean_delta": 0.0,
+          "paired_user_percentile95": [
+            0.0,
+            0.0
+          ],
+          "users_improved": 0,
+          "users_worsened": 0,
+          "users_equal": 1260
+        },
+        "top5_count80": {
+          "score": 0.41723765432098764,
+          "v4_score": 0.41723765432098764,
+          "mean_delta": 0.0,
+          "paired_user_percentile95": [
+            0.0,
+            0.0
+          ],
+          "users_improved": 0,
+          "users_worsened": 0,
+          "users_equal": 1260
+        },
+        "tie_expected_ap5": {
+          "score": 0.3930550424013415,
+          "v4_score": 0.3930550424013415,
+          "mean_delta": 0.0,
+          "paired_user_percentile95": [
+            0.0,
+            0.0
+          ],
+          "users_improved": 0,
+          "users_worsened": 0,
+          "users_equal": 1260
+        }
+      },
+      "replay_only": {
+        "all80": {
+          "score": 0.5908835978835979,
+          "v4_score": 0.5876186067019401,
+          "mean_delta": 0.0032649911816578477,
+          "paired_user_percentile95": [
+            0.0006057980599647268,
+            0.0060370701058201056
+          ],
+          "users_improved": 113,
+          "users_worsened": 101,
+          "users_equal": 1046
+        },
+        "top5_count80": {
+          "score": 0.41821693121693126,
+          "v4_score": 0.41723765432098764,
+          "mean_delta": 0.0009792768959435625,
+          "paired_user_percentile95": [
+            -0.0015344025573192238,
+            0.003417173721340387
+          ],
+          "users_improved": 133,
+          "users_worsened": 124,
+          "users_equal": 1003
+        },
+        "tie_expected_ap5": {
+          "score": 0.3942705705635563,
+          "v4_score": 0.3930550424013415,
+          "mean_delta": 0.0012155281622148323,
+          "paired_user_percentile95": [
+            -0.0011868257920564932,
+            0.0035365687481302022
+          ],
+          "users_improved": 151,
+          "users_worsened": 146,
+          "users_equal": 963
+        }
+      },
+      "identity_only": {
+        "all80": {
+          "score": 0.5887638888888889,
+          "v4_score": 0.5876186067019401,
+          "mean_delta": 0.001145282186948854,
+          "paired_user_percentile95": [
+            -0.002747216710758376,
+            0.004754089506172837
+          ],
+          "users_improved": 194,
+          "users_worsened": 162,
+          "users_equal": 904
+        },
+        "top5_count80": {
+          "score": 0.41760251322751324,
+          "v4_score": 0.41723765432098764,
+          "mean_delta": 0.0003648589065255735,
+          "paired_user_percentile95": [
+            -0.0031384534832451494,
+            0.003744273589065256
+          ],
+          "users_improved": 211,
+          "users_worsened": 184,
+          "users_equal": 865
+        },
+        "tie_expected_ap5": {
+          "score": 0.39218546856109227,
+          "v4_score": 0.3930550424013415,
+          "mean_delta": -0.0008695738402492515,
+          "paired_user_percentile95": [
+            -0.003880571133285906,
+            0.002148818351830986
+          ],
+          "users_improved": 231,
+          "users_worsened": 211,
+          "users_equal": 818
+        }
+      },
+      "combined": {
+        "all80": {
+          "score": 0.5919600970017637,
+          "v4_score": 0.5876186067019401,
+          "mean_delta": 0.004341490299823633,
+          "paired_user_percentile95": [
+            -1.4594356261023562e-05,
+            0.008556007495590824
+          ],
+          "users_improved": 236,
+          "users_worsened": 193,
+          "users_equal": 831
+        },
+        "top5_count80": {
+          "score": 0.41922200176366836,
+          "v4_score": 0.41723765432098764,
+          "mean_delta": 0.0019843474426807766,
+          "paired_user_percentile95": [
+            -0.0018829695767195757,
+            0.005796197089947085
+          ],
+          "users_improved": 272,
+          "users_worsened": 230,
+          "users_equal": 758
+        },
+        "tie_expected_ap5": {
+          "score": 0.3941923874810657,
+          "v4_score": 0.3930550424013415,
+          "mean_delta": 0.0011373450797241657,
+          "paired_user_percentile95": [
+            -0.0023495705324949826,
+            0.0045479361082759445
+          ],
+          "users_improved": 298,
+          "users_worsened": 268,
+          "users_equal": 694
+        }
+      }
+    },
+    "later": {
+      "v4": {
+        "all80": {
+          "score": 0.4972674162257496,
+          "v4_score": 0.4972674162257496,
+          "mean_delta": 0.0,
+          "paired_user_percentile95": [
+            0.0,
+            0.0
+          ],
+          "users_improved": 0,
+          "users_worsened": 0,
+          "users_equal": 1260
+        },
+        "top5_count80": {
+          "score": 0.3654499559082892,
+          "v4_score": 0.3654499559082892,
+          "mean_delta": 0.0,
+          "paired_user_percentile95": [
+            0.0,
+            0.0
+          ],
+          "users_improved": 0,
+          "users_worsened": 0,
+          "users_equal": 1260
+        },
+        "tie_expected_ap5": {
+          "score": 0.3354715604883808,
+          "v4_score": 0.3354715604883808,
+          "mean_delta": 0.0,
+          "paired_user_percentile95": [
+            0.0,
+            0.0
+          ],
+          "users_improved": 0,
+          "users_worsened": 0,
+          "users_equal": 1260
+        }
+      },
+      "replay_only": {
+        "all80": {
+          "score": 0.49603990299823636,
+          "v4_score": 0.4972674162257496,
+          "mean_delta": -0.0012275132275132274,
+          "paired_user_percentile95": [
+            -0.004614726631393298,
+            0.0019599537037037025
+          ],
+          "users_improved": 147,
+          "users_worsened": 163,
+          "users_equal": 950
+        },
+        "top5_count80": {
+          "score": 0.36475683421516747,
+          "v4_score": 0.3654499559082892,
+          "mean_delta": -0.0006931216931216941,
+          "paired_user_percentile95": [
+            -0.003695877425044092,
+            0.0021589065255731895
+          ],
+          "users_improved": 157,
+          "users_worsened": 177,
+          "users_equal": 926
+        },
+        "tie_expected_ap5": {
+          "score": 0.334524172454738,
+          "v4_score": 0.3354715604883808,
+          "mean_delta": -0.0009473880336427771,
+          "paired_user_percentile95": [
+            -0.0037207181092278573,
+            0.0017299561819145205
+          ],
+          "users_improved": 187,
+          "users_worsened": 204,
+          "users_equal": 869
+        }
+      },
+      "identity_only": {
+        "all80": {
+          "score": 0.49730533509700175,
+          "v4_score": 0.4972674162257496,
+          "mean_delta": 3.7918871252204786e-05,
+          "paired_user_percentile95": [
+            -0.004251350308641976,
+            0.004310791446208111
+          ],
+          "users_improved": 215,
+          "users_worsened": 222,
+          "users_equal": 823
+        },
+        "top5_count80": {
+          "score": 0.36491380070546736,
+          "v4_score": 0.3654499559082892,
+          "mean_delta": -0.0005361552028218697,
+          "paired_user_percentile95": [
+            -0.004127452601410936,
+            0.0029449900793650746
+          ],
+          "users_improved": 207,
+          "users_worsened": 209,
+          "users_equal": 844
+        },
+        "tie_expected_ap5": {
+          "score": 0.3336991577056507,
+          "v4_score": 0.3354715604883808,
+          "mean_delta": -0.0017724027827301224,
+          "paired_user_percentile95": [
+            -0.005031836665489736,
+            0.0014505756706860082
+          ],
+          "users_improved": 224,
+          "users_worsened": 246,
+          "users_equal": 790
+        }
+      },
+      "combined": {
+        "all80": {
+          "score": 0.49514572310405647,
+          "v4_score": 0.4972674162257496,
+          "mean_delta": -0.0021216931216931217,
+          "paired_user_percentile95": [
+            -0.00695557208994709,
+            0.0028582727072310396
+          ],
+          "users_improved": 263,
+          "users_worsened": 281,
+          "users_equal": 716
+        },
+        "top5_count80": {
+          "score": 0.3642250881834215,
+          "v4_score": 0.3654499559082892,
+          "mean_delta": -0.001224867724867726,
+          "paired_user_percentile95": [
+            -0.005426995149911818,
+            0.002918832671957668
+          ],
+          "users_improved": 262,
+          "users_worsened": 271,
+          "users_equal": 727
+        },
+        "tie_expected_ap5": {
+          "score": 0.3325559344714881,
+          "v4_score": 0.3354715604883808,
+          "mean_delta": -0.0029156260168926884,
+          "paired_user_percentile95": [
+            -0.00675355337305086,
+            0.000978877053857137
+          ],
+          "users_improved": 283,
+          "users_worsened": 316,
+          "users_equal": 661
+        }
+      }
+    }
+  },
+  "conditional_contributions": {
+    "eval": {
+      "identity_given_replay": {
+        "all80": {
+          "mean_delta": 0.001076499118165785,
+          "paired_user_percentile95": [
+            -0.002728560405643739,
+            0.004786502425044089
+          ],
+          "users_improved": 196,
+          "users_worsened": 163,
+          "users_equal": 901
+        },
+        "top5_count80": {
+          "mean_delta": 0.0010050705467372141,
+          "paired_user_percentile95": [
+            -0.002434810405643737,
+            0.004482170414462082
+          ],
+          "users_improved": 226,
+          "users_worsened": 175,
+          "users_equal": 859
+        },
+        "tie_expected_ap5": {
+          "mean_delta": -7.818308249066626e-05,
+          "paired_user_percentile95": [
+            -0.003171686407626268,
+            0.003051159868420331
+          ],
+          "users_improved": 249,
+          "users_worsened": 206,
+          "users_equal": 805
+        }
+      },
+      "replay_given_identity": {
+        "all80": {
+          "mean_delta": 0.003196208112874779,
+          "paired_user_percentile95": [
+            0.0003081349206349207,
+            0.006199768518518518
+          ],
+          "users_improved": 120,
+          "users_worsened": 101,
+          "users_equal": 1039
+        },
+        "top5_count80": {
+          "mean_delta": 0.0016194885361552037,
+          "paired_user_percentile95": [
+            -0.0009598544973544965,
+            0.004138007054673722
+          ],
+          "users_improved": 146,
+          "users_worsened": 130,
+          "users_equal": 984
+        },
+        "tie_expected_ap5": {
+          "mean_delta": 0.0020069189199734172,
+          "paired_user_percentile95": [
+            -0.0003500656012658401,
+            0.004259969110251931
+          ],
+          "users_improved": 167,
+          "users_worsened": 150,
+          "users_equal": 943
+        }
+      },
+      "factorial_interaction_descriptive": {
+        "all80": -6.87830687830686e-05,
+        "top5_count80": 0.0006402116402116411,
+        "tie_expected_ap5": 0.0007913907577585853
+      }
+    },
+    "later": {
+      "identity_given_replay": {
+        "all80": {
+          "mean_delta": -0.0008941798941798939,
+          "paired_user_percentile95": [
+            -0.0051132385361552036,
+            0.003740415564373896
+          ],
+          "users_improved": 215,
+          "users_worsened": 218,
+          "users_equal": 827
+        },
+        "top5_count80": {
+          "mean_delta": -0.0005317460317460317,
+          "paired_user_percentile95": [
+            -0.0041411485890652565,
+            0.0031136518959435605
+          ],
+          "users_improved": 208,
+          "users_worsened": 205,
+          "users_equal": 847
+        },
+        "tie_expected_ap5": {
+          "mean_delta": -0.001968237983249911,
+          "paired_user_percentile95": [
+            -0.005128727411771827,
+            0.0013893889667431927
+          ],
+          "users_improved": 217,
+          "users_worsened": 246,
+          "users_equal": 797
+        }
+      },
+      "replay_given_identity": {
+        "all80": {
+          "mean_delta": -0.0021596119929453267,
+          "paired_user_percentile95": [
+            -0.0057202050264550264,
+            0.001324156746031738
+          ],
+          "users_improved": 154,
+          "users_worsened": 164,
+          "users_equal": 942
+        },
+        "top5_count80": {
+          "mean_delta": -0.0006887125220458556,
+          "paired_user_percentile95": [
+            -0.0039023699294532623,
+            0.0024811618165784814
+          ],
+          "users_improved": 166,
+          "users_worsened": 180,
+          "users_equal": 914
+        },
+        "tie_expected_ap5": {
+          "mean_delta": -0.0011432232341625657,
+          "paired_user_percentile95": [
+            -0.00397998403040806,
+            0.0016122619151758698
+          ],
+          "users_improved": 189,
+          "users_worsened": 196,
+          "users_equal": 875
+        }
+      },
+      "factorial_interaction_descriptive": {
+        "all80": -0.0009320987654320989,
+        "top5_count80": 4.4091710758382554e-06,
+        "tie_expected_ap5": -0.0001958352005197887
+      }
+    }
+  },
+  "primary_success_checks": {
+    "main_hard_delta_at_least_001": false,
+    "later_hard_delta_at_least_0005": false,
+    "hard_paired95_lower_positive_both": false,
+    "tie_expected_positive_both": false,
+    "all80_loss_no_more_0002": false
+  },
+  "primary_passes_screen": false,
+  "source_hashes": {
+    "evidence/final_identity/results.json": "7f1fe6823bc319105964fe1805b297a0f14b25f7ef603473fe97a46774b167cd",
+    "evidence/final_replay/results.json": "9146fdd6dbe4e3d6479b56d8f068e231b3e4cc84d80c90162621092f0380b8e0",
+    "cache/context_features/eval.npz": "691303bc06e39ef01577a3a9bd9bb3079de49325cddadc331b658a18ceb133e7",
+    "cache/deep_temporal/top5_count80_24features_eval_scores.npy": "34b2bcdbf18bfd76808c0622a905748746faaeeabe9bcaf4432a10c774fb5573",
+    "cache/airing_model/eval_expected_counts.npy": "902bca9343940537cae373a8dc84e7ea10325bd5ff8354496817c9f8683e739a",
+    "cache/final_identity/standalone_eval_scores.npy": "6bbdaa5fbb7a0b672e8f752804035b84f8b2e92d8371a29a298078f649e27a12",
+    "cache/final_replay/eval_replay_expected_counts.npy": "a231ba7b55c430b3dff2396604f1aba4539fe0f00c5052c3ba99c78f890c37b5",
+    "evidence/airing_model/eval_equal_rrf60_v3_predictions.json": "242d6e8c4d0876349b12a4458cd51311222cc001724e74acd89df0483de45f8e",
+    "cache/context_features/later.npz": "bfda6b3cd049fab056a8ba241d6a5fa8bdfadbd7d6937636ffc6f1964a655896",
+    "cache/deep_temporal/top5_count80_24features_later_scores.npy": "7d74002d5d594a43f8a1e42dfdc710ba49d8dee724e3262d39e6fa2718880625",
+    "cache/airing_model/later_expected_counts.npy": "0b1cf45168a47f7502e635f48d39960f9bb828a67d1046f02924bdf06215f35c",
+    "cache/final_identity/standalone_later_scores.npy": "7edcab016251c83d0e840363651823f47efe627d8aa46122d24f609d2d5df3d9",
+    "cache/final_replay/later_replay_expected_counts.npy": "0cc424e4beef60787ce914c7ed3e1f06a2bb1545f045f1cac95b731e47a515c0",
+    "evidence/airing_model/later_equal_rrf60_v3_predictions.json": "492c131e7d1291a06bbe607bd573a39aa2b2c00b1e8ab5443d3573fc9f136357"
+  },
+  "wall_seconds": 13.138342333004402,
+  "new_training_fits": 2,
+  "reviewer_fits": 0,
+  "submissions": 0,
+  "caveats": [
+    "Four fixed arms include the frozen baseline; selecting a different winner after reading results is adaptive model selection.",
+    "Paired intervals are unadjusted and condition on these fitted models and reused overlapping windows; no unseen Kaggle guarantee.",
+    "Tie expectation is a sensitivity metric, not a confirmed organizer target.",
+    "Factorial differences describe predictive scores under fixed recipes, not causal effects."
+  ]
+}

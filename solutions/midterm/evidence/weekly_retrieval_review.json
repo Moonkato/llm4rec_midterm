@@ -1,0 +1,59 @@
+{
+  "status": "complete",
+  "reviewed": [
+    "tools/build_weekly_candidates.py",
+    "tools/build_weekly_context.py",
+    "tools/run_weekly_retrieval.py"
+  ],
+  "blockers": [],
+  "executed_checks": [
+    {
+      "window": "fit",
+      "full_eligible_items": 4412,
+      "users_checked": 4721,
+      "all_old_weekly_max_abs_diff": 0.0,
+      "mapped_v3_weekly_max_abs_diff": 0.0,
+      "extra_candidates": "all users match top30 positive each, numeric-ID ties, then ordered union"
+    },
+    {
+      "window": "eval",
+      "full_eligible_items": 6384,
+      "users_checked": 1260,
+      "all_old_weekly_max_abs_diff": 0.0,
+      "mapped_v3_weekly_max_abs_diff": 0.0,
+      "extra_candidates": "all users match top30 positive each, numeric-ID ties, then ordered union"
+    },
+    {
+      "window": "later",
+      "full_eligible_items": 4582,
+      "users_checked": 1260,
+      "all_old_weekly_max_abs_diff": 0.0,
+      "mapped_v3_weekly_max_abs_diff": 0.0,
+      "extra_candidates": "all users match top30 positive each, numeric-ID ties, then ordered union"
+    }
+  ],
+  "code_findings": [
+    "Rawbehaviour is clipped strictly before each cutoff; only future schedule supplies programme exposures. No target labels select retrieval candidates.",
+    "Selection spans complete forecast-eligible programme universe, not existing shortlists. Seconds ranking equals minutes/day ranking within one window.",
+    "Runner preserves original item IDs, user order, cold flags, fallback, fulltruth denominators and old feature values.",
+    "Frozen-v3-expanded diagnostic isolates score application to expanded retrieval; fixed417/config1 refit includes changed candidates and potentially changed eligible fitting groups.",
+    "Candidate oracle is diagnostic perfect ranking within retrieved items, not achieved model performance."
+  ],
+  "old_shortlist_top5count80_misses": {
+    "eval": {
+      "truth_pairs": 5946,
+      "missing": 1363,
+      "seen_historical30": 0,
+      "unseen_historical30": 1363
+    },
+    "later": {
+      "truth_pairs": 5741,
+      "missing": 1410,
+      "seen_historical30": 12,
+      "unseen_historical30": 1398
+    }
+  },
+  "interpretation": "Most missing preferred programmes lack a >30% historical item interaction; increasing personal100 alone has limited headroom. Unseen refers to this measured history only, not absence of all lifetime viewing.",
+  "reviewer_fits": 0,
+  "submissions": 0
+}

@@ -1,0 +1,7 @@
+{
+  "replay": {
+    "fit_seconds": 47.54435029200249,
+    "weighted_training_logloss": 0.01279318378341846,
+    "features": 37
+  }
+}

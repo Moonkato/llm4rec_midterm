@@ -1,0 +1,24 @@
+{
+  "status": "complete",
+  "stages": {
+    "identity": {
+      "fits": 1,
+      "wall_seconds": 66.45371812499798,
+      "peak_rss_bytes": 432291840,
+      "executed_source_unchanged": true
+    },
+    "replay": {
+      "fits": 1,
+      "wall_seconds": 725.1383357090017,
+      "peak_rss_bytes": 1025523712,
+      "executed_source_unchanged": true
+    }
+  },
+  "total_new_fits": 2,
+  "comparison": "evidence/final_factorial/results.json",
+  "baseline_v4_prediction_parity": true,
+  "component_metric_parity": true,
+  "decision_supported": "Keep frozen v4; combined primary fails every predefined screen condition; no alternate-arm selection or export.",
+  "reviewer_fits": 0,
+  "submissions": 0
+}

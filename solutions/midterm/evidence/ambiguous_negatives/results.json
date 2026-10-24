@@ -1,0 +1,11 @@
+{
+  "map5": {
+    "eval": 0.5771075837742504,
+    "later": 0.45533553791887127
+  },
+  "training_rows_before": 319174,
+  "training_rows_after": 293566,
+  "ambiguous_negatives_removed": 25608,
+  "wall_seconds": 9.889520749999065,
+  "code_sha256": "8421b5275415606512b6df878ecbf616b32451538999eada50881a372a3fac67"
+}

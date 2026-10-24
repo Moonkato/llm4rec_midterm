@@ -1,0 +1,26 @@
+[
+  {
+    "method": "filtered_equal_rows",
+    "fit_seconds": 9.0697788749967,
+    "fit_groups": 4266,
+    "fit_rows": 292457,
+    "eval": {
+      "map5": 0.5892727072310405
+    },
+    "later": {
+      "map5": 0.49188117283950616
+    }
+  },
+  {
+    "method": "filtered_equal_users",
+    "fit_seconds": 8.796092707998469,
+    "fit_groups": 4266,
+    "fit_rows": 292457,
+    "eval": {
+      "map5": 0.5895753968253968
+    },
+    "later": {
+      "map5": 0.4895690035273369
+    }
+  }
+]

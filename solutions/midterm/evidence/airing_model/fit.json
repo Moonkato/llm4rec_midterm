@@ -1,0 +1,5 @@
+{
+  "fit_seconds": 43.91187866600012,
+  "weighted_training_logloss": 0.01282087114366158,
+  "calibration_caveat": "training diagnostic only; no heldout probability-calibration claim"
+}

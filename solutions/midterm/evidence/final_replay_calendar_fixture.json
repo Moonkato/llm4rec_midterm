@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "calendar_replay_feature_checks": 1008,
+  "seconds": 0.7306719999978668,
+  "fake_csv_only": true,
+  "covers": [
+    "strict rational30/80thresholds",
+    "civil weekday and startsecond",
+    "midnight and multidayduration",
+    "missing DSThour and crossing transition",
+    "fullhistorical interval denominator",
+    "recent28civil days",
+    "cutoff clipping",
+    "user memo reset u-v-u",
+    "item and pairbatch invariance"
+  ],
+  "real_feature_builds": 0,
+  "fits": 0
+}

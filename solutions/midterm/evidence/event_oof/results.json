@@ -1,0 +1,103 @@
+{
+  "status": "complete",
+  "fits": 3,
+  "fit_reports": [
+    {
+      "fold": 0,
+      "train_users": 3113,
+      "heldout_users": 1608,
+      "train_rows": 308561,
+      "heldout_sample_rows": 165347,
+      "user_overlap": 0,
+      "fit_seconds": 31.938168457996653,
+      "model_sha256": "ba76abfa18c7ae522c96c46ea49dfc2cee5053872aa93e788e7240cea88d53bb"
+    },
+    {
+      "fold": 1,
+      "train_users": 3157,
+      "heldout_users": 1564,
+      "train_rows": 317012,
+      "heldout_sample_rows": 156896,
+      "user_overlap": 0,
+      "fit_seconds": 36.13316695899994,
+      "model_sha256": "abefddcc079696f697b254929a880bc5c22a3755cd0279a349286db8af3eadac"
+    },
+    {
+      "fold": 2,
+      "train_users": 3172,
+      "heldout_users": 1549,
+      "train_rows": 322243,
+      "heldout_sample_rows": 151665,
+      "user_overlap": 0,
+      "fit_seconds": 31.07295379199786,
+      "model_sha256": "d7cb52ae568c671fd623b7518c57771952b30783904fff6b94111bdb06d52e46"
+    }
+  ],
+  "results": [
+    {
+      "window": "fit",
+      "rows": 319174,
+      "features": [
+        "event_log_expected_count",
+        "event_mean_probability",
+        "event_max_probability",
+        "event_probability_weighted_mean",
+        "event_expected_count_percentile",
+        "event_expected_count_history80_ratio"
+      ],
+      "scored_collapsed_rows": 10712534,
+      "all_rows_assembled_once": true,
+      "frozen_expected_count_max_error": null,
+      "feature_sha256": "070b0006b5b740b189fffcf7f67c50588396f783fb64fb7e4ad287c97c932d64",
+      "source_sha256": "0ed8052cb26e51db7fe7842c551964122549244e5a2d627931494ffb9d150080",
+      "wall_seconds": 454.196237958
+    },
+    {
+      "window": "eval",
+      "rows": 120172,
+      "features": [
+        "event_log_expected_count",
+        "event_mean_probability",
+        "event_max_probability",
+        "event_probability_weighted_mean",
+        "event_expected_count_percentile",
+        "event_expected_count_history80_ratio"
+      ],
+      "scored_collapsed_rows": 4047153,
+      "all_rows_assembled_once": true,
+      "frozen_expected_count_max_error": 0.0,
+      "feature_sha256": "e960c492d8e7bb53534cc195a33ad8cc11be3514cd9da0c6fc217b5702ec2cab",
+      "source_sha256": "691303bc06e39ef01577a3a9bd9bb3079de49325cddadc331b658a18ceb133e7",
+      "wall_seconds": 564.8281058749999
+    },
+    {
+      "window": "later",
+      "rows": 126221,
+      "features": [
+        "event_log_expected_count",
+        "event_mean_probability",
+        "event_max_probability",
+        "event_probability_weighted_mean",
+        "event_expected_count_percentile",
+        "event_expected_count_history80_ratio"
+      ],
+      "scored_collapsed_rows": 3417407,
+      "all_rows_assembled_once": true,
+      "frozen_expected_count_max_error": 0.0,
+      "feature_sha256": "1adf65c5db0c22d2d21dfa5177929e239a6635d8c6580d78b5922f84dad1054d",
+      "source_sha256": "bfda6b3cd049fab056a8ba241d6a5fa8bdfadbd7d6937636ffc6f1964a655896",
+      "wall_seconds": 694.6583100419994
+    }
+  ],
+  "feature_names": [
+    "event_log_expected_count",
+    "event_mean_probability",
+    "event_max_probability",
+    "event_probability_weighted_mean",
+    "event_expected_count_percentile",
+    "event_expected_count_history80_ratio"
+  ],
+  "wall_seconds": 695.0263111249988,
+  "peak_rss_bytes": 897826816,
+  "code_sha256": "f3fc10bcaae7b80504cec53e2e8afda327b27b4d318933d0e93eeb6640889efb"
+}

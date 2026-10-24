@@ -1,0 +1,89 @@
+{
+  "grid": [
+    {
+      "name": "count_p0.25_prior0",
+      "power": 0.25,
+      "prior": 0,
+      "half_life": null,
+      "strict_weight": 0.0
+    },
+    {
+      "name": "count_p0.5_prior0",
+      "power": 0.5,
+      "prior": 0,
+      "half_life": null,
+      "strict_weight": 0.0
+    },
+    {
+      "name": "count_p0.75_prior0",
+      "power": 0.75,
+      "prior": 0,
+      "half_life": null,
+      "strict_weight": 0.0
+    },
+    {
+      "name": "count_p0.25_prior10",
+      "power": 0.25,
+      "prior": 10,
+      "half_life": null,
+      "strict_weight": 0.0
+    },
+    {
+      "name": "count_p0.5_prior10",
+      "power": 0.5,
+      "prior": 10,
+      "half_life": null,
+      "strict_weight": 0.0
+    },
+    {
+      "name": "count_p0.75_prior10",
+      "power": 0.75,
+      "prior": 10,
+      "half_life": null,
+      "strict_weight": 0.0
+    },
+    {
+      "name": "decay60_p0.5",
+      "power": 0.5,
+      "prior": 0,
+      "half_life": 60,
+      "strict_weight": 0.0
+    },
+    {
+      "name": "decay120_p0.5",
+      "power": 0.5,
+      "prior": 0,
+      "half_life": 120,
+      "strict_weight": 0.0
+    },
+    {
+      "name": "strict_blend0.25_p0.5",
+      "power": 0.5,
+      "prior": 0,
+      "half_life": null,
+      "strict_weight": 0.25
+    },
+    {
+      "name": "strict_blend0.5_p0.5",
+      "power": 0.5,
+      "prior": 0,
+      "half_life": null,
+      "strict_weight": 0.5
+    }
+  ],
+  "selection": "exploratory original strict-label holdout; not independent confirmation",
+  "truth": "unchanged evidence/strict_labels/truth.json, all1260, empty truth AP0",
+  "train": "split0, original cutoff 2020-05-18",
+  "count_rule": "one user-airing when MAX(raw overlap duration)>30% full duration",
+  "strict_count_rule": "one user-airing when MAX(raw overlap duration)>80% full duration",
+  "formula": "((1-strict_weight)*count30+strict_weight*count80)*ratio**power; decay variants replace count30 with decayed count30",
+  "ratio": "(forecast_airings+prior)/(train_airings+prior); equal 70-day windows; zero denominator => zero",
+  "exposure": "all deduplicated scheduled events intersecting corresponding window",
+  "recency": "last end among >30% qualifying raw fragments; half-life days before cutoff",
+  "fallback": "fixed >30% train unique-user popularity, restricted to same round1 candidates",
+  "repeats": "allowed",
+  "ties": "ascending numeric item ID",
+  "idea_source": "https://medium.com/data-science/two-layered-recommender-system-methodology-a-prize-winning-solution-c4bdb815b156",
+  "training_runs": 0,
+  "submissions": 0
+}

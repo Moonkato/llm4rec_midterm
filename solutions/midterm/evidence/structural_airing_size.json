@@ -1,0 +1,20 @@
+{
+  "fit": {
+    "users": 4721,
+    "user_item_pairs": 319174,
+    "user_airing_pairs": 37141508,
+    "max_airings_per_item": 3208
+  },
+  "eval": {
+    "users": 1260,
+    "user_item_pairs": 120172,
+    "user_airing_pairs": 20886255,
+    "max_airings_per_item": 6138
+  },
+  "later": {
+    "users": 1260,
+    "user_item_pairs": 126221,
+    "user_airing_pairs": 11320287,
+    "max_airings_per_item": 3040
+  }
+}

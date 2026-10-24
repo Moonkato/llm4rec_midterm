@@ -1,0 +1,46 @@
+{
+  "status": "cleared before real execution; approval pending parent",
+  "reviewed": [
+    "tools/run_final_replay.py",
+    "tools/final_replay_features.py"
+  ],
+  "blockers": [],
+  "findings": [
+    "Original33 feature function reused with first5tuple fields and AST/sourcehash guard.",
+    "Training owner groups contiguous by construction; prepare_user prewarms every selectedtuple for entireowner before pair slices; no cache value depends on labels/queryset.",
+    "Forecast prewarms allcandidate tuples peruser/channel; memo keys include channel/weekday/exactstartsecond/exactduration; userreset clears indices andmemo.",
+    "Exactly one37feature fit, originalsampling/weights/parameters, no recurrence6 or OOFstack.",
+    "Futuremultiplicity and exact boundary feasibility index4 preserved.",
+    "Primary replacementevent+v3 fusion and strictsuccessgate matchplan including paired95lowerbounds."
+  ],
+  "synthetic_calendar_fixture": {
+    "status": "passed",
+    "calendar_replay_feature_checks": 1008,
+    "seconds": 0.7306719999978668,
+    "fake_csv_only": true,
+    "covers": [
+      "strict rational30/80thresholds",
+      "civil weekday and startsecond",
+      "midnight and multidayduration",
+      "missing DSThour and crossing transition",
+      "fullhistorical interval denominator",
+      "recent28civil days",
+      "cutoff clipping",
+      "user memo reset u-v-u",
+      "item and pairbatch invariance"
+    ],
+    "real_feature_builds": 0,
+    "fits": 0
+  },
+  "source_hashes": {
+    "tools/run_final_replay.py": "6c83fbfd43607a830f6e5a190c697e2d53f3f591113e4e2bf7c35443ede8678f",
+    "tools/final_replay_features.py": "4b917af490467dd44152c663cca9b1f931f4666ffecc4dffdd62abbea737bbf1"
+  },
+  "limitations": [
+    "Historical zero is no recorded qualifying session, not proofuser presence/exposure.",
+    "Early fiveweekly dates provide limited support; longhistory distribution differs.",
+    "Counterfactual replay source uses originalrawsessions whereas storedlabels retain splitfragmentproxy.",
+    "Only fakeCSV and fixtures executed by reviewer; no real features/fits."
+  ],
+  "fits": 0
+}

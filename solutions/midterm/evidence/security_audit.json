@@ -1,0 +1,43 @@
+{
+  "status": "No credentials or access secrets detected in audited repository",
+  "audited_at_utc": "2026-10-24T12:51:13.615558+00:00",
+  "repository": "https://github.com/Moonkato/llm4rec_midterm",
+  "scope": {
+    "files_including_git": 581,
+    "files_excluding_git": 554,
+    "bytes_scanned": 45979146,
+    "git_commits": 1,
+    "git_blobs": 1,
+    "session_records": 132,
+    "pdf_pages_text_and_ocr": 19,
+    "images_ocr": 12,
+    "symlinks": 0
+  },
+  "checks": [
+    "All working-tree files, including ignored and hidden files",
+    "All local Git objects, including unreachable objects, and .git metadata",
+    "Provider token formats, private-key headers, JWT, credential URLs, auth literals, token query parameters",
+    "Additional webhook, cookie, service-account, package-registry and cloud token patterns",
+    "Exact comparison against original Kaggle credential without logging values",
+    "Independent raw/base64/hex/URL-encoded Kaggle credential comparison",
+    "JSON/JSONL parsing and session review, no embedded media or encoded payloads in session",
+    "PDF text and annotations, screenshot/image OCR, PDF attachment/form markers",
+    "Kaggle API scripts contain dynamic credential reads only, no embedded values",
+    "Gitignore excludes token files, .env, virtual environment and data caches"
+  ],
+  "findings": [],
+  "independent_review": "Separate read-only agent corroborated no secret findings",
+  "nonsecret_references": [
+    "Authorization and KAGGLE_API_TOKEN names in API tooling",
+    "submission_selection authorization field contains user approval prose",
+    "Author identity, public repository URL, local source paths and experimental user/program IDs remain as expected research provenance"
+  ],
+  "tooling": "Local custom byte/regex scanner, structured JSON review, native PDFKit/Vision OCR; no third-party secret scanner installed. No files or credential values sent to a remote scanning service.",
+  "limitation": "Applies to the audited snapshot, not to future additions. No scanner proves absence of every possible custom-encoded secret.",
+  "artifact_sha256": {
+    "solutions/midterm/submission/session.json": "edc1296b7bf333ccf5f463e21f1a1551190c6f53cb79b32a062620cbfd1c4cef",
+    "solutions/midterm/submission/alektorov_gleb.pdf": "c52a9a93d314f3779fadceefa27c993b83b1f369d423e5c597a88eac89132bdb",
+    "solutions/midterm/candidates/final_factorial_v5.csv": "662620aafd8df3aaf1230f7653c0910708d5fe8fbc056b28b78bb8ddd34a88a3",
+    "midterm/image.png": "307efda209521308d76d11e6a4908ede599f08b30d932056b37eff08694165ad"
+  }
+}

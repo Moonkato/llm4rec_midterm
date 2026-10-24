@@ -1,0 +1,18 @@
+{
+  "coverage_merge_check": {
+    "cross_file_rewinds_before_current_coverage_start": 0,
+    "coverage_intervals_unchanged": true
+  },
+  "threshold_seconds": 180,
+  "diagnostic_only_not_chosen_from_model_scores": true,
+  "validation_truth_item_count_median_all_users": 123.5,
+  "repeat_item_count_median_all_users": 27.0,
+  "users_with_at_least_5_repeated_truth_items": 1191,
+  "repeat_only_oracle_ap5_all_template_users": 0.9629761904761904,
+  "repeat_only_oracle_ap5_nonempty_truth_users": 0.9737961476725521,
+  "all_template_oracle_upper_bound_from_nonempty_truth": 0.9888888888888889,
+  "validation_candidate_items": 6384,
+  "test_candidate_items": 6649,
+  "threshold_convention": ">=180 seconds union per user/airing/split, then binary user/item relevance",
+  "oracle_warning": "Uses observed holdout truth only for diagnostic bounds, never for model features or submissions."
+}

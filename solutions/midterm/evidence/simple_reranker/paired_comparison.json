@@ -1,0 +1,14 @@
+{
+  "comparison": "frozen earlier-window logistic minus sqrt schedule count",
+  "mean_map5_difference": 0.027866181657848325,
+  "paired_user_bootstrap_95pct": [
+    0.021027799823633158,
+    0.03455652557319224
+  ],
+  "users_improved": 421,
+  "users_worsened": 229,
+  "users_unchanged": 610,
+  "seed": 20261022,
+  "resamples": 2000,
+  "limitation": "conditional on this temporal window and chosen models; not uncertainty for Kaggle, not correction for previous model selection"
+}

@@ -1,0 +1,79 @@
+{
+  "status": "complete",
+  "results": [
+    {
+      "window": "eval",
+      "scored_collapsed_rows": 4047153,
+      "frozen_v4_equal_rrf60": {
+        "all80": 0.5876186067019401,
+        "top5_count80": 0.41723765432098764
+      },
+      "variants": {
+        "recurrence": {
+          "expected_count": {
+            "all80": 0.5781490299823632,
+            "top5_count80": 0.40946913580246913
+          },
+          "equal_rrf60_v3": {
+            "all80": 0.5875705467372134,
+            "top5_count80": 0.41393298059964734
+          },
+          "equal_rrf60_delta_vs_frozen_v4": {
+            "all80": -4.805996472667662e-05,
+            "top5_count80": -0.003304673721340301
+          }
+        }
+      },
+      "wall_seconds": 212.07934854199993
+    },
+    {
+      "window": "later",
+      "scored_collapsed_rows": 3417407,
+      "frozen_v4_equal_rrf60": {
+        "all80": 0.4972674162257496,
+        "top5_count80": 0.3654499559082892
+      },
+      "variants": {
+        "recurrence": {
+          "expected_count": {
+            "all80": 0.47956834215167543,
+            "top5_count80": 0.3524863315696649
+          },
+          "equal_rrf60_v3": {
+            "all80": 0.4979995590828924,
+            "top5_count80": 0.36515299823633157
+          },
+          "equal_rrf60_delta_vs_frozen_v4": {
+            "all80": 0.0007321428571427924,
+            "top5_count80": -0.0002969576719576428
+          }
+        }
+      },
+      "wall_seconds": 346.1920471670019
+    }
+  ],
+  "fit_reports": {
+    "recurrence": {
+      "fit_seconds": 40.5209894590007,
+      "weighted_training_logloss": 0.012649035838108454,
+      "features": 39
+    }
+  },
+  "sampling": {
+    "full_exposure_pairs": 37141508,
+    "all_window_recorded_positive_airings": 146748,
+    "pool_positive_airings": 102907,
+    "sampled_negatives": 371001,
+    "sampled_rows": 473908,
+    "effective_weight_sum": 37203008.0,
+    "weighted_positive_rate": 0.002766093472018838,
+    "global_window_positive_coverage": 0.7012497614958977,
+    "fit_user_window_positive_airings": 145708,
+    "fit_user_pool_positive_coverage": 0.7062549757048343
+  },
+  "wall_seconds": 346.4294935420003,
+  "fits": 1,
+  "submissions": 0,
+  "peak_rss_bytes": 954122240,
+  "code_sha256": "f0d11bebf71342d8fb4f3e90271c4f79827b33b07275bf13a5b9476ffde1ef64"
+}

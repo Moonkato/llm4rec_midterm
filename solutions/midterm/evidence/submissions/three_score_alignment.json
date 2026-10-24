@@ -1,0 +1,19 @@
+{
+  "kaggle_deltas_vs_v2": [
+    0.0058,
+    0.00485
+  ],
+  "local_top5_count80_deltas_vs_v2": {
+    "eval": 0.008175264550264552,
+    "later": 0.005288580246913582
+  },
+  "interpretation": "Both Kaggle scores improved, consistent in direction and approximate magnitude with local top5_count80 gains; three aggregate observations do not identify official target or isolate weekly feature contribution from objective/model changes.",
+  "submissions_used": 3,
+  "submissions_remaining": 1,
+  "next_hypothesis": "Historical weekly consistency, recent-vs-older trend and completion ratios; evaluate on same fixed protocol before considering last submission.",
+  "no_claims": [
+    "No evidence of0.8 feasibility",
+    "No proven optimum",
+    "No fourth submission authorized or sent"
+  ]
+}

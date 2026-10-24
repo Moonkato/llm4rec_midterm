@@ -1,0 +1,10 @@
+{
+  "decision": "retain v3 for submission; save EASE as exploratory local improvement only",
+  "main_top5_delta": 0.0036609347442680784,
+  "later_top5_delta": 0.0004563492063492062,
+  "prespecified_success": false,
+  "interpretation": "Main gains in seenitem ordering, no discovery gain; lateinterval includeszero; broad all80 later worsens. Does not justify finalKaggle submission.",
+  "submissions_used": 3,
+  "remaining": 1,
+  "next_structural_hypothesis": "Temporal/horizon alignment or supervised forecasting of qualifying airing counts, not another marginal featuregrid"
+}

@@ -1,0 +1,33 @@
+{
+  "status": "score screenshot added; publication owner-managed, full homework rubric unavailable",
+  "pdf_pages": 11,
+  "visual_review": "all pages reviewed; final changed pages rechecked after edits; readable Cyrillic, no clipping, complete recommendation lists",
+  "text_checks": "required sections, both user IDs and key metrics present",
+  "files": {
+    "session.json": {
+      "bytes": 146135,
+      "sha256": "edc1296b7bf333ccf5f463e21f1a1551190c6f53cb79b32a062620cbfd1c4cef"
+    },
+    "alektorov_gleb.pdf": {
+      "sha256": "c52a9a93d314f3779fadceefa27c993b83b1f369d423e5c597a88eac89132bdb",
+      "bytes": 459987
+    }
+  },
+  "requirements": {
+    "two_allowed_methods": "content TF-IDF and implicit ALS, controlled original comparison",
+    "popularity": "included",
+    "temporal_validation": "main and later windows, leakage boundaries documented",
+    "final_hybrid": "components and individual metrics reported",
+    "two_users": "10 methods each,100 ordered recommendations verified",
+    "business_analysis": "included, no online outcome claimed",
+    "github_link": "included; publication not verified",
+    "kaggle_score_screenshot": "Included original image, Private0.44559/Public0.45546 v5",
+    "ai_session": "composed instructor-authorized dialogue; not original unmodified export",
+    "final_csv": "v5 screenshot-confirmed designated final",
+    "comparison": "exact shared candidate pool and fallback; evidence/matched_pool_comparison.json"
+  },
+  "latest_audit": "evidence/final_compliance_audit.json",
+  "screenshot_evidence": "evidence/submissions/fifth_submission_screenshot.json",
+  "designated_final": "candidates/final_factorial_v5.csv",
+  "package_validation": "evidence/package_validation.json"
+}

@@ -1,0 +1,23 @@
+{
+  "results": [
+    {
+      "window": "test",
+      "rows": 147457,
+      "features": [
+        "weekly_expected_minutes_per_day",
+        "weekly_mean_airing_fraction",
+        "weekly_recent28_expected_minutes_per_day",
+        "weekly_active_date_fraction",
+        "weekly_recent_all_ratio_clip10"
+      ],
+      "used_sessions": 1735688,
+      "users": 1260,
+      "slot_nonzeros": 1153811,
+      "nonzero_feature_rows": 120925,
+      "wall_seconds": 43.02953812499982,
+      "sha256": "c1f3076cef5cd71be3e107f76d9274d769ab57cdfec60374598f453cfb379041"
+    }
+  ],
+  "wall_seconds": 43.19527850000304,
+  "code_sha256": "d34d6860330452e1093490025c2c5290d1f21d52f0cb6bd85bd6fa44efd9155d"
+}

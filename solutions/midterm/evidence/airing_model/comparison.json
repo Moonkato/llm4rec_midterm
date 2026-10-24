@@ -1,0 +1,139 @@
+{
+  "status": "complete",
+  "comparisons": {
+    "eval": {
+      "expected_count": {
+        "all80": {
+          "baseline_map5": 0.5864922839506174,
+          "model_map5": 0.5780257936507937,
+          "empty_truth_users": 24,
+          "mean_delta": -0.008466490299823635,
+          "paired_user_percentile95": [
+            -0.015133090828924166,
+            -0.0016271990740740776
+          ],
+          "users_improved": 301,
+          "users_worsened": 346,
+          "users_equal": 613
+        },
+        "top5_count80": {
+          "baseline_map5": 0.40741291887125225,
+          "model_map5": 0.41225330687830686,
+          "empty_truth_users": 24,
+          "mean_delta": 0.004840388007054673,
+          "paired_user_percentile95": [
+            -0.00108592372134039,
+            0.010958652998236328
+          ],
+          "users_improved": 373,
+          "users_worsened": 346,
+          "users_equal": 541
+        }
+      },
+      "equal_rrf60_v3": {
+        "all80": {
+          "baseline_map5": 0.5864922839506174,
+          "model_map5": 0.5876186067019401,
+          "empty_truth_users": 24,
+          "mean_delta": 0.0011263227513227515,
+          "paired_user_percentile95": [
+            -0.0029962962962962955,
+            0.005188183421516754
+          ],
+          "users_improved": 220,
+          "users_worsened": 203,
+          "users_equal": 837
+        },
+        "top5_count80": {
+          "baseline_map5": 0.40741291887125225,
+          "model_map5": 0.41723765432098764,
+          "empty_truth_users": 24,
+          "mean_delta": 0.00982473544973545,
+          "paired_user_percentile95": [
+            0.0062185626102292755,
+            0.013340426587301578
+          ],
+          "users_improved": 281,
+          "users_worsened": 194,
+          "users_equal": 785
+        }
+      }
+    },
+    "later": {
+      "expected_count": {
+        "all80": {
+          "baseline_map5": 0.4954440035273368,
+          "model_map5": 0.48196472663139334,
+          "empty_truth_users": 38,
+          "mean_delta": -0.013479276895943564,
+          "paired_user_percentile95": [
+            -0.02083279872134039,
+            -0.006016732804232813
+          ],
+          "users_improved": 310,
+          "users_worsened": 403,
+          "users_equal": 547
+        },
+        "top5_count80": {
+          "baseline_map5": 0.3618752204585538,
+          "model_map5": 0.3569435626102293,
+          "empty_truth_users": 38,
+          "mean_delta": -0.004931657848324515,
+          "paired_user_percentile95": [
+            -0.011023627645502647,
+            0.001365680114638446
+          ],
+          "users_improved": 335,
+          "users_worsened": 380,
+          "users_equal": 545
+        }
+      },
+      "equal_rrf60_v3": {
+        "all80": {
+          "baseline_map5": 0.4954440035273368,
+          "model_map5": 0.49726741622574955,
+          "empty_truth_users": 38,
+          "mean_delta": 0.0018234126984126972,
+          "paired_user_percentile95": [
+            -0.002564329805996475,
+            0.006269957010582008
+          ],
+          "users_improved": 257,
+          "users_worsened": 237,
+          "users_equal": 766
+        },
+        "top5_count80": {
+          "baseline_map5": 0.3618752204585538,
+          "model_map5": 0.3654499559082892,
+          "empty_truth_users": 38,
+          "mean_delta": 0.003574735449735448,
+          "paired_user_percentile95": [
+            2.761243386244351e-06,
+            0.007319135802469134
+          ],
+          "users_improved": 273,
+          "users_worsened": 214,
+          "users_equal": 773
+        }
+      }
+    }
+  },
+  "bootstrap_replicates": 5000,
+  "seed": 20261023,
+  "users_per_window": 1260,
+  "metric": "AP@5 denominator min(5, full truth size); empty truth zero; saved ordered lists",
+  "caveat": "Paired intervals condition on fitted models and reused cohorts. Overlapping windows are not independent confirmation; intervals are not adjusted for multiple comparisons.",
+  "source_hashes": {
+    "evidence/deep_temporal/top5_count80_24features_eval_predictions.json": "89e85b43471bb0c9166b5af70ae273590bdfa61f83952524bc23f00acfec8074",
+    "evidence/context_features/eval_truth.json": "0e5341725d5353f2739f28a5abb1ed58aac91a733db03baba1601c70a377e93b",
+    "evidence/top5_target_audit/eval_truth.json": "6a532b91526d043e2e6399e38736ffce4c6806b37db3981b4aac369b58c991dd",
+    "evidence/airing_model/eval_expected_count_predictions.json": "b5df67942349227083b61a33bd5a3aefd52d8ce3e7cb26a198c4468c1af562f5",
+    "evidence/airing_model/eval_equal_rrf60_v3_predictions.json": "242d6e8c4d0876349b12a4458cd51311222cc001724e74acd89df0483de45f8e",
+    "evidence/deep_temporal/top5_count80_24features_later_predictions.json": "cd5ff93e63223739ce0aca410fe5efce123c936a3005510c7f13ad4c41f786c3",
+    "evidence/context_features/later_truth.json": "b7cb96c8fde3b801798886309424ad23a856b8873f204fcfd76393ca7f7f15ff",
+    "evidence/top5_target_audit/later_truth.json": "e118e46092cc239255cba6112f2508758bdd19db6f8a236d2e79ad9cf39fb411",
+    "evidence/airing_model/later_expected_count_predictions.json": "68280fb14ecb6d3c25b58cbf8a5b85e1220c34d28217bb07667eddc7ba80bb79",
+    "evidence/airing_model/later_equal_rrf60_v3_predictions.json": "492c131e7d1291a06bbe607bd573a39aa2b2c00b1e8ab5443d3573fc9f136357"
+  },
+  "reviewer_fits": 0
+}

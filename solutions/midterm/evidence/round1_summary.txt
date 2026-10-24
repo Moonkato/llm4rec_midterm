@@ -1,0 +1,29 @@
+LOCAL TEMPORAL VALIDATION — completed first round
+Training: 2020-03-09 to 2020-05-18 exclusive.
+Validation: 2020-05-18 to 2020-07-27 exclusive.
+Truth: distinct programmes watched at least 180 seconds per airing.
+1260 users; 6384 common candidates; repeats allowed; empty truth AP=0.
+
+MAP@5:
+Popularity (unique viewers): 0.752994709
+Personal frequency:          0.776756614
+Personal decay, 28 days:     0.775732804
+Historical content TF-IDF:   0.064574074
+Best first-round ALS:        0.598164021 (32 factors, alpha=1, lambda=1, 10 iterations)
+
+Exploratory reciprocal-rank fusion, constant 60:
+Personal weights .25/.50/.75/.90:
+0.775208995 / 0.785359788 / 0.792465608 / 0.788671958
+Best tested fusion uses .75 personal frequency and .25 popularity.
+Selection uses the same holdout; this is not independent confirmation.
+
+First-round runtime: 23.22 seconds; peak RSS: 385089536 bytes.
+Fusion runtime: see evidence/fusion/results.json.
+Four ALS fits completed. Kaggle submissions: ZERO of four allowed.
+No Kaggle performance claim; official target construction remains unresolved.
+These results do not establish an achievable optimum or a Kaggle score of 0.8.
+
+Artifacts: round1/protocol.json, results.json, manifest.json, predictions.json;
+fusion/protocol.json, results.json, predictions.json.
+Next: resolve official target definition, then test schedule/channel preference
+and an additional temporal window before choosing a submission candidate.

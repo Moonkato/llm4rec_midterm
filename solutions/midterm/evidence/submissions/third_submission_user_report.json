@@ -1,0 +1,21 @@
+{
+  "description": "gleb_alektorov_midterm_03_weekly_lambdarank",
+  "file": "candidates/weekly_ranker_v3.csv",
+  "status": "Complete (after deadline)",
+  "scores_in_user_order": [
+    0.43519,
+    0.44966
+  ],
+  "public_score_assumed": 0.43519,
+  "private_score_assumed": 0.44966,
+  "source": "user pasted result; headings not independently confirmed",
+  "delta_vs_second": [
+    0.0058,
+    0.00485
+  ],
+  "delta_vs_first": [
+    0.00826,
+    0.00508
+  ],
+  "sha256": "d89ae53ef29f7981d322204a77c98bf144c266280642d3be25b04fe2596263a5"
+}

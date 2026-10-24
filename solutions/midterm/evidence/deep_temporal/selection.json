@@ -1,0 +1,18 @@
+{
+  "all80": {
+    "phase": "inner",
+    "variant": "all80",
+    "config_id": 2,
+    "best_iteration": 400,
+    "inner_stop_map5": 0.4074087301587302,
+    "fit_seconds": 39.84892170799867
+  },
+  "top5_count80": {
+    "phase": "inner",
+    "variant": "top5_count80",
+    "config_id": 1,
+    "best_iteration": 417,
+    "inner_stop_map5": 0.33943716931216933,
+    "fit_seconds": 36.8394971250018
+  }
+}

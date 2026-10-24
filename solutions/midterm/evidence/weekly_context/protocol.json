@@ -1,0 +1,39 @@
+{
+  "windows": [
+    [
+      "fit",
+      "2020-04-13 00:00:00",
+      "2020-05-18 00:00:00"
+    ],
+    [
+      "eval",
+      "2020-05-18 00:00:00",
+      "2020-07-27 00:00:00"
+    ],
+    [
+      "later",
+      "2020-06-22 00:00:00",
+      "2020-07-27 00:00:00"
+    ]
+  ],
+  "features": [
+    "weekly_expected_minutes_per_day",
+    "weekly_mean_airing_fraction",
+    "weekly_recent28_expected_minutes_per_day",
+    "weekly_active_date_fraction",
+    "weekly_recent_all_ratio_clip10"
+  ],
+  "fits": 0,
+  "submissions": 0,
+  "candidate_pool": "unchanged collaborative_features",
+  "history": "actual raw sessions before each cutoff, including unlabelled airtime",
+  "cap": "Each history-clipped session contributes min(duration,3600) seconds proportionally across its exact hour overlaps; cap is not deduplication.",
+  "duplicates": "Logged sessions counted separately; per-slot estimated propensity clipped to1.",
+  "clock": "same tick missing2020-03-29 03hour correction; normalized hour inverse maps to civil weekday/hour",
+  "rates": "slot seconds / actual historical opportunity seconds; recent28 calendar days same denominator; active-date bits per actual clipped overlap day divided by slot opportunities",
+  "schedule": "only future IDs/channel/time/duration; integrate forecast airing slot durations and full-event fractions",
+  "unknown_channels": "No candidate has these channels; their actual slots cannot contribute to item exposure. Opportunity denominators are temporal, not share-of-channel mass.",
+  "ratio": "recent expected/all expected; denominator0 =>0, cap10",
+  "budget": "5min2GB, sequential windows",
+  "no_model_training": true
+}

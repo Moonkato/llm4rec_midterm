@@ -1,0 +1,60 @@
+{
+  "status": "cleared",
+  "blockers": [],
+  "reviewed": [
+    "tools/build_ease_features.py",
+    "tools/run_ease_ablation.py"
+  ],
+  "checks": [
+    {
+      "window": "fit",
+      "rows": 319174,
+      "count30_exact": true,
+      "original24_hashes_unchanged": true,
+      "catalog_alignment": true,
+      "cold_zero": true,
+      "cold_rows": 91431
+    },
+    {
+      "window": "eval",
+      "rows": 120172,
+      "count30_exact": true,
+      "original24_hashes_unchanged": true,
+      "catalog_alignment": true,
+      "cold_zero": true,
+      "cold_rows": 25730
+    },
+    {
+      "window": "later",
+      "rows": 126221,
+      "count30_exact": true,
+      "original24_hashes_unchanged": true,
+      "catalog_alignment": true,
+      "cold_zero": true,
+      "cold_rows": 19863
+    }
+  ],
+  "independent_asymmetric_toy": {
+    "shape": [
+      6,
+      3
+    ],
+    "regularization": 500,
+    "max_constrained_ridge_error": 4.336808689942018e-19,
+    "incorrect_row_normalization_error": 1.580215307524441e-05
+  },
+  "findings": [
+    "Column normalization correct; zero diagonal and binary observed history only.",
+    "No labels used for EASE; cutoff-specific histories match base count30 exactly.",
+    "Repeats allowed; percentile on full historically observed future-eligible universe with numeric ties.",
+    "Cold score and percentile zero; independent flags; fixed existing candidate pool.",
+    "Original24 unchanged, same complete-query label filtering and full-truth AP with common cold fallback.",
+    "One fixed ranker fit; standalone raw EASE diagnostic; no tuning or submissions."
+  ],
+  "caveats": [
+    "Builder toy is symmetric and alone would not detect axis bug; independent asymmetric reviewer toy detects it.",
+    "Standalone cold-item zero can outrank negative warm scores; intentional zero prior, flags available to primary ranker.",
+    "Local targets remain proxies; reused overlapping windows are not untouched confirmation."
+  ],
+  "reviewer_real_fits": 0
+}

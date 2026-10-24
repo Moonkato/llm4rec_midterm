@@ -1,0 +1,13 @@
+{
+  "logistic_v1": {
+    "mismatches": 0,
+    "all_1260_ranked_lists_match": true,
+    "sha256": "90e5341edb9ff7e30f1c54cc48148f409d4ae93ac55dbf3d733d872c54631346"
+  },
+  "filtered_context_v2": {
+    "mismatches": 0,
+    "all_1260_ranked_lists_match": true,
+    "sha256": "fee5299aeb1e5dc960143dca61a9ed6759b3b9735a032f93119f1816f89f5cb7"
+  },
+  "wall_seconds": 34.99578004199793
+}

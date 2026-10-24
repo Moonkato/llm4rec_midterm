@@ -1,0 +1,7 @@
+{
+  "recurrence": {
+    "fit_seconds": 40.5209894590007,
+    "weighted_training_logloss": 0.012649035838108454,
+    "features": 39
+  }
+}

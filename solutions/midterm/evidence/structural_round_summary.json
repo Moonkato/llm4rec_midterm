@@ -1,0 +1,44 @@
+{
+  "status": "complete; candidate prepared, not submitted",
+  "overall_budget": "45min4GB2CPU",
+  "temporal": {
+    "status": "complete",
+    "results": "evidence/rolling_temporal/results.json",
+    "fits": 2,
+    "wall_seconds": 198.05451804100085,
+    "peak_rss_bytes": 629374976
+  },
+  "airing": {
+    "status": "complete",
+    "results": "evidence/airing_model/results.json",
+    "fits": 1,
+    "wall_seconds": 293.70560708300036,
+    "peak_rss_bytes": 771342336
+  },
+  "submissions": 0,
+  "training_runs_recorded": true,
+  "full_history_companion": {
+    "status": "complete",
+    "results": "evidence/full_history_temporal/results.json",
+    "fits": 2,
+    "wall_seconds": 120.0771119159981,
+    "peak_rss_bytes": 741654528
+  },
+  "decision": {
+    "candidate": "equal_rrf60_v3_and_airing",
+    "candidate_export": "complete",
+    "main_top5_delta": 0.00982473544973545,
+    "later_top5_delta": 0.003574735449735448,
+    "limitations": "Prespecified diagnostic fusion improves reused overlapping windows; late interval lower bound nearly zero; official target formula still uncertain. Primary event-only model not consistently better. No promise of Kaggle improvement."
+  },
+  "experiment_wall_seconds": 611.8372370399993,
+  "candidate": {
+    "file": "candidates/event_v3_rrf_v4.csv",
+    "manifest": "evidence/candidate_event_v3_rrf_v4/manifest.json",
+    "sha256": "f2b802ac394e35d1999754a461848479f3bbc5abb5cd8a7b6dad80196c783e5a",
+    "inference_wall_seconds": 106.14991141700011,
+    "rows": 1260,
+    "status": "prepared, not submitted",
+    "proposed_description": "gleb_alektorov_midterm_04_airing_v3_rrf"
+  }
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "window": "fit",
+    "users": 4721,
+    "rows": 319174,
+    "features": 19,
+    "positive_rate": 0.09749854311441408,
+    "cold_users": 0,
+    "candidate_oracle_map5": 0.7925721951563934,
+    "wall_seconds": 9.536802416998398,
+    "npz_sha256": "0ed8052cb26e51db7fe7842c551964122549244e5a2d627931494ffb9d150080"
+  },
+  {
+    "window": "eval",
+    "users": 1260,
+    "rows": 120172,
+    "features": 19,
+    "positive_rate": 0.11021702226808242,
+    "cold_users": 12,
+    "candidate_oracle_map5": 0.8729497354497353,
+    "wall_seconds": 12.753574459002266,
+    "npz_sha256": "691303bc06e39ef01577a3a9bd9bb3079de49325cddadc331b658a18ceb133e7"
+  },
+  {
+    "window": "later",
+    "users": 1260,
+    "rows": 126221,
+    "features": 19,
+    "positive_rate": 0.08144445060647594,
+    "cold_users": 9,
+    "candidate_oracle_map5": 0.82994708994709,
+    "wall_seconds": 13.80012883299787,
+    "npz_sha256": "bfda6b3cd049fab056a8ba241d6a5fa8bdfadbd7d6937636ffc6f1964a655896"
+  }
+]

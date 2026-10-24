@@ -1,0 +1,50 @@
+{
+  "windows": [
+    [
+      "fit",
+      "2020-04-13 00:00:00",
+      "2020-05-18 00:00:00"
+    ],
+    [
+      "eval",
+      "2020-05-18 00:00:00",
+      "2020-07-27 00:00:00"
+    ],
+    [
+      "later",
+      "2020-06-22 00:00:00",
+      "2020-07-27 00:00:00"
+    ]
+  ],
+  "rationale": "Use actual historical channel/time context including unlabelled airtime omitted from item-interaction features.",
+  "source": "midterm/data/dataset11-30.csv",
+  "session_weight": "min(max(0,min(stop,cut)-max(start,March9)),3600) seconds per logged session",
+  "hour": "civil start_time hour; session weight assigned to its start hour, not spread across hours",
+  "all_channels": "unknown or unavailable channels retain probability mass in denominator",
+  "duplicates": "raw logged sessions are weighted individually; overlapping/duplicate sessions are not unioned in this ablation",
+  "features_added": [
+    "raw_channel_affinity",
+    "raw_hour_affinity",
+    "raw_channel_hour_product"
+  ],
+  "affinity": "user capped-duration shares dot candidate forecast airing channel/hour shares",
+  "future_inputs": "only programme IDs, channel, and airing timestamps; no future views/attributes",
+  "fit_filter": "early fit candidate groups containing at least one positive and one negative; equal row weight",
+  "parameters": {
+    "learning_rate": 0.06,
+    "max_iter": 150,
+    "l2_regularization": 10.0,
+    "min_samples_leaf": 50,
+    "early_stopping": false,
+    "random_state": 20261022,
+    "max_leaf_nodes": 15,
+    "max_depth": 3
+  },
+  "candidate_pool": "existing context_features unchanged",
+  "fallback": "existing common cold popularity fallback unchanged",
+  "comparison": "filtered_equal_rows 19feature reference, main .5892727072 later .4918811728",
+  "selection": "single prespecified variant, exploratory previously used overlapping windows",
+  "fits": 1,
+  "submissions": 0,
+  "timeout_seconds_before_fit": 300
+}

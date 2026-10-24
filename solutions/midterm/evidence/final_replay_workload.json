@@ -1,0 +1,18 @@
+{
+  "windows": [
+    {
+      "window": "fit",
+      "exact_replay_collapsed_user_airing_rows": 14973335
+    },
+    {
+      "window": "eval",
+      "exact_replay_collapsed_user_airing_rows": 5773879
+    },
+    {
+      "window": "later",
+      "exact_replay_collapsed_user_airing_rows": 4519494
+    }
+  ],
+  "wall_seconds": 0.8407251660028123,
+  "fits": 0
+}

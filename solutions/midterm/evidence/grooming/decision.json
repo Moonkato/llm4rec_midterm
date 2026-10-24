@@ -1,0 +1,66 @@
+{
+  "status": "grooming complete; no training or submission in grooming",
+  "team": [
+    "modeling",
+    "research",
+    "data_validation"
+  ],
+  "decision": "Short temporal and target diagnostic, then one learned-collaborative conditional-feature experiment; no further feature/loss/fusion grids",
+  "why_prior_rounds_plateau": "Most trials reused same generic representation and April supervised training; larger candidate recall failed to translate to ranking quality. Learned collaborative identity conditional on context has not been tested.",
+  "ordered_plan": [
+    {
+      "stage": 0,
+      "task": "Inspect target construction if user supplies it; otherwise preserve all80 and top5count80 proxies. Measure top5 horizon stability and cohort/history shift with fixed comparable baseline.",
+      "fits": 0,
+      "minutes_estimate": 10,
+      "dependency": "Existing local data; exact scorer question pending, not prerequisite for diagnostic"
+    },
+    {
+      "stage": 1,
+      "task": "Three history-only WARP-LightFM fits at current fit/eval/later cutoffs,16factors10epochs,max_sampled10. Append predicted score,item/user biases and factor norms to fixed v3 rows, with missing-factor flags/fallback. Exactly one fixed v3 reranker refit; no raw latent-coordinate concatenation across rotations.",
+      "factor_fits": 3,
+      "ranker_fits": 1,
+      "dependency": "LightFM not installed; user handles installation/network under standing agreement",
+      "minutes_estimate": 20,
+      "ram_gb_estimate": 2
+    },
+    {
+      "stage": 2,
+      "task": "Reserve only: per-airing uninterrupted completion probability integrated over future schedule into expected programme counts. Requires separate design and approval.",
+      "fits_authorized": 0
+    }
+  ],
+  "proposed_next_round_budget": {
+    "wall_minutes": 45,
+    "ram_gb": 4,
+    "cpu_threads": 2,
+    "factor_fits": 3,
+    "ranker_fits": 1,
+    "submissions": 0,
+    "approval_status": "not requested before grooming completion; await user approval"
+  },
+  "success_gate": {
+    "primary_top5_proxy": "At least+.01absolute MAP on declared primary existingwindow, no deterioration on otherwindow; improvement should exceed paired-user sampling variation",
+    "robustness": "Report all80 and empty/nonemptytruth policies; investigate material target-specific reversal. Evaluate seen/user-new separately. Existing windows explored; bootstrap is descriptive, not independent proof.",
+    "fourth_submission": "Only after demonstrated gain, fullhistorycandidate validation and separate user discussion; user uploads manually"
+  },
+  "deprioritized": [
+    "Further smallfeature and fusionweight grids",
+    "Larger candidate pools without better relevance signal",
+    "Large Transformer before evidence sequenceorder matters",
+    "Synthetic labels without independent signal",
+    "Semantic coldstart work before major globallyknown-item errors"
+  ],
+  "sources": [
+    "https://making.lyst.com/lightfm/docs/lightfm.html",
+    "https://medium.com/data-science/two-layered-recommender-system-methodology-a-prize-winning-solution-c4bdb815b156"
+  ],
+  "source_limit": "Participant article supports method, not official hidden-target formula or guaranteed gain. Code notebook content inaccessible through web; no network workaround attempted.",
+  "team_disagreement": "Modeling prioritizes temporal repair, research collaborative representation; resolved by no-fit temporal diagnostic before single architecture pilot.",
+  "best_kaggle_user_reported": [
+    0.43519,
+    0.44966
+  ],
+  "submissions_remaining": 1,
+  "claims": "No promised0.8, no proof of optimum; proposed criterion is experimental gate, not forecast."
+}

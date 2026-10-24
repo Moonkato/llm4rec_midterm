@@ -1,0 +1,7 @@
+{
+  "source_protocol": "evidence/multiwindow/protocol.json",
+  "change": "Restrict training rows to template user IDs, which are supplied before test; no test views accessed",
+  "models": 1,
+  "selection": "exploratory late holdout already inspected",
+  "submissions": 0
+}

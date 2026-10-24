@@ -1,0 +1,263 @@
+{
+  "status": "complete",
+  "purpose": "Supplementary harmonized-fallback evaluation only; not a new trained model or replacement for the scored submission",
+  "window": "2020-05-18 through 2020-07-27 exclusive",
+  "users": 1260,
+  "truth": "same full-universe strict top5_count80; ties ascending numeric ID; empty truth AP0",
+  "cold_definition": "Union of users without any >=180-second historical qualifying airing and users without any >30%-coverage historical qualifying airing, computed before main holdout",
+  "cold180_count": 10,
+  "cold30_count": 12,
+  "common_cold_count": 12,
+  "common_cold_users": [
+    "319675768840678676",
+    "414363484269016605",
+    "2864964383167733994",
+    "10120801182216576239",
+    "10246214960655461086",
+    "12452087939154504535",
+    "13688967069138961119",
+    "14401191285650834662",
+    "14719185688099378764",
+    "16561743585370579180",
+    "17337543921140631187",
+    "17498855137197959107"
+  ],
+  "fallback": [
+    "2400480",
+    "240081",
+    "2400508",
+    "6500479",
+    "2400467"
+  ],
+  "fallback_definition": "Historical >=180-second unique-viewer popularity, restricted to the common labelled EPG eligibility universe; numeric-ID ties. Same routing cohort and exact ranked list across all8. Warm zero-signal/short core lists use this same fallback to fill.",
+  "candidate_policy": "Same eligible EPG universe and repeats allowed; advanced systems retain original personalized retrieval shortlists. This remains an end-to-end comparison, not a model-family controlled ablation.",
+  "methods": {
+    "popularity_unique_viewers": {
+      "original_map5": 0.27064858906525574,
+      "common_fallback_map5": 0.27064858906525574,
+      "changed_ranked_lists": 0,
+      "warm_zero_or_short_signal_fallback_users": 0
+    },
+    "content_tfidf": {
+      "original_map5": 0.005386904761904762,
+      "common_fallback_map5": 0.005667328042328042,
+      "changed_ranked_lists": 2,
+      "warm_zero_or_short_signal_fallback_users": 0
+    },
+    "als_f32_a1": {
+      "original_map5": 0.1456115520282187,
+      "common_fallback_map5": 0.14589197530864198,
+      "changed_ranked_lists": 1,
+      "warm_zero_or_short_signal_fallback_users": 0
+    },
+    "personal_frequency": {
+      "original_map5": 0.3379404761904762,
+      "common_fallback_map5": 0.3382208994708995,
+      "changed_ranked_lists": 2,
+      "warm_zero_or_short_signal_fallback_users": 4
+    },
+    "weekly_ranker_v3": {
+      "original_map5": 0.40741291887125225,
+      "common_fallback_map5": 0.40736265432098767,
+      "changed_ranked_lists": 12,
+      "warm_zero_or_short_signal_fallback_users": 0
+    },
+    "airing_model": {
+      "original_map5": 0.41225330687830686,
+      "common_fallback_map5": 0.4122030423280424,
+      "changed_ranked_lists": 12,
+      "warm_zero_or_short_signal_fallback_users": 0
+    },
+    "hybrid_v4": {
+      "original_map5": 0.41723765432098764,
+      "common_fallback_map5": 0.4171873897707231,
+      "changed_ranked_lists": 12,
+      "warm_zero_or_short_signal_fallback_users": 0
+    },
+    "identity_replay_v5": {
+      "original_map5": 0.4192220017636684,
+      "common_fallback_map5": 0.41917173721340384,
+      "changed_ranked_lists": 12,
+      "warm_zero_or_short_signal_fallback_users": 0
+    }
+  },
+  "examples": {
+    "15634861151839696048": {
+      "in_common_cold_cohort": false,
+      "all_lists_unchanged": true,
+      "methods": {
+        "popularity_unique_viewers": {
+          "top5": [
+            "2400480",
+            "240081",
+            "2400508",
+            "6500479",
+            "2400467"
+          ],
+          "ap5": 0.4
+        },
+        "content_tfidf": {
+          "top5": [
+            "90076295",
+            "90079323",
+            "90079212",
+            "90057593",
+            "90079463"
+          ],
+          "ap5": 0.0
+        },
+        "als_f32_a1": {
+          "top5": [
+            "240081",
+            "2400480",
+            "2400508",
+            "20088",
+            "2500413"
+          ],
+          "ap5": 0.55
+        },
+        "personal_frequency": {
+          "top5": [
+            "240081",
+            "1000723",
+            "2400480",
+            "200469",
+            "1100411"
+          ],
+          "ap5": 0.4533333333333333
+        },
+        "weekly_ranker_v3": {
+          "top5": [
+            "240081",
+            "2400480",
+            "20088",
+            "2400508",
+            "1100411"
+          ],
+          "ap5": 0.76
+        },
+        "airing_model": {
+          "top5": [
+            "2400480",
+            "240081",
+            "20088",
+            "1100411",
+            "2400508"
+          ],
+          "ap5": 0.8
+        },
+        "hybrid_v4": {
+          "top5": [
+            "240081",
+            "2400480",
+            "20088",
+            "1100411",
+            "2400508"
+          ],
+          "ap5": 0.8
+        },
+        "identity_replay_v5": {
+          "top5": [
+            "240081",
+            "2400480",
+            "20088",
+            "1100411",
+            "2400508"
+          ],
+          "ap5": 0.8
+        }
+      }
+    },
+    "10269329346053634491": {
+      "in_common_cold_cohort": false,
+      "all_lists_unchanged": true,
+      "methods": {
+        "popularity_unique_viewers": {
+          "top5": [
+            "2400480",
+            "240081",
+            "2400508",
+            "6500479",
+            "2400467"
+          ],
+          "ap5": 0.18
+        },
+        "content_tfidf": {
+          "top5": [
+            "90079477",
+            "90080134",
+            "90080331",
+            "90080332",
+            "90082149"
+          ],
+          "ap5": 0.0
+        },
+        "als_f32_a1": {
+          "top5": [
+            "300358",
+            "200337",
+            "2500430",
+            "20088",
+            "200405"
+          ],
+          "ap5": 0.0
+        },
+        "personal_frequency": {
+          "top5": [
+            "2400480",
+            "240081",
+            "200469",
+            "2500413",
+            "5200303"
+          ],
+          "ap5": 0.1
+        },
+        "weekly_ranker_v3": {
+          "top5": [
+            "240081",
+            "2400480",
+            "200432",
+            "2500413",
+            "2400508"
+          ],
+          "ap5": 0.2
+        },
+        "airing_model": {
+          "top5": [
+            "240081",
+            "2400480",
+            "2400508",
+            "10003012",
+            "1100411"
+          ],
+          "ap5": 0.2
+        },
+        "hybrid_v4": {
+          "top5": [
+            "240081",
+            "2400480",
+            "2400508",
+            "2500413",
+            "10003012"
+          ],
+          "ap5": 0.2
+        },
+        "identity_replay_v5": {
+          "top5": [
+            "240081",
+            "2400480",
+            "2500413",
+            "2400508",
+            "10003012"
+          ],
+          "ap5": 0.2
+        }
+      }
+    }
+  },
+  "fits": 0,
+  "submissions": 0,
+  "frozen_csvs_modified": false,
+  "original_required_method_comparison": "Original round1 four-method comparison already shares exactly the same cold cohort, fallback, histories and eligibility; it satisfies the core two-method comparison. This supplement harmonizes fallback across the later advanced systems as well.",
+  "source_script": "tools/build_common_fallback_comparison.py"
+}

@@ -1,0 +1,34 @@
+{
+  "map5_strict": 0.5756011904761904,
+  "candidate_oracle_map5": 0.86239417989418,
+  "fit_rows": 204404,
+  "fit_positive_rate": 0.13699829748928594,
+  "features": [
+    "log_count30",
+    "log_count80",
+    "log_decay60_count30",
+    "log_future_airings_per_day",
+    "log_past_airings_per_day",
+    "log_personal_schedule_score",
+    "log_pop_viewers",
+    "log_user_count",
+    "days_since_last_watch30"
+  ],
+  "coefficients_standardized": [
+    -0.3274408129920671,
+    0.22852255325096396,
+    0.17276567163813414,
+    1.1100131912068718,
+    -0.8509499666002892,
+    0.9201502770242054,
+    0.8505967913890183,
+    0.2930166845062534,
+    -0.13627228872698513,
+    -2.443909129009353
+  ],
+  "optimizer_success": true,
+  "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+  "iterations": 37,
+  "wall_seconds": 17.3143665839998,
+  "submissions": 0
+}

@@ -1,0 +1,24 @@
+{
+  "threshold": "MAX single raw fragment clipped beforecut >30% full airing",
+  "windows": [
+    [
+      "fit",
+      "2020-04-13",
+      "2020-05-18"
+    ],
+    [
+      "eval",
+      "2020-05-18",
+      "2020-07-27"
+    ],
+    [
+      "later",
+      "2020-06-22",
+      "2020-07-27"
+    ]
+  ],
+  "no_future_views": true,
+  "origin": "2020-03-09",
+  "repeats": "allowed",
+  "missing_session_identity": "stored old-cut fragments not rejoined"
+}

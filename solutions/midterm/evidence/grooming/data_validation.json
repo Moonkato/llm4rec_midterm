@@ -1,0 +1,212 @@
+{
+  "role": "data/evaluation skeptic; no training",
+  "priority_order": [
+    "Resolve target semantics while continuing diagnostic work",
+    "Measure temporal/cohort transport and target stability",
+    "Test conditional seen/new-known ranking before further retrieval expansion"
+  ],
+  "hypotheses": [
+    {
+      "priority": 1,
+      "name": "Optimization target remains unidentified; small model gains may optimize the wrong ranking",
+      "evidence": [
+        "Same v1 predictions score .575601 on all80, .394064 on top5count80, .237792 on top5seconds80, .439352 on top5count30 in main local window. This label-choice effect greatly exceeds recent feature/model deltas.",
+        "Official wording says five most preferred programmes; output length does not prove hidden truth length or preference formula.80percent rule came from participant description.",
+        "Three public outcomes cannot identify one target among several correlated proxies; score closeness is not evidence of exact semantics."
+      ],
+      "discriminating_test": "Inspect organizer target-generation/evaluation code or exact stated formula: overlap denominator, strict/inclusive threshold, airing/session aggregation, all-items versus preferred subset, count versus duration preference, ties, empty users. Reproduce on a small historical example; request no hidden test labels.",
+      "budget": "Documentation/code inspection only initially; <=5min CPU and1GB for historical reconstruction if exact logic supplied; zero fitting/submission.",
+      "strategy_change": "If exact rule differs, rebuild labels and reassess frozen predictions before training. If unavailable, retain all80 and top5count80 as declared plausible targets with explicit uncertainty; do not choose a proxy because it matches Kaggle.",
+      "risk": "Overinterpreting a participant description or adapting proxy definitions to three leaderboard observations."
+    },
+    {
+      "priority": 2,
+      "name": "Horizon, user participation and session structure create larger transport shift than model capacity",
+      "evidence": [
+        "Fitting history35days, outer70days, later105days, final140days; label horizons range14/21/35/70days while deployment forecast84days.",
+        "Raw population sessions/day61904 in early fitting history versus26812 in main validation.",
+        "No-retrieved-positive fitting groups455/4721 early versus1724/4813 recent; filtering recent+early improves .462831 to .486095 but remains below filtered early .491881 under all80 HGB. This does not falsify target-matched ranking, but exposes cohort selection.",
+        "Sample22925 raw sessions had0exact duplicates yet10321different-channel overlap pairs and556same-channel overlapping pairs. These may be concurrent household/device use; do not assume a single uninterrupted personal viewing process.",
+        "Raw session duration maximum342145seconds. The current weekly context caps each session to3600 weighted seconds, while label construction can credit many complete airings from one long session."
+      ],
+      "discriminating_test": "Before fitting, quantify top5 stability and activity eligibility across nested14/35/70day windows, plus preferred-airing contributions from long sessions and concurrent-channel sessions. Compare source/category AP by target-user activity/cohort using only pre-cut features for strata. Then one paired horizon/population experiment on fixed evaluation rows, not a grid.",
+      "budget": "<=3min CPU/1GB for cached/raw diagnostic aggregation; any new1-2fits require explicit approval and a separate small budget.",
+      "strategy_change": "If target ranks vary strongly with horizon, prioritize programme opportunity/completion-count prediction and horizon-aware aggregation. If selected-user participation dominates, design target-cohort training or weighting from pre-cut variables. If long channel sessions dominate relevant labels, test channel-run completion features rather than treating concurrent logs as corrupt.",
+      "risk": "20weeks of logs cannot supply long historical fit plus12week supervised labels plus an independent12week holdout. A May4-Jul27 outer test would leak current v3 labels throughMay18; refit must end labels byMay4. Newer/longer targets also change season/cohort, so effects must not be attributed to horizon alone."
+    },
+    {
+      "priority": 3,
+      "name": "Potential gains split between seen-item ordering and user-new globally-known programmes; generic expansion lacks the needed conditional ranking signal",
+      "evidence": [
+        "Main top5 source idealmass: seen .67294 versus actualAPcredit .40018; new-user/global-known .26526 versus actual .00724; globallynew .04275. Later corresponding masses .65306/.35694,.28431/.00493,.03247.",
+        "Seen-ranking remaining potential .27276/.29611; new-user/global-known remaining .25803/.27938. These are diagnostic oracle gaps, not learnable guarantees.",
+        "Original shortlist internal ranking gap .33966/.35871 exceeds missing-candidate oracle gap .23388/.24926.",
+        "Weekly retrieval raises top5 candidate oracle .74708\u2192.78135 and .72058\u2192.75331, but achieved top5 MAP decreases .001031/.002063 after refit.",
+        "Missing top5 pairs mostly user-new but globally observed:1146of1363 main,1270of1410 later. Only217/140 are globally unobserved."
+      ],
+      "discriminating_test": "Use fixed current pairs first: decompose false positives and per-source AP; evaluate a prespecified seen-versus-new-known gate or airing-level probability of one uninterrupted>80percent overlap, with a separate calibration check for new-known pairs. Measure incremental actual AP, not only retrieval coverage. Expand candidates only after signal improves conditional ranking.",
+      "budget": "Saved-prediction decomposition completed in under2seconds; further conditional diagnostics <=2min/1GB. One targeted fitted gate/airing model only after approval, with fixed setup and<=10min/2GB budget proposal.",
+      "strategy_change": "Prioritize reliable seen ordering and calibrated new-known relevance; avoid investing primarily in globally cold item machinery or another topK increase. Conditional completion scoring may connect historical channel habits with programme airtime better than total expected minutes.",
+      "risk": "Source-only oracles overlap for all80 and cannot be summed. For top5 they are additive, but assume perfect knowledge of future labels. Training only current shortlist can undersample new-known positives; any target-informed training-pair sampling must remain confined to fitting labels and clearly documented. No future metadata beyond permitted schedule availability/channel/time."
+    }
+  ],
+  "proposed_decision_gate": {
+    "primary": "Predeclare one hypothesis, fixed candidate and target policy, and a material-gain threshold before fitting; retain v3 otherwise.",
+    "robustness": "Report both all80/top5count80 on both windows, plus unchanged all-user and nonempty-user summaries. Do not silently exclude empty users. Until scorer is known, prefer gains whose direction is consistent across plausible targets; tradeoffs must be explicitly surfaced rather than choosing favorable proxy.",
+    "evidence": "Paired user-level AP changes and uncertainty, source slice diagnostics, and actual ranking improvement. Candidateoracle alone cannot approve an expensive round or submission.",
+    "limitation": "Reused overlapping windows do not become independent tests because a new protocol is written. User bootstrap quantifies sample variability, not hidden-target uncertainty or extrapolation risk."
+  },
+  "cross_agent_challenges": [
+    "Warned both modeling agents that12week fit and independent12week validation are infeasible with20weeks logs.",
+    "Warned that scoring existingv3 on May4-Jul27 leaks its fit labels throughMay18.",
+    "Shared additive top5 AP-source decomposition; modelingagent agreed to test conditional ranking on fixed pairs before expanded retrieval.",
+    "Agreed that failed earlier all80 HGB pooling does not falsify a new target-matched LambdaRank hypothesis, but is negative evidence against naive concatenation."
+  ],
+  "source_ap_diagnostic": {
+    "eval": {
+      "all80": {
+        "users": 1260,
+        "empty_users": 24,
+        "actual_v3_map_all": 0.5864922839506164,
+        "actual_v3_map_nonempty": 0.5978804836389779,
+        "candidate_oracle": 0.8729497354497355,
+        "ranking_gap_inside_candidates": 0.2864574514991191,
+        "sources": {
+          "user_seen30": {
+            "actual_ap_credit": 0.5775645943562797,
+            "source_only_oracle": 0.8134126984126979,
+            "missing_source_oracle_recovery": 0.0,
+            "truth_pairs": 11031,
+            "missing_pairs": 102
+          },
+          "user_new_globally_seen30": {
+            "actual_ap_credit": 0.008927689594356254,
+            "source_only_oracle": 0.8239947089947083,
+            "missing_source_oracle_recovery": 0.0920370370370372,
+            "truth_pairs": 18695,
+            "missing_pairs": 16987
+          },
+          "globally_unseen30": {
+            "actual_ap_credit": 0.0,
+            "source_only_oracle": 0.6033862433862434,
+            "missing_source_oracle_recovery": 0.05342592592592597,
+            "truth_pairs": 10023,
+            "missing_pairs": 9415
+          }
+        },
+        "note": "For top5_count80 source-only oracles and missing-source recovery are additive; for all80 source-only and marginal-recovery oracles overlap and must not be summed."
+      },
+      "top5_count80": {
+        "users": 1260,
+        "empty_users": 24,
+        "actual_v3_map_all": 0.40741291887125136,
+        "actual_v3_map_nonempty": 0.4153238493347708,
+        "candidate_oracle": 0.7470767195767166,
+        "ranking_gap_inside_candidates": 0.3396638007054653,
+        "sources": {
+          "user_seen30": {
+            "actual_ap_credit": 0.4001757054673605,
+            "source_only_oracle": 0.6729365079365058,
+            "missing_source_oracle_recovery": 0.0,
+            "truth_pairs": 4145,
+            "missing_pairs": 0
+          },
+          "user_new_globally_seen30": {
+            "actual_ap_credit": 0.007237213403880067,
+            "source_only_oracle": 0.2652645502645488,
+            "missing_source_oracle_recovery": 0.1939417989417981,
+            "truth_pairs": 1568,
+            "missing_pairs": 1146
+          },
+          "globally_unseen30": {
+            "actual_ap_credit": 0.0,
+            "source_only_oracle": 0.04275132275132288,
+            "missing_source_oracle_recovery": 0.03993386243386253,
+            "truth_pairs": 233,
+            "missing_pairs": 217
+          }
+        },
+        "note": "For top5_count80 source-only oracles and missing-source recovery are additive; for all80 source-only and marginal-recovery oracles overlap and must not be summed."
+      }
+    },
+    "later": {
+      "all80": {
+        "users": 1260,
+        "empty_users": 38,
+        "actual_v3_map_all": 0.49544400352733603,
+        "actual_v3_map_nonempty": 0.5108506092016721,
+        "candidate_oracle": 0.8299470899470892,
+        "ranking_gap_inside_candidates": 0.33450308641975324,
+        "sources": {
+          "user_seen30": {
+            "actual_ap_credit": 0.4895425485008841,
+            "source_only_oracle": 0.7727380952380948,
+            "missing_source_oracle_recovery": 0.00031746031746031746,
+            "truth_pairs": 8903,
+            "missing_pairs": 309
+          },
+          "user_new_globally_seen30": {
+            "actual_ap_credit": 0.005901455026455028,
+            "source_only_oracle": 0.7390740740740744,
+            "missing_source_oracle_recovery": 0.12439153439153439,
+            "truth_pairs": 11863,
+            "missing_pairs": 10650
+          },
+          "globally_unseen30": {
+            "actual_ap_credit": 0.0,
+            "source_only_oracle": 0.404219576719575,
+            "missing_source_oracle_recovery": 0.0485185185185186,
+            "truth_pairs": 4024,
+            "missing_pairs": 3551
+          }
+        },
+        "note": "For top5_count80 source-only oracles and missing-source recovery are additive; for all80 source-only and marginal-recovery oracles overlap and must not be summed."
+      },
+      "top5_count80": {
+        "users": 1260,
+        "empty_users": 38,
+        "actual_v3_map_all": 0.3618752204585535,
+        "actual_v3_map_nonempty": 0.3731282960538277,
+        "candidate_oracle": 0.7205820105820078,
+        "ranking_gap_inside_candidates": 0.35870679012345424,
+        "sources": {
+          "user_seen30": {
+            "actual_ap_credit": 0.3569420194003442,
+            "source_only_oracle": 0.6530555555555545,
+            "missing_source_oracle_recovery": 0.0019047619047619048,
+            "truth_pairs": 3952,
+            "missing_pairs": 12
+          },
+          "user_new_globally_seen30": {
+            "actual_ap_credit": 0.004933201058201059,
+            "source_only_oracle": 0.2843121693121675,
+            "missing_source_oracle_recovery": 0.21947089947089837,
+            "truth_pairs": 1626,
+            "missing_pairs": 1258
+          },
+          "globally_unseen30": {
+            "actual_ap_credit": 0.0,
+            "source_only_oracle": 0.032473544973545,
+            "missing_source_oracle_recovery": 0.02788359788359787,
+            "truth_pairs": 163,
+            "missing_pairs": 140
+          }
+        },
+        "note": "For top5_count80 source-only oracles and missing-source recovery are additive; for all80 source-only and marginal-recovery oracles overlap and must not be summed."
+      }
+    }
+  },
+  "references": [
+    "evidence/top5_target_audit/results.json",
+    "evidence/weekly_retrieval/coverage.json",
+    "evidence/weekly_retrieval/results.json",
+    "evidence/deep_join_audit.json",
+    "evidence/score_gap_audit.json",
+    "evidence/filtered_multiwindow/results.json",
+    "evidence/training_filter/results.json",
+    "evidence/deep_temporal/top5_count80_24features_eval_predictions.json",
+    "evidence/deep_temporal/top5_count80_24features_later_predictions.json"
+  ],
+  "fits": 0,
+  "submissions": 0
+}

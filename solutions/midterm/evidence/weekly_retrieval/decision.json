@@ -1,0 +1,6 @@
+{
+  "decision": "retain v3",
+  "reason": "Retrieval recall improves but primary retrained ranker top5 MAP worsens on both periods",
+  "submissions_added": 0,
+  "submissions_remaining": 1
+}

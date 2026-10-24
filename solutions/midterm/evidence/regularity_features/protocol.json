@@ -1,0 +1,74 @@
+{
+  "windows": [
+    [
+      "inner_fit",
+      "2020-04-13 00:00:00",
+      "deep_context"
+    ],
+    [
+      "inner_stop",
+      "2020-05-04 00:00:00",
+      "deep_context"
+    ],
+    [
+      "fit",
+      "2020-04-13 00:00:00",
+      "context_features"
+    ],
+    [
+      "eval",
+      "2020-05-18 00:00:00",
+      "context_features"
+    ],
+    [
+      "later",
+      "2020-06-22 00:00:00",
+      "context_features"
+    ]
+  ],
+  "features": [
+    "active_history_weeks_fraction30",
+    "active_last4weeks_fraction30",
+    "recent14_previous14_count30_ratio_smoothed",
+    "count30_per_history_day",
+    "item_share_user_count30",
+    "completion80_given30_smoothed",
+    "completion30_given10_smoothed",
+    "mean_maxsingle_completion_gt10",
+    "recent28_completion80_given30_smoothed",
+    "weeks_since_first30_normalized"
+  ],
+  "fits": 0,
+  "submissions": 0,
+  "alignment": "base19 context group/user/item row order",
+  "events": "MAX clipped stored raw overlap per user-airing; denominator full airing duration; no fragment union",
+  "timing": "event last endpoint clipped at cutoff assigns week and recent-window membership; point at cutoff belongs to preceding instant",
+  "opportunities": "calendar weeks since March9, including partial week; last4weeks uses last min(28,historydays) calendar days",
+  "trend": "(recent14 count30+1)/(preceding14 count30+1); no clipping",
+  "rates": "historyday denominator is elapsed civil calendar days, not number of active days",
+  "ratios": "(count80+1)/(count30+2), (count30+1)/(count10+2), (recent28count80+1)/(recent28count30+2)",
+  "completion": "mean maxsingle overlap/full duration for events >10%; thresholds strictly greater",
+  "first_age": "(cutoff-first qualifying max-overlap endpoint)/(7days), divided by historical opportunityweeks; no history=>0",
+  "future_inputs": "none; row candidates already supplied, no forecast behaviour queried",
+  "groups": {
+    "regularity": [
+      0,
+      1,
+      9
+    ],
+    "trend": [
+      2
+    ],
+    "intensity": [
+      3,
+      4
+    ],
+    "completion": [
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "budget": "5min1GB"
+}

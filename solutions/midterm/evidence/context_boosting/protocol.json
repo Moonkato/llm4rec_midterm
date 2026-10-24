@@ -1,0 +1,30 @@
+{
+  "seed": 20261022,
+  "learning_rate": 0.06,
+  "iterations": 150,
+  "l2": 10.0,
+  "min_samples_leaf": 50,
+  "early_stopping": false,
+  "models": [
+    {
+      "name": "boost_old9",
+      "features": 9,
+      "max_leaf_nodes": 15,
+      "max_depth": 3
+    },
+    {
+      "name": "boost_context",
+      "features": null,
+      "max_leaf_nodes": 15,
+      "max_depth": 3
+    },
+    {
+      "name": "boost_context_deeper",
+      "features": null,
+      "max_leaf_nodes": 31,
+      "max_depth": 5
+    }
+  ],
+  "selection": "primary window MAP; later window robustness overlaps primary, not independent test",
+  "new_submissions": 0
+}

@@ -1,0 +1,28 @@
+{
+  "sources": [
+    {
+      "url": "https://medium.com/data-science/two-layered-recommender-system-methodology-a-prize-winning-solution-c4bdb815b156",
+      "author": "Nikita Melentev",
+      "retrieved": true,
+      "claims": {
+        "target": "More than 80 percent of programme in one uninterrupted viewing",
+        "split": "20 training weeks; 12 future weeks; public/private split by users 50/50",
+        "prediction": "Five programme IDs per user",
+        "local_baseline_features": "Author uses >50 percent watched for personal frequency baseline"
+      },
+      "scope": "Participant account, not official hidden-target specification"
+    },
+    {
+      "url": "https://github.com/ndmel/2nd_place_recsys_cinema_challenge_2020",
+      "retrieved": "repository listing only",
+      "notebook_contents_verified": false
+    }
+  ],
+  "unresolved": [
+    "Whether truth consists of all qualifying distinct programmes or only top five",
+    "Official AP denominator and treatment of users with empty truth",
+    "Exact local split date and target-construction code used by participant"
+  ],
+  "network_limitation": "Raw notebook fetches failed; shell fetch required approval and was aborted. No external code executed.",
+  "conclusion": "Top-five prediction instruction does not establish top-five truncation of truth. Current all-distinct labels remain a documented approximation pending official Evaluation/Description."
+}

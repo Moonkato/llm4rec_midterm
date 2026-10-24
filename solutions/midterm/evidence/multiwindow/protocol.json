@@ -1,0 +1,32 @@
+{
+  "early_fit": [
+    "2020-04-13",
+    "2020-05-18"
+  ],
+  "recent_fit": [
+    "2020-05-18",
+    "2020-06-22"
+  ],
+  "evaluation": [
+    "2020-06-22",
+    "2020-07-27"
+  ],
+  "fit_rows": "all historical users, distinct chronological snapshots with overlapping users/history; no synthetic labels",
+  "models": [
+    "recent_only",
+    "early_plus_recent"
+  ],
+  "parameters": {
+    "learning_rate": 0.06,
+    "max_iter": 150,
+    "max_leaf_nodes": 15,
+    "max_depth": 3,
+    "min_samples_leaf": 50,
+    "l2_regularization": 10.0,
+    "early_stopping": false,
+    "random_state": 20261022
+  },
+  "validation_caveat": "later window previously inspected but never included in fit labels; original May18July27 window cannot be used to evaluate these fitted models",
+  "submissions": 0,
+  "row_weighting": "each candidate row equal weight; no window/user rebalancing"
+}

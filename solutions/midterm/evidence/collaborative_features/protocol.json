@@ -1,0 +1,56 @@
+{
+  "windows": [
+    [
+      "fit",
+      "2020-04-13 00:00:00",
+      "2020-05-18 00:00:00",
+      true
+    ],
+    [
+      "eval",
+      "2020-05-18 00:00:00",
+      "2020-07-27 00:00:00",
+      false
+    ],
+    [
+      "later",
+      "2020-06-22 00:00:00",
+      "2020-07-27 00:00:00",
+      false
+    ]
+  ],
+  "features": [
+    "log_count30",
+    "log_count80",
+    "log_decay60_count30",
+    "log_future_airings_per_day",
+    "log_past_airings_per_day",
+    "log_personal_schedule_score",
+    "log_pop_viewers",
+    "log_user_count",
+    "days_since_last_watch30",
+    "log_count10",
+    "log_count50",
+    "log_decay7_count30",
+    "log_decay28_count30",
+    "log_distinct_watched_airing_days",
+    "log_user_distinct_items",
+    "channel_affinity",
+    "hour_affinity",
+    "channel_hour_product",
+    "log_exposure_ratio_smoothed10",
+    "usercf_score",
+    "itemassociation_score",
+    "usercf_rrf60",
+    "itemassociation_rrf60"
+  ],
+  "fits": 0,
+  "submissions": 0,
+  "generation": "original personal100+popularity30+channel/hour30; append top20 positive userCF and top20 positive itemassociation scores; preserve previous candidate order",
+  "sources": "historical-only CF scores computed separately before respective cutoffs",
+  "ties": "numeric item ID ascending; reciprocal rank 1/(60+rank) across full forecast pool",
+  "rrf_zero_policy": "zero score gets zero reciprocal-rank feature",
+  "truth": "original strict single-fragment >80% labels; never used to select candidates",
+  "schema": "same context_features NPZ, with23 feature columns and extended groups",
+  "builder_sha256": "b5fb0ff94a716ff8dfe875cc332b7ec3fd858ccea3e325681be5e87bf1836d5c"
+}

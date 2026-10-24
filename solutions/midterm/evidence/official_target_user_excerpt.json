@@ -1,0 +1,8 @@
+{
+  "source": "Competition Description and Evaluation copied by user into chat",
+  "description": "Your task is to predict the 5 most preferred tv_show_ids for each user from submission.csv, from the most preferred (#1) to the least preferred (#5). The preferences were calculated for the users using the subsequent 12 weeks (weeks 31-42) of historical views.",
+  "evaluation": "Mean Average Precision @5; strictly five space-delimited IDs, ordered most to least preferred.",
+  "external_data": "any external data source allowed per pasted Description",
+  "unresolved": "How preferences were calculated; whether scorer stores exactly five relevant IDs; watched threshold not specified in this pasted text.",
+  "implication": "Top-five target proxies deserve explicit sensitivity evaluation; broad all-viewed truth not established as matching Kaggle."
+}

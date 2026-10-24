@@ -1,0 +1,29 @@
+{
+  "train_start": "2020-03-09 00:00:00",
+  "cutoff": "2020-06-22 00:00:00",
+  "validation_end_exclusive": "2020-07-27 00:00:00",
+  "threshold_seconds": 180,
+  "truth": "all distinct qualifying programmes, >=180 unioned seconds per airing",
+  "cohort": "all 1260 template users, empty truth AP=0",
+  "k": 5,
+  "candidate_pool": "nonzero programme IDs with airing intersecting forecast window",
+  "repeats": "allowed",
+  "ties": "ascending numeric programme ID",
+  "methods": [
+    "popularity_unique_viewers",
+    "personal_frequency",
+    "frozen_rrf"
+  ],
+  "frozen_rrf": {
+    "personal_weight": 0.75,
+    "popularity_weight": 0.25,
+    "constant": 60,
+    "unseen_personal_items": "zero reciprocal-rank contribution"
+  },
+  "fallback": "historical distinct-viewer popularity, identical for every method",
+  "interval_handling": "reunite original split fragments; union by user/event; clip on each side of new cutoff",
+  "selection": "frozen from earlier holdout; no weight search here",
+  "limitation": "overlapping time windows with earlier experiment; not statistically independent confirmation",
+  "training_runs": 0,
+  "kaggle_submissions": 0
+}

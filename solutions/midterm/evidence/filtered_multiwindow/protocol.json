@@ -1,0 +1,32 @@
+{
+  "fit_windows": [
+    [
+      "2020-04-13",
+      "2020-05-18"
+    ],
+    [
+      "2020-05-18",
+      "2020-06-22"
+    ]
+  ],
+  "evaluation_window": [
+    "2020-06-22",
+    "2020-07-27"
+  ],
+  "filter": "Separately within each fitting snapshot, retain user groups with both retrieved positive and negative labels.",
+  "weights": "Equal weight per retained candidate row; concatenate filtered snapshots.",
+  "parameters": {
+    "learning_rate": 0.06,
+    "max_iter": 150,
+    "l2_regularization": 10.0,
+    "min_samples_leaf": 50,
+    "early_stopping": false,
+    "random_state": 20261022,
+    "max_leaf_nodes": 15,
+    "max_depth": 3
+  },
+  "training_runs": 1,
+  "submissions": 0,
+  "evaluation": "Later only, all1260 users, unchanged candidates/cold fallback/full-truth AP@5 denominator.",
+  "caveat": "Original main window overlaps fitting labels and must not be evaluated. Later window was previously explored; not independent confirmation."
+}

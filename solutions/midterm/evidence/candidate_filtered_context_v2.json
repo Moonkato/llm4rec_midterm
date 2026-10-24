@@ -1,0 +1,23 @@
+{
+  "status": "prepared, not submitted",
+  "proposed_submission_name": "midterm_02_filtered_context_rrf",
+  "file": "solutions/midterm/candidates/filtered_context_v2.csv",
+  "rows": 1260,
+  "changed_ranked_lists_vs_v1": 1012,
+  "local_map5": {
+    "main": 0.5854757495590829,
+    "later": 0.49270568783068786
+  },
+  "formula": "0.5/(60+rank_logistic)+0.5/(60+rank_filtered_boost)",
+  "training": "both models frozen fit Apr13May18 labels; prediction features from full history beforeJuly27",
+  "test_labels_used": false,
+  "selection_caveat": "selected on repeatedly explored overlapping holdouts; does not guarantee Kaggle gain",
+  "hashes": {
+    "solutions/midterm/candidates/filtered_context_v2.csv": "fee5299aeb1e5dc960143dca61a9ed6759b3b9735a032f93119f1816f89f5cb7",
+    "solutions/midterm/cache/simple_reranker.npz": "2389e04ee618aff75f48c60c9992a1ecee3e990b810d5a791f854cdf8218ecb7",
+    "solutions/midterm/cache/training_filter/filtered_equal_rows.pkl": "65b344b5fbfc635185e863be31fc517d33aa0f31c7e64f7c15c474bfc702222e",
+    "solutions/midterm/cache/context_features/test.npz": "96b5139c209b539b2b1e93b9139072c396fdee6ed1ad4a6b76134b9b55136eed",
+    "solutions/midterm/tools/export_filtered_fusion.py": "f06efabc6447dc28b262784ff0b482fda1b9f62cdf72f3161b8e3b5a8f8d09df"
+  },
+  "wall_seconds": 2.631397625002137
+}

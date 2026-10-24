@@ -1,0 +1,36 @@
+{
+  "results": [
+    {
+      "cutoff": "2020-04-13",
+      "short_end": "2020-05-18",
+      "long_end": "2020-06-22",
+      "short_days": 35,
+      "long_days": 70,
+      "users": 1260,
+      "changed_top5_sets": 721,
+      "both_nonempty_users": 1210,
+      "mean_jaccard_both_nonempty": 0.7249180112816477,
+      "mean_short_top5_retained_in_long": 0.8250826446280991,
+      "both_exactly5_users": 1055,
+      "changed_sets_among_both_exactly5": 622
+    },
+    {
+      "cutoff": "2020-05-18",
+      "short_end": "2020-06-22",
+      "long_end": "2020-07-27",
+      "short_days": 35,
+      "long_days": 70,
+      "users": 1260,
+      "changed_top5_sets": 1099,
+      "both_nonempty_users": 938,
+      "mean_jaccard_both_nonempty": 0.5258972992181948,
+      "mean_short_top5_retained_in_long": 0.6955579246624023,
+      "both_exactly5_users": 739,
+      "changed_sets_among_both_exactly5": 613
+    }
+  ],
+  "fits": 0,
+  "submissions": 0,
+  "wall_seconds": 10.016277750000881,
+  "interpretation_limit": "Same cutoff and users, nested35/70day realized horizons. Measures proxy label sensitivity, not causal effect on model accuracy. Longer horizon includes later calendar weeks and activity changes. Official target formula remains unknown; no12week holdout claim."
+}

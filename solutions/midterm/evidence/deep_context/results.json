@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "results": [
+    {
+      "window": "inner_fit",
+      "users": 4721,
+      "rows": 303445,
+      "features": 19,
+      "positive_rate": 0.07085303761801974,
+      "labels_available": true,
+      "cold_users": 0,
+      "candidate_oracle_map5": 0.7291534279460565,
+      "wall_seconds": 15.254331000000093,
+      "npz_sha256": "b738d7d19dd60a6ecc8378e3f425f15e294aeaf988e37564b829d4711ac9afef"
+    },
+    {
+      "window": "inner_stop",
+      "users": 1260,
+      "rows": 94839,
+      "features": 19,
+      "positive_rate": 0.066249116924472,
+      "labels_available": true,
+      "cold_users": 13,
+      "candidate_oracle_map5": 0.7462962962962963,
+      "wall_seconds": 11.176503167000192,
+      "npz_sha256": "499995d6a0b4313bb4886d38cd24977824bf85d92557d7e6ee72f61906e3caee"
+    }
+  ],
+  "wall_seconds": 26.667700834001153,
+  "code_sha256": "cc67f5d81679557cb4bef42c6f0320c1e93e09e5ea558c609f65e8328d1fe406",
+  "training_runs": 0,
+  "submissions": 0
+}

@@ -1,0 +1,35 @@
+{
+  "source": "official_target_user_excerpt.json",
+  "source_provenance": "Official page text copied by user; no independently retrieved scorer or hidden labels",
+  "established": [
+    "Predict exactly five programme IDs per user in preference order.",
+    "Preference targets derive from subsequent12weeks of views.",
+    "Metric stated MAP@5."
+  ],
+  "not_established": [
+    "Formula converting future views into preference: frequency, duration, completion, recency or another weighting.",
+    "Whether scorer stores exactly five ground-truth relevant IDs or a larger relevant set.",
+    "Whether80percent uninterrupted threshold is used by official scorer.",
+    "Exact AP denominator and empty-ground-truth policy."
+  ],
+  "metric_interpretation": {
+    "conventional_ap5": "sum over predicted ranks r=1..5 of precision_at_r multiplied by membership(prediction_r, relevant_set), divided by min(5, number_of_relevant_items).",
+    "prediction_order": "Matters: an isolated relevant prediction at rank1 contributes more than at rank5 when other ranks miss.",
+    "actual_order": "Conventional binary MAP uses ground-truth set membership, not target item preference ranks. Reordering the same five correct predicted IDs yields AP=1 when those five comprise the relevant set.",
+    "caveat": "This describes conventional binary MAP and our implementation; actual competition scorer implementation is unavailable."
+  },
+  "reassessment": {
+    "all_distinct_watched": "A useful broad-viewing task, but now clearly unconfirmed as official preference target. Do not call it matched Kaggle ground truth.",
+    "top5_proxies": "Text makes top-five preference proxies a motivated sensitivity analysis, not proof of actual hidden-target construction.",
+    "threshold80": "Participant-reported heuristic/target account only. Official excerpt neither confirms nor refutes it. Keep provenance distinct.",
+    "prior_local_scores": "Remain valid measured scores for their documented proxy. Do not relabel previous results as official-MAP estimates."
+  },
+  "recommended_bounded_analysis": [
+    "Freeze existing predictions and compare all-relevant versus top5-by-completed-airing-count and top5-by-overlap-seconds targets.",
+    "State threshold, aggregation, tie handling and fewer-than-five-truth treatment for each proxy.",
+    "Show whether model ranking changes across target proxies; two Kaggle points cannot identify the true preference formula.",
+    "Do not select a label definition merely because it yields a higher absolute local score; proxy difficulty changes."
+  ],
+  "fits": 0,
+  "submissions": 0
+}

@@ -1,0 +1,54 @@
+{
+  "results": [
+    {
+      "window": "eval",
+      "normalization": "counts_only",
+      "model": "frozen_logistic",
+      "map5": 0.5754351851851852
+    },
+    {
+      "window": "eval",
+      "normalization": "counts_only",
+      "model": "boost_context",
+      "map5": 0.5813167989417989
+    },
+    {
+      "window": "eval",
+      "normalization": "counts_and_decay",
+      "model": "frozen_logistic",
+      "map5": 0.5760753968253969
+    },
+    {
+      "window": "eval",
+      "normalization": "counts_and_decay",
+      "model": "boost_context",
+      "map5": 0.5810945767195768
+    },
+    {
+      "window": "later",
+      "normalization": "counts_only",
+      "model": "frozen_logistic",
+      "map5": 0.48202425044091707
+    },
+    {
+      "window": "later",
+      "normalization": "counts_only",
+      "model": "boost_context",
+      "map5": 0.48792901234567904
+    },
+    {
+      "window": "later",
+      "normalization": "counts_and_decay",
+      "model": "frozen_logistic",
+      "map5": 0.4822965167548501
+    },
+    {
+      "window": "later",
+      "normalization": "counts_and_decay",
+      "model": "boost_context",
+      "map5": 0.48813866843033504
+    }
+  ],
+  "wall_seconds": 3.600581916001829,
+  "code_sha256": "3b2e27639857dd7c26310b0bda361e1e79a79c9aba1268e3e963ece75f1971fe"
+}

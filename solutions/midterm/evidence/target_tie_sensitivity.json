@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "results": {
+    "eval": {
+      "users": 1260,
+      "tie_boundary_users": 728,
+      "tie_boundary_users_with_predicted_tied_item": 486,
+      "boundary_count_histogram": {
+        "6": 17,
+        "1": 427,
+        "2": 145,
+        "3": 62,
+        "4": 35,
+        "5": 22,
+        "8": 8,
+        "14": 1,
+        "13": 2,
+        "7": 5,
+        "10": 1,
+        "19": 1,
+        "15": 1,
+        "12": 1
+      },
+      "mean_boundary_tie_size": 8.153846153846153,
+      "v4_map_numeric_tie": 0.41723765432098764,
+      "v4_map_optimistic_admissible_ties": 0.4525842151675485,
+      "v4_map_pessimistic_admissible_ties": 0.36061596119929457,
+      "v4_same5_perfect_order_oracle": 0.48247354497354494,
+      "v4_across_existing_proxies": {
+        "top5_count80": 0.41723765432098764,
+        "top5_seconds80": 0.24525088183421517,
+        "top5_count30": 0.4546600529100529,
+        "top5_seconds30": 0.2593240740740741,
+        "all80": 0.5876186067019401
+      }
+    },
+    "later": {
+      "users": 1260,
+      "tie_boundary_users": 767,
+      "tie_boundary_users_with_predicted_tied_item": 516,
+      "boundary_count_histogram": {
+        "1": 509,
+        "2": 147,
+        "3": 61,
+        "4": 24,
+        "5": 15,
+        "6": 7,
+        "8": 2,
+        "7": 1,
+        "10": 1
+      },
+      "mean_boundary_tie_size": 8.279009126466754,
+      "v4_map_numeric_tie": 0.3654499559082892,
+      "v4_map_optimistic_admissible_ties": 0.4002938712522046,
+      "v4_map_pessimistic_admissible_ties": 0.3004684744268078,
+      "v4_same5_perfect_order_oracle": 0.4320767195767196,
+      "v4_across_existing_proxies": {
+        "top5_count80": 0.3654499559082892,
+        "top5_seconds80": 0.20364836860670196,
+        "top5_count30": 0.407234126984127,
+        "top5_seconds30": 0.20818121693121694,
+        "all80": 0.4972674162257496
+      }
+    }
+  },
+  "wall_seconds": 4.65360587500254,
+  "note": "Optimistic/pessimistic tie sets use heldout truth for diagnostic sensitivity only; cannot be used for model selection or prediction. Same5 perfect ordering oracle diagnoses ranking versus selectedset. No fitting/submission."
+}

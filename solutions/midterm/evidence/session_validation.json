@@ -1,0 +1,17 @@
+{
+  "status": "valid",
+  "format": "JSON Lines, .json extension matching homework packaging",
+  "file": "submission/session.json",
+  "records": 132,
+  "question_answer_exchanges": 63,
+  "dialogue_text_characters": 54794,
+  "bytes": 146135,
+  "sha256": "edc1296b7bf333ccf5f463e21f1a1551190c6f53cb79b32a062620cbfd1c4cef",
+  "parent_chain": "continuous and unique",
+  "credentials": "no credentials included",
+  "provenance": "composed instructor-authorized reference dialogue; not original provider export",
+  "unavailable_fields": "null timestamps, model, provider IDs, accounts",
+  "tool_execution_records": 0,
+  "training_runs": 0,
+  "validation_scope": "JSON syntax, role counts, length, linked records; content grounded in referenced saved evidence"
+}

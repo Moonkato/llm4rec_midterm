@@ -1,0 +1,149 @@
+{
+  "status": "proposal only; requires parent/user approval before executing heavier work",
+  "evidence": [
+    "lambdarank_targets/protocol.json",
+    "lambdarank_targets/results.json",
+    "context_features/protocol.json",
+    "training_filter/protocol.json",
+    "training_filter/results.json"
+  ],
+  "observed_current_state": {
+    "fit_label_window": [
+      "2020-04-13",
+      "2020-05-18"
+    ],
+    "main_validation": [
+      "2020-05-18",
+      "2020-07-27"
+    ],
+    "later_validation": [
+      "2020-06-22",
+      "2020-07-27"
+    ],
+    "lightgbm_200_tree_fits_seconds": [
+      5.39,
+      7.4
+    ],
+    "lightgbm_all80_main_later": [
+      0.5895861992945326,
+      0.49296781305114645
+    ],
+    "lightgbm_top5_count80_main_later": [
+      0.5888661816578483,
+      0.4933447971781305
+    ],
+    "training_filtered_positive_rate": 0.1064053860909467,
+    "training_filter_removed_groups": 455,
+    "independence": "Main/later overlap and were repeatedly explored. Neither is untouched confirmation."
+  },
+  "recommended_temporal_design": {
+    "history_origin": "2020-03-09",
+    "tuning_training": {
+      "feature_cutoff": "2020-04-13",
+      "labels_start": "2020-04-13",
+      "labels_end_exclusive": "2020-05-04"
+    },
+    "early_stopping": {
+      "feature_cutoff": "2020-05-04",
+      "labels_start": "2020-05-04",
+      "labels_end_exclusive": "2020-05-18"
+    },
+    "outer_evaluation": {
+      "feature_cutoff": "2020-05-18",
+      "labels_start": "2020-05-18",
+      "labels_end_exclusive": "2020-07-27"
+    },
+    "later_diagnostic": {
+      "feature_cutoff": "2020-06-22",
+      "labels_start": "2020-06-22",
+      "labels_end_exclusive": "2020-07-27"
+    },
+    "rebuild_required": [
+      "Recompute training labels restricted to April13-May4; cannot merely reuse labels aggregated through May18.",
+      "Build May4 snapshot using only pre-May4 history, historical metadata available by cutoff, and known schedule context.",
+      "All target proxies use their own fixed window aggregation and deterministic ties.",
+      "Freeze model candidates and target variants before viewing new comparison."
+    ],
+    "leakage_rule": "Fit uses only earlier labels. Early-stop labels control iteration/hyperparameters only, never features or gradient updates. Any later refit including stop period requires fixed selected iteration count and separate reporting.",
+    "limits": "New split boundaries do not make underlying observations unseen: these weeks were already used in previous fits; report improved temporal separation, not pristine holdout. Stop horizon2weeks vs fit3weeks and outer10weeks introduces horizon shift."
+  },
+  "bounded_fit_budget": {
+    "max_fits": 12,
+    "threads": 2,
+    "ram_limit_gib": 4,
+    "wall_budget_minutes": 45,
+    "n_estimators_cap": 2000,
+    "early_stopping_rounds": 100,
+    "seed": 20261023,
+    "suggested_configs": [
+      {
+        "num_leaves": 7,
+        "max_depth": 3,
+        "min_child_samples": 100,
+        "reg_lambda": 20
+      },
+      {
+        "num_leaves": 15,
+        "max_depth": 4,
+        "min_child_samples": 100,
+        "reg_lambda": 10
+      },
+      {
+        "num_leaves": 31,
+        "max_depth": 5,
+        "min_child_samples": 150,
+        "reg_lambda": 20
+      }
+    ],
+    "common": {
+      "objective": "lambdarank",
+      "learning_rate": 0.03,
+      "deterministic": true,
+      "force_col_wise": true,
+      "label_gain": [
+        0,
+        1
+      ],
+      "lambdarank_truncation_level": 10
+    },
+    "allocation": [
+      "6 tuning fits =3configs x2fixed targets (all80, top5_count80).",
+      "At most2 feature-ablation fits with prespecified best configuration, same early-stop period.",
+      "At most2 fixed-iteration refits on existing full early label window after choices frozen.",
+      "2fits reserve only for justified correction/repeat, not open-ended search."
+    ],
+    "metric": "Select using explicitly fixed full-truth-denominator macro MAP@5; standard built-in MAP on retrieved shortlist may use wrong denominator. Use custom callback or clearly state NDCG@5 stopping proxy plus own MAP reporting.",
+    "group_filter": "Keep positive-and-negative query groups for training if retaining existing convention; evaluate complete cohort including empty truth and fixed cold fallback.",
+    "selection": "Choose within each target by its own early-stop score; report both target scores and broad-viewing score outside. Do not choose target definition because its absolute MAP is larger.",
+    "resource_note": "Earlier fits fast, but 2000tree cost and rebuilt features not measured. Stop before exceeding limits; log elapsed time, rows, memory, iteration and thread count."
+  },
+  "feature_priority": [
+    {
+      "feature": "User-item share of all qualifying user airings; weekly normalized count; active-week fraction and distinct watch days per observed week",
+      "reason": "Current raw cumulative log counts shift with35/70/105day history; normalize with explicit exposure denominators."
+    },
+    {
+      "feature": "Historical user category affinity and item category from metadata observed before each cutoff",
+      "reason": "Current19features lack explicit category preferences; avoid labels from future metadata or new unknown categories treated as known."
+    },
+    {
+      "feature": "Historical item median airing duration, completion-bin proportions and watched-seconds share",
+      "reason": "Distinguishes frequent short news/cartoons from long programmes; source duration/overlap denominators explicit."
+    },
+    {
+      "feature": "Historical weekly regularity and change in recent vs earlier counts",
+      "reason": "Can capture habitual viewing without future behaviour; define fixed7/28day windows."
+    }
+  ],
+  "alternative_later_only": {
+    "fit_labels_end": "2020-06-22",
+    "evaluation": [
+      "2020-06-22",
+      "2020-07-27"
+    ],
+    "pros": "More training labels and history resembling final forecast.",
+    "cons": "Invalidates May18July27 as out-of-fit evaluation because labels overlap fit; late window is previously explored and only5weeks vs12week Kaggle horizon. Must report as separate experiment, not improvement on same validation protocol."
+  },
+  "training_runs_performed": 0,
+  "network_requests": 0
+}

@@ -1,0 +1,13 @@
+{
+  "decision": "retain submitted v3; preserve fourth submission",
+  "reason": "Expanded weekly retrieval improves coverage but retrained ranker worsens MAP; alternative loss models and every prespecified equal fusion fail consistent gain across both temporal periods.",
+  "best_reported_scores": [
+    0.43519,
+    0.44966
+  ],
+  "submissions_used": 3,
+  "submissions_remaining": 1,
+  "new_fits_this_round": 3,
+  "new_submissions": 0,
+  "limitations": "Results do not prove global optimum or0.8 feasibility. Reused local periods are exploratory."
+}

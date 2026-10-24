@@ -1,0 +1,18 @@
+{
+  "status": "read-only code review complete",
+  "file": "tools/check_history_normalization.py",
+  "blockers": [],
+  "findings": [
+    "Count scaling35/history_days is algebraically appropriate for linearly accumulated counts under constant expected daily rate. Column5 schedule-adjusted count also scales linearly because airing rate ratio is already normalized by period length.",
+    "Decay factor (1-exp(-ln2*35/half_life))/(1-exp(-ln2*history_days/half_life)) is the correct ratio of integrated exponential decay mass for homogeneous arrivals.",
+    "Transformation is mathematically identity on nominal35day fitting histories, so no refit is required to test this heuristic. This does not establish identical train/test distributions.",
+    "AP@5 denominator, cold popularity fallback and deterministic tie handling remain unchanged. Transformation uses known history duration, no future viewing labels.",
+    "Distinct watched-airing-day scaling assumes stable daily event probability, which may fail for user entry, churn, or seasonality.",
+    "Historical unique-viewer popularity and user distinct-item count remain unadjusted; these are history-dependent but not generally linear in time.",
+    "For logistic regression, user-total feature changes only a within-user constant and cannot itself change rankings; for boosting it can interact with other features.",
+    "Actual normalized fitting history is34days23hours because of civil clock correction; nominal35days is a negligible approximation but identity is nominal, not physical elapsed-time exact.",
+    "Post-hoc choice among variants reuses explored overlapping validation windows and must be reported as selection, not independent confirmation."
+  ],
+  "training_runs": 0,
+  "submissions": 0
+}

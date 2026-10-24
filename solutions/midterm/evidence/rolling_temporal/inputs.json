@@ -1,0 +1,8 @@
+{
+  "cache/context_features/fit.npz": "0ed8052cb26e51db7fe7842c551964122549244e5a2d627931494ffb9d150080",
+  "cache/deep_weekly/fit_row_features.npy": "acedb2a4a093b566e9da5eed71229ae0e2308e1b4d33c6af9277614c56753349",
+  "cache/rolling_temporal/recent.npz": "5513f121510312dcef4a399a6cee6751a2e7eef010ebc54b64173389abeba195",
+  "cache/rolling_temporal/recent_weekly.npy": "f7901cfcd712c994eba9eee4f81381a80c27c77a3760c0eb6820e0ba853f5eae",
+  "cache/rolling_temporal/later.npz": "8b7a2d264bd76283c1eb45dfcc988c7d4ac802a242ed75b010ab2a054819fd43",
+  "cache/rolling_temporal/later_weekly.npy": "f8cbe59cefa2995ace2d17394c94d0bb55eced09fd872586359ac1868d2bddea"
+}

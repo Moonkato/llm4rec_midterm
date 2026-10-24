@@ -1,0 +1,120 @@
+{
+  "status": "read-only diagnostic audit complete; no fitting or submissions",
+  "scores": {
+    "outer_local": 0.5756011904761904,
+    "later_local": 0.4823276014109347,
+    "kaggle_user_reported": [
+      0.42693,
+      0.44458
+    ],
+    "public_private_order": "assumed, screenshot not verified",
+    "outer_minus_later": 0.09327358906525568,
+    "later_minus_assumed_public": 0.05539760141093475
+  },
+  "confirmed": [
+    "Local AP@5 uses unique item truth, duplicate-safe precision, divisor min(5,truth count), and averages all1260 template users including empty truth as0. Official hidden target generation and empty-truth handling remain unverified.",
+    "Rows and submission IDs use strings, preserve template order, and contain five distinct nonzero eligible IDs. User IDs exceed JavaScript exact-integer range; no numeric conversion was used in export.",
+    "Logs end July26 23:59:58. No supplied test viewing behaviour exists or is used.",
+    "Civil timestamps lack verified geographical timezone. Channel equality uses vsetv_id/channel_id;5 log channels are absent from schedules, covering113579 rows.",
+    "All117 raw duration discrepancies equal+3600 across March28/29. Shared clock correction removes the missing hour; schedule end is normalized start+duration. No arbitrary timezone shift has been applied.",
+    "Schedule filenames spill12hours over nominal boundaries. Pipeline filters actual interval timestamps; test candidates include valid prior-file airings continuing into the forecast.",
+    "Training feature histories grow from35days for logistic fitting to70days outer validation,105days later validation,140days final forecast. Forecast horizons are35,70,35,84days respectively.",
+    "Single-session proxy uses maximum raw overlap fragment; no sums of interrupted sessions. Original May18 split can truncate one session into fragments;751 user/event groups across all users have both split values.",
+    "Zero programme ID airtime is excluded as items. Only approximately11percent of schedule rows are labelled; threshold changes cannot reconstruct missing IDs."
+  ],
+  "observed_distribution_shift": {
+    "periods": [
+      {
+        "name": "fit_history",
+        "start": "2020-03-09",
+        "end_exclusive": "2020-04-13",
+        "days": 35,
+        "all_population_view_rows": 2166643,
+        "rows_per_day": 61904.08571428571
+      },
+      {
+        "name": "fit_labels",
+        "start": "2020-04-13",
+        "end_exclusive": "2020-05-18",
+        "days": 35,
+        "all_population_view_rows": 1778530,
+        "rows_per_day": 50815.142857142855
+      },
+      {
+        "name": "outer_validation",
+        "start": "2020-05-18",
+        "end_exclusive": "2020-07-27",
+        "days": 70,
+        "all_population_view_rows": 1876814,
+        "rows_per_day": 26811.628571428573
+      },
+      {
+        "name": "later_validation",
+        "start": "2020-06-22",
+        "end_exclusive": "2020-07-27",
+        "days": 35,
+        "all_population_view_rows": 1043155,
+        "rows_per_day": 29804.428571428572
+      }
+    ],
+    "outer_strict_truth_median": 18.0,
+    "outer_empty_truth_users": 24,
+    "outer_users_fewer5_truth": 136,
+    "later_strict_truth_median": 12.0,
+    "later_empty_truth_users": 38,
+    "later_users_fewer5_truth": 213
+  },
+  "plausible_explanations_not_established_causes": [
+    {
+      "priority": 1,
+      "hypothesis": "Temporal population/programme shift and forecast-horizon mismatch",
+      "evidence": "Frozen same model drops .09327 between local windows; average logs/day drops from61904 in fitting history to26812 in outer validation. Late local .48233 is much closer to Kaggle .42693 than .57560. Hidden future activity cannot be measured."
+    },
+    {
+      "priority": 2,
+      "hypothesis": "Hidden target semantics differ from strict proxy",
+      "evidence": "80percent rule comes from a participant description, not verified official ground truth. Differences could include >= versus >, full-session versus overlap criteria, programme occurrence aggregation, empty-user policy, or ground-truth truncation. None established."
+    },
+    {
+      "priority": 3,
+      "hypothesis": "Features and candidate retrieval transfer imperfectly to140days history and84days forecast",
+      "evidence": "Count/recency features trained on35day histories, global top30 plus personal top100 retrieval, and no final-window labels available. Outer candidate oracle .86239 does not establish test retrieval coverage. User-total and logistic intercept terms are constant within a user and cannot directly change that user ranking."
+    },
+    {
+      "priority": 4,
+      "hypothesis": "Exploratory selection optimism plus public/private user composition",
+      "evidence": "Outer holdout reused for model/heuristic exploration; later window overlaps it. Reported public/private scores differ .01765, but user allocation and score column order unverified."
+    },
+    {
+      "priority": 5,
+      "hypothesis": "Join/clock or boundary proxy differences",
+      "evidence": "No detected large mapping bug; missing channels and zero IDs reduce usable information. DST correction affects a narrow March transition, not a recurring one-hour forecast shift. Constant offset cannot be inferred solely from high overlap coverage; do not tune artificial shifts to inflate local labels."
+    }
+  ],
+  "recommended_next_checks_without_submission": [
+    "Confirm score labels and actual uploaded file hash from user screenshot or submission record.",
+    "Treat later local validation as stronger practical warning than earlier .5756; do not promise0.8.",
+    "Preserve official-target uncertainty; if exact target rule becomes available, align labels before further model selection.",
+    "Any further candidate retrieval or feature comparison should use the same frozen strict protocol and report all attempted variants."
+  ],
+  "sources_local": [
+    "input_audit.json",
+    "interaction_audit.json",
+    "duration_discrepancies.json",
+    "preprocessing_checks.json",
+    "strict_labels/truth.json",
+    "strict_temporal/results.json",
+    "strict_temporal/per_user.json",
+    "simple_reranker/results.json",
+    "candidate_logistic_v1.json",
+    "submissions/first_submission_user_report.json"
+  ],
+  "code_review": [
+    "tools/build_interactions.py",
+    "tools/run_round1.py",
+    "tools/simple_reranker.py",
+    "tools/export_candidate.py"
+  ],
+  "training_runs": 0,
+  "submissions": 0
+}

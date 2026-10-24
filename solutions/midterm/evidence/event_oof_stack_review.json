@@ -1,0 +1,49 @@
+{
+  "status": "static review cleared before execution",
+  "blockers": [],
+  "reviewed": [
+    "tools/build_event_oof.py",
+    "tools/tie_control_utils.py",
+    "tools/run_tie_controls.py",
+    "tools/run_event_stack.py"
+  ],
+  "findings": [
+    "OOF SHA256user folds exclude all exposures/labels from helduser during thatfoldfit, and score allcandidateairings label-independently.",
+    "Sixscalar summaries respect tuplemultiplicity; fituser rowmapping matches originalcache; eval/later frozen event sums asserted1e-10 against executedoriginal.",
+    "Controls both use original24/allrows/equaluser weights; fractional membership before shortlist; no adaptive objective selection for finalstack.",
+    "Tie expectedAP uses correct joint inclusion, not productofmarginals for boundaryties.",
+    "Stack retains fixed originalhardtop5 labels/queryfilter and417/config1; no tuning."
+  ],
+  "caveats": [
+    "OOF2/3trainingpopulation versus fullmodel inference shifts feature calibration; standardstacking risk, no leakage.",
+    "Original24fitinputhash and OOFsource/hash assertions recommended to parent beforelaunch.",
+    "Previously explored overlappingholdouts and unknownofficialtarget limit conclusions."
+  ],
+  "source_hashes": {
+    "tools/build_event_oof.py": "f3fc10bcaae7b80504cec53e2e8afda327b27b4d318933d0e93eeb6640889efb",
+    "tools/tie_control_utils.py": "d1910fd57c88c9bff0f23fa7697f11eeb164418f8e66e505b5b964582d52aebe",
+    "tools/run_tie_controls.py": "c4dc05fd42417656689ff35173af727766c1b2d4d6924d23427d802535ca1171",
+    "tools/run_event_stack.py": "9bb8557f060c13496df2aeff0fefdb3c206d0c055c1f8ccfdc914cd76925c2d3"
+  },
+  "reviewer_fits": 0,
+  "actual_oof_evidence_review": {
+    "fold_user_counts": {
+      "2": 1549,
+      "1": 1564,
+      "0": 1608
+    },
+    "hash_assignment_all_users_checked": true,
+    "heldout_sample_partition_exact": true,
+    "sampled_rows": 473908,
+    "sampled_positives": 102907,
+    "sample_matches_original": true,
+    "completed_features_at_review": [
+      "fit",
+      "eval"
+    ],
+    "eval_frozen_count_max_error": 0.0,
+    "later": "complete; exact frozen count parity0"
+  },
+  "final_stage": "All six authorized fits completed; independent comparison saved evidence/event_stack/comparison.json",
+  "recommendation": "Retain v4: prespecified stack slightly lower on hardtop5 both windows; controls do not show material consistent gains."
+}

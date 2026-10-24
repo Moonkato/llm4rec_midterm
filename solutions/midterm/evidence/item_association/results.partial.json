@@ -1,0 +1,56 @@
+[
+  {
+    "window": "fit",
+    "shape": [
+      4721,
+      4995
+    ],
+    "graph_nnz": 152971,
+    "source_block_size": 128,
+    "target_users": 4721,
+    "candidates": 4412,
+    "cold_users": 0,
+    "wall_seconds": 0.3332390000032319,
+    "scores_file": "cache/item_association/fit_scores.npy",
+    "catalog_sha256": "864e6d7f069d4ef7f818867b560c4d08f68730cccbe8c02d5c044867c00259fd",
+    "counts_sha256": "0fdda722c1cadd6eb8c05314c9fe5a9b9ad7ff1fa03d07245b912279301b6228"
+  },
+  {
+    "window": "eval",
+    "shape": [
+      4825,
+      7084
+    ],
+    "graph_nnz": 274063,
+    "source_block_size": 128,
+    "target_users": 1260,
+    "candidates": 6384,
+    "cold_users": 12,
+    "wall_seconds": 0.7274884580001526,
+    "scores_file": "cache/item_association/eval_scores.npy",
+    "catalog_sha256": "0496ff9cf74aaed88d768ce6ffcbcb4d763a15fdccf025d5d51ed4abd5a71c2d",
+    "counts_sha256": "bbd2bdf6b8c7a23f380cd4e427e37f2e697ebce41997ea4ffbdfa5b2df789021",
+    "map5": 0.38509104938271604,
+    "fallback_users": 12,
+    "empty_truth_users": 24
+  },
+  {
+    "window": "later",
+    "shape": [
+      4846,
+      6089
+    ],
+    "graph_nnz": 356338,
+    "source_block_size": 128,
+    "target_users": 1260,
+    "candidates": 4582,
+    "cold_users": 9,
+    "wall_seconds": 1.2599498749987106,
+    "scores_file": "cache/item_association/later_scores.npy",
+    "catalog_sha256": "207dceaae0704c3f3b7c7db8dd3487a293da2eaf411ef576e0e3ac1dc1385f3f",
+    "counts_sha256": "cd7974eddd270b1a6ceb1921a884cb6b6a7703abc9e2d2419d49a271b3b2144c",
+    "map5": 0.3020438712522046,
+    "fallback_users": 9,
+    "empty_truth_users": 38
+  }
+]

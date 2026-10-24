@@ -1,0 +1,12 @@
+{
+  "early": {
+    "input_queries": 4721,
+    "retained_queries": 4260,
+    "retained_rows": 292065
+  },
+  "recent": {
+    "input_queries": 4813,
+    "retained_queries": 3079,
+    "retained_rows": 271036
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "method": "expanded_candidates_old19",
+      "fit_rows": 298736,
+      "fit_seconds": 4.711196042000665,
+      "eval": {
+        "map5": 0.5872625661375661
+      },
+      "later": {
+        "map5": 0.49000176366843035
+      }
+    },
+    {
+      "method": "expanded_candidates_collaborative23",
+      "fit_rows": 298736,
+      "fit_seconds": 5.885299165998731,
+      "eval": {
+        "map5": 0.5880515873015872
+      },
+      "later": {
+        "map5": 0.4868811728395061
+      }
+    }
+  ],
+  "wall_seconds": 12.411895332999848,
+  "peak_rss_bytes": 331218944,
+  "code_sha256": "99350a772bbc84de787256ed6d6329d22487286a2f029a78def57187907bb8e7"
+}

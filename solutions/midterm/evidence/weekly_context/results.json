@@ -1,0 +1,57 @@
+{
+  "results": [
+    {
+      "window": "fit",
+      "rows": 326264,
+      "features": [
+        "weekly_expected_minutes_per_day",
+        "weekly_mean_airing_fraction",
+        "weekly_recent28_expected_minutes_per_day",
+        "weekly_active_date_fraction",
+        "weekly_recent_all_ratio_clip10"
+      ],
+      "used_sessions": 1753121,
+      "users": 4721,
+      "slot_nonzeros": 1498968,
+      "nonzero_feature_rows": 202294,
+      "wall_seconds": 37.44343187499908,
+      "sha256": "33ff59adb52fd4f32a83e703e2ef0f7e8d226ae5fe6f0eb56679726467a8b679"
+    },
+    {
+      "window": "eval",
+      "rows": 121398,
+      "features": [
+        "weekly_expected_minutes_per_day",
+        "weekly_mean_airing_fraction",
+        "weekly_recent28_expected_minutes_per_day",
+        "weekly_active_date_fraction",
+        "weekly_recent_all_ratio_clip10"
+      ],
+      "used_sessions": 1149069,
+      "users": 1260,
+      "slot_nonzeros": 831480,
+      "nonzero_feature_rows": 92772,
+      "wall_seconds": 22.59106425000209,
+      "sha256": "d5866e1f6b9b33d4baafdd3443bcf30c4ba75148e095536b5a4b4319189c08b9"
+    },
+    {
+      "window": "later",
+      "rows": 127707,
+      "features": [
+        "weekly_expected_minutes_per_day",
+        "weekly_mean_airing_fraction",
+        "weekly_recent28_expected_minutes_per_day",
+        "weekly_active_date_fraction",
+        "weekly_recent_all_ratio_clip10"
+      ],
+      "used_sessions": 1414336,
+      "users": 1260,
+      "slot_nonzeros": 978723,
+      "nonzero_feature_rows": 96331,
+      "wall_seconds": 28.328566749998572,
+      "sha256": "6f182c4403ec7f57c16db1f84f1f636aa8fbfef07f08da27d94d06de79f8e548"
+    }
+  ],
+  "wall_seconds": 88.51090874999863,
+  "code_sha256": "791f24dda9e16a7dc1b552aec4c336abf0b513cc606cfacb899dc6db9a355d87"
+}

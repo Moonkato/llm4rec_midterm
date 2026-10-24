@@ -1,0 +1,11 @@
+{
+  "status": "copied and verified",
+  "repository": "https://github.com/Moonkato/llm4rec_midterm",
+  "original_files_preserved": true,
+  "metric_fixtures_passed": 16,
+  "final_csv_session_screenshot_byte_identical": true,
+  "report_link_updated": true,
+  "raw_data_cache_venv_credentials_excluded": true,
+  "published": false,
+  "pdf_sha256": "c52a9a93d314f3779fadceefa27c993b83b1f369d423e5c597a88eac89132bdb"
+}

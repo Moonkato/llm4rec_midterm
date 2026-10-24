@@ -1,0 +1,13 @@
+# Credentials and local data
+**/api-token
+**/kaggle.json
+.env
+.env.*
+midterm/data/
+# Runtime and generated caches
+**/.venv/
+**/__pycache__/
+*.pyc
+solutions/midterm/cache/
+solutions/midterm/evidence/report_render/page-*.png
+.DS_Store

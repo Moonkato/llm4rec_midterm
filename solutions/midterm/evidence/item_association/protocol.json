@@ -1,0 +1,20 @@
+{
+  "windows": [
+    "fit",
+    "eval",
+    "later"
+  ],
+  "history": "shared >30% single-fragment counts; cutoff-specific",
+  "binary": "B_ui=1[count_ui>0]",
+  "similarity": "C_ij/sqrt(freq_i*freq_j) * C_ij/(C_ij+20), C=B.T@B, diagonal zero",
+  "neighbors_per_source": 100,
+  "neighbor_ties": "ascending numeric item ID",
+  "score": "(log1p(counts) / row_sum(log1p(counts))) @ sparse_neighbor_graph",
+  "repeats": "allowed",
+  "fallback": "same historical >30% distinct-viewer popularity for cold users and empty score slots",
+  "score_output": "dense float32 target_users x candidate_ids in corresponding collaborative catalog order; zero means no association signal",
+  "selection": "one fixed scorer, no tuning; eval/later reuse explored windows",
+  "fit_scores_caveat": "historical associative features, not fitted on future labels; fitting-window y is never used",
+  "memory": "co-view products in at most128-source blocks, at most2million cells/block; full score arrays written using memmap",
+  "submissions": 0
+}

@@ -1,0 +1,188 @@
+{
+  "scope": "Source audit of preprocessing, base feature building, weekly context, round1 methods, temporal ranker, event model and v4/v5 exports; saved-artifact consistency checks; no training/full raw-data rebuild",
+  "checks": {
+    "event_v3_rrf_v4": {
+      "rows": 1260,
+      "valid": true,
+      "ranking_matches_saved_scores": true,
+      "cold_users": 3,
+      "sha256": "f2b802ac394e35d1999754a461848479f3bbc5abb5cd8a7b6dad80196c783e5a"
+    },
+    "final_factorial_v5": {
+      "rows": 1260,
+      "valid": true,
+      "ranking_matches_saved_scores": true,
+      "cold_users": 3,
+      "sha256": "662620aafd8df3aaf1230f7653c0910708d5fe8fbc056b28b78bb8ddd34a88a3"
+    },
+    "fallback_comparison": {
+      "round1_popularity_180s": [
+        "2400480",
+        "240081",
+        "2400508",
+        "6500479",
+        "2400467"
+      ],
+      "advanced_popularity_30pct": [
+        "2400480",
+        "240081",
+        "2400467",
+        "2400508",
+        "6500479"
+      ],
+      "equal": false,
+      "advanced_cold_users": 12,
+      "round1_cold_users": 10
+    },
+    "strict_rescored_baselines": {
+      "popularity_unique_viewers": 0.27064858906525574,
+      "popularity_event_counts": 0.294501102292769,
+      "personal_frequency": 0.3379404761904762,
+      "personal_watch_seconds": 0.2444481922398589,
+      "personal_decay7": 0.29102006172839506,
+      "personal_decay28": 0.33713381834215167,
+      "content_tfidf": 0.005386904761904762,
+      "als_f32_a1": 0.1456115520282187,
+      "als_f32_a10": 0.09229122574955909,
+      "als_f64_a10": 0.06159611992945326,
+      "als_f64_a40": 0.021396604938271606
+    }
+  },
+  "metric_fixtures": {
+    "passed": 16,
+    "failed": 0,
+    "cases": [
+      {
+        "case": "one truth at rank 1",
+        "expected": 1.0,
+        "observed": 1.0,
+        "passed": true
+      },
+      {
+        "case": "one truth at rank 5",
+        "expected": 0.2,
+        "observed": 0.2,
+        "passed": true
+      },
+      {
+        "case": "all five correct",
+        "expected": 1.0,
+        "observed": 1.0,
+        "passed": true
+      },
+      {
+        "case": "more than five truths",
+        "expected": 1.0,
+        "observed": 1.0,
+        "passed": true
+      },
+      {
+        "case": "hits at ranks 2 and 4",
+        "expected": 0.5,
+        "observed": 0.5,
+        "passed": true
+      },
+      {
+        "case": "missing truth penalizes recall",
+        "expected": 0.3333333333333333,
+        "observed": 0.3333333333333333,
+        "passed": true
+      },
+      {
+        "case": "empty truth",
+        "expected": 0.0,
+        "observed": 0.0,
+        "passed": true
+      },
+      {
+        "case": "empty prediction",
+        "expected": 0.0,
+        "observed": 0.0,
+        "passed": true
+      },
+      {
+        "case": "both empty",
+        "expected": 0.0,
+        "observed": 0.0,
+        "passed": true
+      },
+      {
+        "case": "no correct prediction",
+        "expected": 0.0,
+        "observed": 0.0,
+        "passed": true
+      },
+      {
+        "case": "rank six ignored",
+        "expected": 0.0,
+        "observed": 0.0,
+        "passed": true
+      },
+      {
+        "case": "duplicate hit consumes rank",
+        "expected": 0.8333333333333333,
+        "observed": 0.8333333333333333,
+        "passed": true
+      },
+      {
+        "case": "duplicate hits never counted twice",
+        "expected": 1.0,
+        "observed": 1.0,
+        "passed": true
+      },
+      {
+        "case": "duplicate miss consumes rank",
+        "expected": 0.3333333333333333,
+        "observed": 0.3333333333333333,
+        "passed": true
+      },
+      {
+        "case": "short prediction retains denominator",
+        "expected": 0.4,
+        "observed": 0.4,
+        "passed": true
+      },
+      {
+        "case": "macro mean includes empty truth user",
+        "expected": 0.4,
+        "observed": 0.39999999999999997,
+        "passed": true
+      }
+    ]
+  },
+  "findings": [
+    {
+      "severity": "requirement-gap",
+      "requirement": "section5: give the same fallback everywhere",
+      "finding": "Initial 180-second models and advanced >30%-history systems use differently ordered popularity fallback lists and different cold cohorts. This is disclosed by the report, and the original required-method comparison is internally controlled, but the cross-family strict table does not literally use the same fallback.",
+      "recommendation": "Add a clearly labelled no-refit harmonized evaluation using one frozen common fallback for all methods, or acknowledge this remaining strict-requirement gap. Preserve submitted v4 predictions/provenance.",
+      "resolution": "Both common-fallback and exact-matched-per-user-pool comparisons completed without fitting. Primary audit comparison in matched_pool_comparison.json uses the identical original v3 shortlist for all8, union12 cold users, and one shared 180s popularity list (verified present in every pool). Original submitted files and source scores unchanged. Updated examples included for consistent report use."
+    },
+    {
+      "severity": "limitation",
+      "finding": "Strict targets use MAX stored fragments after the artificial May18 preprocessing split. Continuous sessions crossing that split can be undercounted for later/full-history queries; report explicitly discloses it. Replay features use raw sessions, not those fragments.",
+      "recommendation": "Keep limitation; do not claim exact official labels."
+    },
+    {
+      "severity": "limitation",
+      "finding": "Repeated use of overlapping main/later holdouts causes selection optimism; temporal inner stopping avoids direct outer model fit but not research-level selection bias.",
+      "recommendation": "Keep current explicit limitation."
+    }
+  ],
+  "no_issue_found": [
+    "AP@5 fixtures all passed; duplicate-hit handling and full truth denominator correct",
+    "All 1260 template IDs preserved as strings, exactly five unique nonzero eligible item IDs in v4/v5",
+    "Both exported CSVs exactly reproduced from saved fused scores without training",
+    "History reads consistently clipped before each forecast cutoff in examined feature builders",
+    "Future EPG only supplies schedule/item availability; no future viewing behavior used in examined export paths",
+    "Core content and ALS models use training-only counts/metadata; original core comparison shares fallback, repeat policy and catalogue",
+    "Individual v3/event and fusion results are present; hybrid rank scales not conflated as probabilities"
+  ],
+  "not_verified": [
+    "No exhaustive fresh raw-data join rebuild",
+    "No new end-to-end retraining",
+    "No independent online Kaggle score retrieval or repository publication verification"
+  ],
+  "harmonized_comparison": "evidence/common_fallback_comparison.json",
+  "matched_pool_comparison": "evidence/matched_pool_comparison.json"
+}

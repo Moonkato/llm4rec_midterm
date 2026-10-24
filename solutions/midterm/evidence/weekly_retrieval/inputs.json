@@ -1,0 +1,20 @@
+{
+  "evidence/weekly_candidates/fit_extra_candidates.json": "38fb377b8d9d5c13d18a9070a10a2b5718b787d4caac71c76efe1343288e1c2a",
+  "cache/weekly_candidates/fit_catalog.npz": "efa0e7410c6def9a8cc261743c83955a52c8ccba4849bfea4083c423f0c2fafe",
+  "cache/weekly_candidates/fit_expected.npz": "b635ccb5f8a0a83d4a99a6869eafd5ff146afe05d568d978c38a4334a8e00f63",
+  "cache/weekly_candidates/fit_recent_expected.npz": "29ee18e9b96a016f5d4803d4321d8c0b8168208152c345c4a6af84bbb3f1a764",
+  "cache/weekly_candidates/fit_mean_fraction.npz": "03a83693dd83406fb245a323109331d67d600a812a6981b68d56026867190f76",
+  "cache/weekly_candidates/fit_activity.npz": "824c6c421b332f877ff32d07184efa4eee962611409a328f6c2815c0ff087814",
+  "evidence/weekly_candidates/eval_extra_candidates.json": "35379f5e1c790338fc2417a4d63bc7fc7b01aa1e5e8f055347491706d6afb044",
+  "cache/weekly_candidates/eval_catalog.npz": "d389c5f27ae76dbb442ecc122e7a6a9e7851ddf25434721734819735a7342174",
+  "cache/weekly_candidates/eval_expected.npz": "aaaa2dd6a8a1c4ca16ebaaddacecfa60bcec2d7f7bc698e46af1f86b08c5af22",
+  "cache/weekly_candidates/eval_recent_expected.npz": "42be335b43a4d24a86e1b51f3ad383cffd07a373b9c64582b318cd231d164aff",
+  "cache/weekly_candidates/eval_mean_fraction.npz": "856ae212844570ae910e50c8d20bf4c3fc4bbf7ee7a7f83afa07b04f57851017",
+  "cache/weekly_candidates/eval_activity.npz": "136bf04d4117c805947a4614661dfe334ce9e1658bf50586a64b0e0c4ffa561d",
+  "evidence/weekly_candidates/later_extra_candidates.json": "3c4222a89a8faa6eb9d445cc4b69cf3fa8c89abf5f1a535be18a79c942772fe2",
+  "cache/weekly_candidates/later_catalog.npz": "da0a8bc58fd16689aced3e59a89a4b1b76b240e0bb91867ed3c856c5a7e8ff7b",
+  "cache/weekly_candidates/later_expected.npz": "8f092517f4b91e94f57a24730174209b29c8eb4e9e393eea8cf57ce011278f07",
+  "cache/weekly_candidates/later_recent_expected.npz": "da50dfbdc42750540d45e604b2d82d302dc83f3f6782e7f8ba3eda7aece796de",
+  "cache/weekly_candidates/later_mean_fraction.npz": "3b16360bbcca12670398074e0600c027e37d97ffc2b531229df15c0a3db4e9d6",
+  "cache/weekly_candidates/later_activity.npz": "838fe79e246e311a4f26bbed6f3f534fc0ed238673da9c6e3caaf67fc36332c3"
+}

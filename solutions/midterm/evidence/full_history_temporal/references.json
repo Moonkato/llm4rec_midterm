@@ -1,0 +1,12 @@
+{
+  "frozen_v3_full_history_control": {
+    "all80": 0.4954440035273369,
+    "top5_count80": 0.3618752204585538
+  },
+  "original_v3_full_history_reference": {
+    "all80": 0.4954440035273369,
+    "top5_count80": 0.3618752204585538
+  },
+  "controlled_cold_users": 9,
+  "original_cold_users": 9
+}

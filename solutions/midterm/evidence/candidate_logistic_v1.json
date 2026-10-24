@@ -1,0 +1,49 @@
+{
+  "status": "candidate only; not submitted",
+  "model": "frozen cache/simple_reranker.npz",
+  "history": "2020-03-09 to 2020-07-27 exclusive",
+  "forecast": "2020-07-27 to 2020-10-19 exclusive",
+  "features": [
+    "log_count30",
+    "log_count80",
+    "log_decay60_count30",
+    "log_future_airings_per_day",
+    "log_past_airings_per_day",
+    "log_personal_schedule_score",
+    "log_pop_viewers",
+    "log_user_count",
+    "days_since_last_watch30"
+  ],
+  "candidate_generation": "same fitted model: top100 personal schedule frequency + top30 train popularity",
+  "fragment_limitation": "maximum clipped raw fragment across stored splits; original sessions cannot be reconstructed, artificial boundary fragments are not joined",
+  "test_usage": "only schedule item IDs, event times and exposure counts; no test views or metadata",
+  "training_runs": 0,
+  "submissions": 0,
+  "file": "solutions/midterm/candidates/logistic_v1.csv",
+  "rows": 1260,
+  "checks": {
+    "eligible_items": 6649,
+    "cold_users": 3,
+    "history_population_users": 4879,
+    "max_history_endpoint": 12092400
+  },
+  "validation": {
+    "cutoff": "2020-06-22",
+    "end": "2020-07-27",
+    "map5_strict": 0.4823276014109347,
+    "nonempty_map5_strict": 0.4973263320603746,
+    "empty_truth_users": 38,
+    "eligible_items": 4582,
+    "cold_users": 9,
+    "history_population_users": 4837,
+    "max_history_endpoint": 9068400,
+    "limitation": "frozen coefficients; temporal robustness check overlaps previously explored validation periods"
+  },
+  "wall_seconds": 30.9834660000015,
+  "sha256": {
+    "solutions/midterm/candidates/logistic_v1.csv": "90e5341edb9ff7e30f1c54cc48148f409d4ae93ac55dbf3d733d872c54631346",
+    "solutions/midterm/cache/simple_reranker.npz": "2389e04ee618aff75f48c60c9992a1ecee3e990b810d5a791f854cdf8218ecb7",
+    "solutions/midterm/tools/export_candidate.py": "a758d70b36c3a7982c9ffdea45566a27d0dcd21b873d1b6907322327fd1cbc64",
+    "midterm/data/submission.csv": "d8c209dce3c7c9d815d8e2a6226e1be63052ee7afa7e8ba8b75dc2f703967a02"
+  }
+}

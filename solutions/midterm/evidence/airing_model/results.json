@@ -1,0 +1,50 @@
+{
+  "status": "complete",
+  "results": [
+    {
+      "window": "eval",
+      "scored_collapsed_rows": 4047153,
+      "expected_count": {
+        "all80": 0.5780257936507937,
+        "top5_count80": 0.41225330687830686
+      },
+      "equal_rrf60_v3": {
+        "all80": 0.5876186067019401,
+        "top5_count80": 0.41723765432098764
+      },
+      "wall_seconds": 206.98959541700242
+    },
+    {
+      "window": "later",
+      "scored_collapsed_rows": 3417407,
+      "expected_count": {
+        "all80": 0.4819647266313932,
+        "top5_count80": 0.3569435626102293
+      },
+      "equal_rrf60_v3": {
+        "all80": 0.4972674162257496,
+        "top5_count80": 0.3654499559082892
+      },
+      "wall_seconds": 293.541838000001
+    }
+  ],
+  "fit_seconds": 43.91187866600012,
+  "weighted_training_logloss": 0.01282087114366158,
+  "sampling": {
+    "full_exposure_pairs": 37141508,
+    "all_window_recorded_positive_airings": 146748,
+    "pool_positive_airings": 102907,
+    "sampled_negatives": 371001,
+    "sampled_rows": 473908,
+    "effective_weight_sum": 37203008.0,
+    "weighted_positive_rate": 0.002766093472018838,
+    "global_window_positive_coverage": 0.7012497614958977,
+    "fit_user_window_positive_airings": 145708,
+    "fit_user_pool_positive_coverage": 0.7062549757048343
+  },
+  "wall_seconds": 293.70560708300036,
+  "fits": 1,
+  "submissions": 0,
+  "peak_rss_bytes": 771342336,
+  "code_sha256": "b64e1928fd0f665d4eb6eb9536a229a5dbff06432f479c2515a1f34476054b35"
+}

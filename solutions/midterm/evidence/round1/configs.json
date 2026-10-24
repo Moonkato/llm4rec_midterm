@@ -1,0 +1,112 @@
+{
+  "popularity_unique_viewers": {
+    "method": "historical distinct viewers"
+  },
+  "popularity_event_counts": {
+    "method": "historical qualifying airing counts"
+  },
+  "personal_frequency": {
+    "method": "personal_frequency",
+    "zero_signal": "common popularity fallback",
+    "half_life_days": null
+  },
+  "personal_watch_seconds": {
+    "method": "personal_watch_seconds",
+    "zero_signal": "common popularity fallback",
+    "half_life_days": null
+  },
+  "personal_decay7": {
+    "method": "personal_decay7",
+    "zero_signal": "common popularity fallback",
+    "half_life_days": 7
+  },
+  "personal_decay28": {
+    "method": "personal_decay28",
+    "zero_signal": "common popularity fallback",
+    "half_life_days": 28
+  },
+  "content_tfidf": {
+    "method": "historical_attribute_tfidf_cosine",
+    "block_weights": {
+      "category": 1.0,
+      "genre": 1.5,
+      "director": 0.75,
+      "actors": 1.0,
+      "year": 0.35
+    },
+    "block_feature_counts": {
+      "category": 8,
+      "genre": 62,
+      "director": 3301,
+      "actors": 8470,
+      "year": 98
+    },
+    "historical_metadata_items": 5842,
+    "profile_weight": "log1p(event_count)",
+    "idf": "log((1+n_historical_items)/(1+df))+1",
+    "normalization": "L2 per block, item and user profile",
+    "repeat_items_allowed": true,
+    "missing_metadata": "zero vector; caller handles fallback",
+    "zero_profile": "all-zero scores; caller handles fallback"
+  },
+  "als_f32_a1": {
+    "method": "implicit_als",
+    "factors": 32,
+    "regularization": 1.0,
+    "alpha": 1.0,
+    "iterations": 10,
+    "seed": 20261022,
+    "confidence": "1 + alpha * log1p(count)",
+    "preference": "count > 0",
+    "regularization_scaling": "constant",
+    "n_users": 4851,
+    "n_items": 8233,
+    "nnz": 651903,
+    "fit_seconds": 2.6056805419975717
+  },
+  "als_f32_a10": {
+    "method": "implicit_als",
+    "factors": 32,
+    "regularization": 1.0,
+    "alpha": 10.0,
+    "iterations": 10,
+    "seed": 20261022,
+    "confidence": "1 + alpha * log1p(count)",
+    "preference": "count > 0",
+    "regularization_scaling": "constant",
+    "n_users": 4851,
+    "n_items": 8233,
+    "nnz": 651903,
+    "fit_seconds": 2.8667516670029727
+  },
+  "als_f64_a10": {
+    "method": "implicit_als",
+    "factors": 64,
+    "regularization": 1.0,
+    "alpha": 10.0,
+    "iterations": 10,
+    "seed": 20261022,
+    "confidence": "1 + alpha * log1p(count)",
+    "preference": "count > 0",
+    "regularization_scaling": "constant",
+    "n_users": 4851,
+    "n_items": 8233,
+    "nnz": 651903,
+    "fit_seconds": 4.258774834001088
+  },
+  "als_f64_a40": {
+    "method": "implicit_als",
+    "factors": 64,
+    "regularization": 1.0,
+    "alpha": 40.0,
+    "iterations": 10,
+    "seed": 20261022,
+    "confidence": "1 + alpha * log1p(count)",
+    "preference": "count > 0",
+    "regularization_scaling": "constant",
+    "n_users": 4851,
+    "n_items": 8233,
+    "nnz": 651903,
+    "fit_seconds": 4.751901958999952
+  }
+}

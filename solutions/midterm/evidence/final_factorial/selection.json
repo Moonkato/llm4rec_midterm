@@ -1,0 +1,17 @@
+{
+  "selected_arm": "v3_old_event",
+  "selected_file": "candidates/event_v3_rrf_v4.csv",
+  "sha256": "f2b802ac394e35d1999754a461848479f3bbc5abb5cd8a7b6dad80196c783e5a",
+  "decision": "Retain already-submitted frozen v4 as final solution. Every new arm improved first-window hard MAP slightly but worsened later window; combined primary fails prespecified screen. No new export or duplicate submission recommended.",
+  "evidence": "evidence/final_factorial/results.json",
+  "scores_in_user_order": [
+    0.44394,
+    0.45348
+  ],
+  "score_column_order": "not confirmed from screenshot",
+  "additional_submission_used": false,
+  "reason_for_no_new_csv": "Selected exact existing file already validated and Kaggle-scored; no need to relabel identical predictions as a new model",
+  "training_complete": true,
+  "new_fits": 2,
+  "further_training": "none in final experiment"
+}

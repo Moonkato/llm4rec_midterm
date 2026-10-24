@@ -1,0 +1,16 @@
+{
+  "status": "sensitivity analysis, official target not confirmed",
+  "source": "https://medium.com/data-science/two-layered-recommender-system-methodology-a-prize-winning-solution-c4bdb815b156",
+  "truth": "all distinct items with one logged viewing overlap strictly >80% full airing duration, validation split1",
+  "single_session_proxy": "maximum raw overlap fragment per user/airing/split; does not sum interrupted fragments",
+  "thresholds_train": [
+    0.3,
+    0.5,
+    0.8
+  ],
+  "cohort": "all1260, emptytruth AP0",
+  "candidate_pool": "same round1",
+  "selection": "exploratory, changed label definition motivated by external source; not directly comparable to original metric",
+  "boundary_policy": "Raw sessions clipped at original train/validation cutoff; only within-window single-fragment overlap counts against full airing duration.",
+  "fallback_comparison": "New frequency/popularity sensitivity variants use unique-viewer fallback at their own training fraction; not the fixed fallback used in original model comparison."
+}

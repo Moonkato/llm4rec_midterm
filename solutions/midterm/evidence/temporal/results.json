@@ -1,0 +1,39 @@
+{
+  "status": "complete",
+  "results": [
+    {
+      "method": "popularity_unique_viewers",
+      "map5": 0.6569517195767196,
+      "map5_nonempty": 0.6659365781710915,
+      "cold_map5": 0.2680952380952381
+    },
+    {
+      "method": "personal_frequency",
+      "map5": 0.7050978835978836,
+      "map5_nonempty": 0.7147412174845803,
+      "cold_map5": 0.2680952380952381
+    },
+    {
+      "method": "frozen_rrf",
+      "map5": 0.7125132275132275,
+      "map5_nonempty": 0.7222579780101904,
+      "cold_map5": 0.2680952380952381
+    }
+  ],
+  "counts": {
+    "raw_fragments": 3848465,
+    "train_user_airings": 1832659,
+    "validation_user_airings": 519376,
+    "train_user_item_pairs": 841866,
+    "users_processed": 4895
+  },
+  "candidates": 4582,
+  "empty_truth_users": 17,
+  "cold_users": 7,
+  "wall_seconds": 15.001272041998163,
+  "peak_rss_bytes": 216481792,
+  "code_sha256": "028f11f43cb88743c73b5282a3eaf2e1050b25cfb3ae7d9b0414ed57b592dad9",
+  "protocol_sha256": "710d91624494989fbb3dfa6cdf1aa875e0275d2a461dd510e4ffe29174d82c63",
+  "limitation": "overlapping time windows with earlier experiment; not statistically independent confirmation",
+  "fixture": "split_union duplicates and reunited fragments passed"
+}

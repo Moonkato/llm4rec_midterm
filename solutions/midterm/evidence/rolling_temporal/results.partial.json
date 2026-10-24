@@ -1,0 +1,30 @@
+[
+  {
+    "model": "recent_only",
+    "fit_seconds": 26.535697750001418,
+    "scores": {
+      "all80": 0.4472292768959435,
+      "top5_count80": 0.32482980599647265
+    },
+    "delta_vs_identical_rolling_control": {
+      "all80": -0.008021825396825444,
+      "top5_count80": -0.006016534391534378
+    },
+    "fit_queries": 3032,
+    "fit_rows": 235961
+  },
+  {
+    "model": "pooled_early_recent",
+    "fit_seconds": 51.64820058400073,
+    "scores": {
+      "all80": 0.4530006613756614,
+      "top5_count80": 0.33079960317460316
+    },
+    "delta_vs_identical_rolling_control": {
+      "all80": -0.0022504409171075213,
+      "top5_count80": -4.673721340386905e-05
+    },
+    "fit_queries": 7292,
+    "fit_rows": 528026
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "model": "v3_24_plus_user_item_identity26",
+  "base_features": "EXACT original19 plus successful weekly5; no OOF extras",
+  "parameters": {
+    "objective": "lambdarank",
+    "metric": "None",
+    "n_estimators": 417,
+    "learning_rate": 0.03,
+    "random_state": 20261023,
+    "n_jobs": 1,
+    "verbosity": -1,
+    "deterministic": true,
+    "force_col_wise": true,
+    "label_gain": [
+      0,
+      1
+    ],
+    "lambdarank_truncation_level": 10,
+    "cat_smooth": 20,
+    "min_data_per_group": 100
+  },
+  "config": {
+    "num_leaves": 15,
+    "max_depth": 4,
+    "min_child_samples": 100,
+    "reg_lambda": 10.0
+  },
+  "categorical_feature_indices": [
+    24,
+    25
+  ],
+  "categorical_encoding": "Contiguous zero-based user/item codes fitted ONLY from retained TRAIN rows; unseen=-1; original IDs retained as strings",
+  "fit_window": [
+    "2020-04-13",
+    "2020-05-18"
+  ],
+  "target": "Original hardtop5_count80 full universe, numeric ties before shortlist",
+  "query_filter": "Original v3 training_rows positive-and-negative groups; same rows and query boundaries",
+  "baseline_checks": "Original24 input hashes match deep_temporal/inputs.json; frozenv3 predictions exactly equal stored scores for BOTH windows",
+  "outputs": "Standalone and fixed equalRRF60 with original event model; compare standalone v3 and fusion v4",
+  "primary_decision": "Final prespecified2x2 combiner assessed separately by parent; these diagnostics do not select a different configuration",
+  "limits": {
+    "fits": 1,
+    "wall_seconds": 300,
+    "rss_bytes": 1610612736,
+    "threads": 1
+  },
+  "caveat": "Repeatedly explored overlapping temporal windows; not untouched test, no hyperparameter or blend search",
+  "submissions": 0
+}

@@ -1,0 +1,17 @@
+{
+  "file": "candidates/event_v3_rrf_v4.csv",
+  "description": "gleb_alektorov_midterm_04_airing_v3_rrf",
+  "sha256": "f2b802ac394e35d1999754a461848479f3bbc5abb5cd8a7b6dad80196c783e5a",
+  "status": "Complete (after deadline), user reported",
+  "user_approval": "\u0434\u0430\u0432\u0430\u0439",
+  "scores_in_user_order": [
+    0.44394,
+    0.45348
+  ],
+  "score_column_order": "unconfirmed; user pasted no headings",
+  "delta_vs_third": [
+    0.00875,
+    0.00382
+  ],
+  "source": "user pasted result; screenshot not yet supplied"
+}

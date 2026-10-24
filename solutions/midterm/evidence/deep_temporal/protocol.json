@@ -1,0 +1,81 @@
+{
+  "windows": {
+    "inner_fit": [
+      "2020-04-13",
+      "2020-05-04"
+    ],
+    "inner_stop": [
+      "2020-05-04",
+      "2020-05-18"
+    ],
+    "fit": [
+      "2020-04-13",
+      "2020-05-18"
+    ],
+    "eval": [
+      "2020-05-18",
+      "2020-07-27"
+    ],
+    "later": [
+      "2020-06-22",
+      "2020-07-27"
+    ]
+  },
+  "configurations": [
+    {
+      "num_leaves": 7,
+      "max_depth": 3,
+      "min_child_samples": 100,
+      "reg_lambda": 20.0
+    },
+    {
+      "num_leaves": 15,
+      "max_depth": 4,
+      "min_child_samples": 100,
+      "reg_lambda": 10.0
+    },
+    {
+      "num_leaves": 31,
+      "max_depth": 5,
+      "min_child_samples": 150,
+      "reg_lambda": 20.0
+    }
+  ],
+  "parameters": {
+    "objective": "lambdarank",
+    "metric": "None",
+    "n_estimators": 2000,
+    "learning_rate": 0.03,
+    "random_state": 20261023,
+    "n_jobs": 2,
+    "verbosity": -1,
+    "deterministic": true,
+    "force_col_wise": true,
+    "label_gain": [
+      0,
+      1
+    ],
+    "lambdarank_truncation_level": 10
+  },
+  "features": "base19 plus five aligned weekly features",
+  "max_fits": 12,
+  "planned_fits": 10,
+  "wall_seconds_limit": 2700,
+  "rss_bytes_limit": 4294967296,
+  "threads": 2,
+  "early_stopping_rounds": 100,
+  "targets": [
+    "all80",
+    "top5_count80"
+  ],
+  "top5": "Full universe >80% airing count, numeric ID ties, before shortlist",
+  "selection": "Within target select configuration and iteration solely by inner_stop full-truth MAP@5; deterministic first config on ties",
+  "refit": "Original Apr13-May18 labels at selected fixed iteration; no early stopping on outer data",
+  "optional_ablation": "Base19 refit at same chosen configuration/iteration, no additional selection",
+  "candidates": "Existing fixed snapshots; cold fallback unchanged",
+  "limits": "Runtime/RSS monitored before loading/fitting and each boosting iteration; not OS hard allocation cap",
+  "reuse": "All observations previously explored; improved temporal separation does not create untouched confirmation",
+  "horizon_mismatch": "Inner fit21days / stop14days versus outer70/35days and final84days; temporal separation does not remove horizon distribution shift",
+  "fragment_caveat": "Maximum stored clipped overlap; original sessions not rejoined",
+  "submissions": 0
+}

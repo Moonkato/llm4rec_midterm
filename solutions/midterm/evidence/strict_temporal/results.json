@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "results": [
+    {
+      "method": "popularity_strict30",
+      "map5": 0.3703864638447972,
+      "map5_nonempty": 0.38190420985633755
+    },
+    {
+      "method": "personal_strict30",
+      "map5": 0.45333245149911816,
+      "map5_nonempty": 0.4674295326422986
+    },
+    {
+      "method": "personal_strict30_airing_rate_sqrt",
+      "map5": 0.45840983245149913,
+      "map5_nonempty": 0.47266480269139843
+    }
+  ],
+  "counts": {
+    "events_spanning_old_cutoff": 66,
+    "user_event_groups": 3014157,
+    "groups_with_both_original_splits": 751,
+    "train_qualifying_user_airings": 911518,
+    "forecast_qualifying_user_airings": 152154,
+    "train_user_item_pairs": 363039,
+    "users_processed": 4895
+  },
+  "candidates": 4582,
+  "empty_truth_users": 38,
+  "cold_users": 9,
+  "truth_pairs": 24790,
+  "wall_seconds": 12.497613042000012,
+  "peak_rss_bytes": 286097408,
+  "code_sha256": "ca3c7e1dd5855a26ded7d4c905a5adb25e382ca29684fcf47e298b79905cdee1",
+  "protocol_sha256": "b657c0dfe8f7b8d5dde73db434a481ded30e8a35fab322515901f61499a0cb0a",
+  "limitation": "forecast overlaps earlier validation; robustness check, not unseen independent confirmation; official Kaggle target still unverified"
+}

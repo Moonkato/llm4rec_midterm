@@ -1,0 +1,1061 @@
+{
+  "status": "complete",
+  "purpose": "Identical per-user candidate-pool comparison of frozen systems, no refitting",
+  "users": 1260,
+  "window": "2020-05-18 through 2020-07-27 exclusive",
+  "truth": "same strict top5_count80 full-universe target; AP denominator min(5,truth size) before candidate restriction; empty truth AP0",
+  "candidate_pool": "Exactly original v3 per-user eval shortlist, union top100 personal schedule count, top30 >30% historical unique-viewer popularity and top30 positive channel-hour affinity. All10 methods restricted to identical item IDs for each user. Pool uses historical behavior and supplied future schedule, never holdout labels.",
+  "candidate_counts": {
+    "min": 30,
+    "max": 151,
+    "total": 120172
+  },
+  "repeat_policy": "Allowed identically for all methods",
+  "cold_cohort_count": 12,
+  "cold_definition": "Union of users without any >=180-second historical qualifying airing and users without any >30%-coverage historical qualifying airing, computed before main holdout",
+  "cold_user_ids": [
+    "319675768840678676",
+    "414363484269016605",
+    "2864964383167733994",
+    "10120801182216576239",
+    "10246214960655461086",
+    "12452087939154504535",
+    "13688967069138961119",
+    "14401191285650834662",
+    "14719185688099378764",
+    "16561743585370579180",
+    "17337543921140631187",
+    "17498855137197959107"
+  ],
+  "fallback": "Same historical >=180s distinct-viewer popularity restricted to that user shortlist, numeric-ID ties; same exact ranked fallback for every method for a given user",
+  "global180_top5_present_in_every_pool": true,
+  "distinct_fallback_lists": 1,
+  "methods": {
+    "popularity_unique_viewers": {
+      "map5": 0.27064858906525574,
+      "changed_vs_full_eligibility_common_fallback": 0,
+      "warm_short_or_zero_signal_fallback_users": 0
+    },
+    "content_tfidf": {
+      "map5": 0.013115299823633157,
+      "changed_vs_full_eligibility_common_fallback": 1240,
+      "warm_short_or_zero_signal_fallback_users": 0
+    },
+    "als_f32_a1": {
+      "map5": 0.160027557319224,
+      "changed_vs_full_eligibility_common_fallback": 496,
+      "warm_short_or_zero_signal_fallback_users": 0
+    },
+    "personal_frequency": {
+      "map5": 0.33949074074074076,
+      "changed_vs_full_eligibility_common_fallback": 113,
+      "warm_short_or_zero_signal_fallback_users": 9
+    },
+    "weekly_ranker_v3": {
+      "map5": 0.40736265432098767,
+      "changed_vs_full_eligibility_common_fallback": 0,
+      "warm_short_or_zero_signal_fallback_users": 0
+    },
+    "airing_model": {
+      "map5": 0.4122030423280424,
+      "changed_vs_full_eligibility_common_fallback": 0,
+      "warm_short_or_zero_signal_fallback_users": 0
+    },
+    "hybrid_v4": {
+      "map5": 0.4171873897707231,
+      "changed_vs_full_eligibility_common_fallback": 0,
+      "warm_short_or_zero_signal_fallback_users": 0
+    },
+    "identity_replay_v5": {
+      "map5": 0.41917173721340384,
+      "changed_vs_full_eligibility_common_fallback": 0,
+      "warm_short_or_zero_signal_fallback_users": 0
+    },
+    "identity_ranker": {
+      "map5": 0.41269532627865957,
+      "changed_vs_full_eligibility_common_fallback": 12,
+      "warm_short_or_zero_signal_fallback_users": 0
+    },
+    "replay_airing": {
+      "map5": 0.4130586419753086,
+      "changed_vs_full_eligibility_common_fallback": 12,
+      "warm_short_or_zero_signal_fallback_users": 0
+    }
+  },
+  "examples": [
+    {
+      "user_id": "15634861151839696048",
+      "selection": "25th percentile of non-cold historical airing count",
+      "training_airings": 199.0,
+      "historical_unique_items": 92,
+      "historical_top5": [
+        {
+          "id": "240081",
+          "title": "Факты. День.",
+          "category": "Инфо",
+          "airings": 22
+        },
+        {
+          "id": "1000723",
+          "title": "Т/с 'Охотники за древностями', 3 сезон, 14 и 15 с.",
+          "category": "Сериалы",
+          "airings": 14
+        },
+        {
+          "id": "2400480",
+          "title": "'ТСН. Неделя'.",
+          "category": "Инфо",
+          "airings": 14
+        },
+        {
+          "id": "200469",
+          "title": "Варьяты. Лучшее.",
+          "category": "Развлечения",
+          "airings": 9
+        },
+        {
+          "id": "1100411",
+          "title": "Премьера. 'Вещдок. Особый случай. Око за око'.",
+          "category": "Познавательное",
+          "airings": 9
+        }
+      ],
+      "validation_truth_180s_count": 94,
+      "validation_truth_strict_top5": [
+        {
+          "id": "240081",
+          "title": "Факты. День.",
+          "category": "Инфо"
+        },
+        {
+          "id": "2400480",
+          "title": "'ТСН. Неделя'.",
+          "category": "Инфо"
+        },
+        {
+          "id": "20088",
+          "title": "'Завтрак с 1+1'. Информационно-развлекательная программа.",
+          "category": "Развлечения"
+        },
+        {
+          "id": "1100411",
+          "title": "Премьера. 'Вещдок. Особый случай. Око за око'.",
+          "category": "Познавательное"
+        },
+        {
+          "id": "12001697",
+          "title": "М/с 'Аватар: Легенда об Аанге', 56 с. 'Южные захватчики'.",
+          "category": "Детям"
+        }
+      ],
+      "methods": {
+        "popularity_unique_viewers": {
+          "ap5_strict_top5": 0.4,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "6500479",
+              "title": "'Мир наизнанку. Бразилия', 36 эп.",
+              "category": "Познавательное",
+              "seen_in_training_180s": false,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "2400467",
+              "title": "'Викна-Новости'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "content_tfidf": {
+          "ap5_strict_top5": 0.0,
+          "changed_from_original": true,
+          "recommendations": [
+            {
+              "id": "90079212",
+              "title": "Х/ф 'Боги Египта'.",
+              "category": "Фильмы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "90057593",
+              "title": "Х/ф 'Сокровище Амазонки'.",
+              "category": "Фильмы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "90071644",
+              "title": "Х/ф 'Принц Персии: Пески времени'.",
+              "category": "Фильмы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "90067713",
+              "title": "Х/ф 'Хеллбой 2. Золотая армия'.",
+              "category": "Фильмы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "90081867",
+              "title": "Премьера. Х/ф 'Миссия невыполнима 6. Последствия'.",
+              "category": "Фильмы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "als_f32_a1": {
+          "ap5_strict_top5": 0.55,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "20088",
+              "title": "'Завтрак с 1+1'. Информационно-развлекательная программа.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2500413",
+              "title": "Гражданская оборона.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "personal_frequency": {
+          "ap5_strict_top5": 0.4533333333333333,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "1000723",
+              "title": "Т/с 'Охотники за древностями', 3 сезон, 14 и 15 с.",
+              "category": "Сериалы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "200469",
+              "title": "Варьяты. Лучшее.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "1100411",
+              "title": "Премьера. 'Вещдок. Особый случай. Око за око'.",
+              "category": "Познавательное",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            }
+          ]
+        },
+        "weekly_ranker_v3": {
+          "ap5_strict_top5": 0.76,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "20088",
+              "title": "'Завтрак с 1+1'. Информационно-развлекательная программа.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "1100411",
+              "title": "Премьера. 'Вещдок. Особый случай. Око за око'.",
+              "category": "Познавательное",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            }
+          ]
+        },
+        "airing_model": {
+          "ap5_strict_top5": 0.8,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "20088",
+              "title": "'Завтрак с 1+1'. Информационно-развлекательная программа.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "1100411",
+              "title": "Премьера. 'Вещдок. Особый случай. Око за око'.",
+              "category": "Познавательное",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "hybrid_v4": {
+          "ap5_strict_top5": 0.8,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "20088",
+              "title": "'Завтрак с 1+1'. Информационно-развлекательная программа.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "1100411",
+              "title": "Премьера. 'Вещдок. Особый случай. Око за око'.",
+              "category": "Познавательное",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "identity_replay_v5": {
+          "ap5_strict_top5": 0.8,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "20088",
+              "title": "'Завтрак с 1+1'. Информационно-развлекательная программа.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "1100411",
+              "title": "Премьера. 'Вещдок. Особый случай. Око за око'.",
+              "category": "Познавательное",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "identity_ranker": {
+          "ap5_strict_top5": 0.76,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "20088",
+              "title": "'Завтрак с 1+1'. Информационно-развлекательная программа.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "1100411",
+              "title": "Премьера. 'Вещдок. Особый случай. Око за око'.",
+              "category": "Познавательное",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            }
+          ]
+        },
+        "replay_airing": {
+          "ap5_strict_top5": 0.8,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "20088",
+              "title": "'Завтрак с 1+1'. Информационно-развлекательная программа.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "1100411",
+              "title": "Премьера. 'Вещдок. Особый случай. Око за око'.",
+              "category": "Познавательное",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "user_id": "10269329346053634491",
+      "selection": "75th percentile of non-cold historical airing count",
+      "training_airings": 503.0,
+      "historical_unique_items": 251,
+      "historical_top5": [
+        {
+          "id": "2400480",
+          "title": "'ТСН. Неделя'.",
+          "category": "Инфо",
+          "airings": 36
+        },
+        {
+          "id": "240081",
+          "title": "Факты. День.",
+          "category": "Инфо",
+          "airings": 32
+        },
+        {
+          "id": "200469",
+          "title": "Варьяты. Лучшее.",
+          "category": "Развлечения",
+          "airings": 15
+        },
+        {
+          "id": "2500413",
+          "title": "Гражданская оборона.",
+          "category": "Инфо",
+          "airings": 14
+        },
+        {
+          "id": "5200303",
+          "title": "'Следствие вели...' с Леонидом Каневским.",
+          "category": "Познавательное",
+          "airings": 14
+        }
+      ],
+      "validation_truth_180s_count": 26,
+      "validation_truth_strict_top5": [
+        {
+          "id": "1100412",
+          "title": "'Вещественное доказательство'.",
+          "category": "Познавательное"
+        },
+        {
+          "id": "10003167",
+          "title": "Т/с 'Крепостная', 1 и 2 с.",
+          "category": "Сериалы"
+        },
+        {
+          "id": "90072814",
+          "title": "Х/ф 'Исходный код'.",
+          "category": "Фильмы"
+        },
+        {
+          "id": "240081",
+          "title": "Факты. День.",
+          "category": "Инфо"
+        },
+        {
+          "id": "2400467",
+          "title": "'Викна-Новости'.",
+          "category": "Инфо"
+        }
+      ],
+      "methods": {
+        "popularity_unique_viewers": {
+          "ap5_strict_top5": 0.18,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "6500479",
+              "title": "'Мир наизнанку. Бразилия', 36 эп.",
+              "category": "Познавательное",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "2400467",
+              "title": "'Викна-Новости'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            }
+          ]
+        },
+        "content_tfidf": {
+          "ap5_strict_top5": 0.0,
+          "changed_from_original": true,
+          "recommendations": [
+            {
+              "id": "90074614",
+              "title": "Х/ф 'Притворись моим мужем'.",
+              "category": "Фильмы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "90076668",
+              "title": "Х/ф 'Два ствола'.",
+              "category": "Фильмы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "90028050",
+              "title": "Х/ф 'Жандарм из Сен-Тропе', 1 ч.",
+              "category": "Фильмы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "90055201",
+              "title": "Х/ф 'Интимный словарь', 1 ч.",
+              "category": "Фильмы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "90046977",
+              "title": "Х/ф 'Любимая женщина механика Гаврилова'.",
+              "category": "Фильмы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "als_f32_a1": {
+          "ap5_strict_top5": 0.0,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "300358",
+              "title": "Скетч-шоу 'На троих', 7 сезон.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "200337",
+              "title": "'Утро с 'Интером'.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "2500430",
+              "title": "'Затерянный мир'.",
+              "category": "Познавательное",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "20088",
+              "title": "'Завтрак с 1+1'. Информационно-развлекательная программа.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "200405",
+              "title": "'Мамахохотала-шоу'. Лучшее.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "personal_frequency": {
+          "ap5_strict_top5": 0.1,
+          "changed_from_original": true,
+          "recommendations": [
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2500413",
+              "title": "Гражданская оборона.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "5200303",
+              "title": "'Следствие вели...' с Леонидом Каневским.",
+              "category": "Познавательное",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "200405",
+              "title": "'Мамахохотала-шоу'. Лучшее.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "weekly_ranker_v3": {
+          "ap5_strict_top5": 0.2,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "200432",
+              "title": "Дизель-шоу. 8 марта.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "2500413",
+              "title": "Гражданская оборона.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "airing_model": {
+          "ap5_strict_top5": 0.2,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "10003012",
+              "title": "Т/с 'Однажды в Одессе'.",
+              "category": "Сериалы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "1100411",
+              "title": "Премьера. 'Вещдок. Особый случай. Око за око'.",
+              "category": "Познавательное",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "hybrid_v4": {
+          "ap5_strict_top5": 0.2,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "2500413",
+              "title": "Гражданская оборона.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "10003012",
+              "title": "Т/с 'Однажды в Одессе'.",
+              "category": "Сериалы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "identity_replay_v5": {
+          "ap5_strict_top5": 0.2,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "2500413",
+              "title": "Гражданская оборона.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "10003012",
+              "title": "Т/с 'Однажды в Одессе'.",
+              "category": "Сериалы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "identity_ranker": {
+          "ap5_strict_top5": 0.1,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2500413",
+              "title": "Гражданская оборона.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "200432",
+              "title": "Дизель-шоу. 8 марта.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "200405",
+              "title": "'Мамахохотала-шоу'. Лучшее.",
+              "category": "Развлечения",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        },
+        "replay_airing": {
+          "ap5_strict_top5": 0.2,
+          "changed_from_original": false,
+          "recommendations": [
+            {
+              "id": "240081",
+              "title": "Факты. День.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": true
+            },
+            {
+              "id": "2400480",
+              "title": "'ТСН. Неделя'.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "2400508",
+              "title": "Сегодня. Итоги с Олегом Панютой.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "10003012",
+              "title": "Т/с 'Однажды в Одессе'.",
+              "category": "Сериалы",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            },
+            {
+              "id": "2500413",
+              "title": "Гражданская оборона.",
+              "category": "Инфо",
+              "seen_in_training_180s": true,
+              "hit_strict_top5": false
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "preserved_original_csvs": true,
+  "fits": 0,
+  "submissions": 0,
+  "limitation": "Training histories/thresholds and model fitting objectives remain different; this is a matched-output-policy comparison of frozen systems, not a retrained model-family feature ablation. Primary benchmark supplements historical exact submitted-system scores.",
+  "source_hashes": {
+    "cache/round1/popularity_unique_viewers_scores.npy": "7ff3f7ccf24da4e7ee8591fb6fa27d82b9272c777d44b4716273608cb0dd78ae",
+    "cache/round1/content_tfidf_scores.npy": "75afa031e4f674c5f114d5610d2868208de48ee72deae9cb7de1838f090dccd6",
+    "cache/round1/als_f32_a1_scores.npy": "ba0eb4bbe024f44f3287d92cfcd2cd740324f42f54ea3acc27e2d5c8042d5a6b",
+    "cache/round1/personal_frequency_scores.npy": "c1ec6f2e61e53aaa39097ccd2c94ffc252314d0806baa4a80348c25fec694099",
+    "cache/deep_temporal/top5_count80_24features_eval_scores.npy": "34b2bcdbf18bfd76808c0622a905748746faaeeabe9bcaf4432a10c774fb5573",
+    "cache/airing_model/eval_expected_counts.npy": "902bca9343940537cae373a8dc84e7ea10325bd5ff8354496817c9f8683e739a",
+    "cache/final_factorial/v4_eval_scores.npy": "7e6b9d03d2f59095efd2bdb1fb113bf2fae127fcc38c2d639a1fbe7476fe12c2",
+    "cache/final_factorial/combined_eval_scores.npy": "be629f196d34d1bd0b9e3f3ec260855579573fb5d0376a90f4130b684a323215",
+    "cache/final_identity/standalone_eval_scores.npy": "6bbdaa5fbb7a0b672e8f752804035b84f8b2e92d8371a29a298078f649e27a12",
+    "cache/final_replay/eval_replay_expected_counts.npy": "a231ba7b55c430b3dff2396604f1aba4539fe0f00c5052c3ba99c78f890c37b5"
+  },
+  "runtime_seconds": 3.022065625002142,
+  "source_script": "tools/build_matched_pool_comparison.py"
+}

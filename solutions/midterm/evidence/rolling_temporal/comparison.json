@@ -1,0 +1,49 @@
+{
+  "primary": "pooled_early_recent",
+  "window": "Jun22-Jul27 only",
+  "results": {
+    "same_rolling_input": {
+      "top5_count80": {
+        "candidate": 0.33079960317460316,
+        "baseline": 0.33084634038800703,
+        "delta": -4.6737213403880237e-05,
+        "paired_user_interval95": [
+          -0.0029802248677248686,
+          0.0029836860670194
+        ]
+      },
+      "all80": {
+        "candidate": 0.4530006613756614,
+        "baseline": 0.45525110229276894,
+        "delta": -0.002250440917107584,
+        "paired_user_interval95": [
+          -0.0058602513227513225,
+          0.0013585868606701918
+        ]
+      }
+    },
+    "original_full_history": {
+      "top5_count80": {
+        "candidate": 0.33079960317460316,
+        "baseline": 0.3618752204585538,
+        "delta": -0.031075617283950623,
+        "paired_user_interval95": [
+          -0.039684402557319226,
+          -0.02213016424162258
+        ]
+      },
+      "all80": {
+        "candidate": 0.4530006613756614,
+        "baseline": 0.4954440035273369,
+        "delta": -0.04244334215167549,
+        "paired_user_interval95": [
+          -0.052030285493827155,
+          -0.03251081900352734
+        ]
+      }
+    }
+  },
+  "fits": 0,
+  "submissions": 0,
+  "limitations": "Full-history reference changes history and candidate pool as well as fitting; same-rolling reference is controlled comparison. Reused observations; intervals conditional on predictions and ignore selection/user dependence."
+}

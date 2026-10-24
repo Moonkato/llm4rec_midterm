@@ -1,0 +1,33 @@
+{
+  "status": "prespecified; execution awaits root instruction",
+  "primary": "v3_plus_warp32",
+  "features": "Original base19 plus weekly5 plus8 invariant WARP scalar features; no raw latent axes",
+  "candidates": "Unchanged original v3 candidates",
+  "fit_target": "Full-universe top5_count80 before shortlist; numeric item ID ties",
+  "fit_window": [
+    "2020-04-13",
+    "2020-05-18"
+  ],
+  "configuration": {
+    "num_leaves": 15,
+    "max_depth": 4,
+    "min_child_samples": 100,
+    "reg_lambda": 10.0,
+    "learning_rate": 0.03,
+    "n_estimators": 417,
+    "random_state": 20261023
+  },
+  "training_groups": "Same positive-and-negative groups as original v3",
+  "limits": {
+    "ranker_fits": 1,
+    "wall_seconds": 600,
+    "rss_bytes": 2147483648,
+    "threads": 2
+  },
+  "success_rule": "At least +0.01 absolute top5_count80 MAP on main evaluation and nonnegative later delta; show paired-user95percent intervals, no promise of Kaggle gain",
+  "diagnostics": "Both all80 and top5count80; additive per-slice AP credit for seen/unseen candidates using fixed full-truth denominator;5000 paired-user bootstrap",
+  "baseline": "Frozen original v3 top5_count80_24features scores",
+  "selection": "One fixed refit; no tuning, mixtures, retrieval expansion or score-based feature selection",
+  "caveat": "Repeatedly explored overlapping periods; bootstrap conditional on fixed models, not selection-adjusted; unseen means no >30percent historical interaction for this user-item pair.",
+  "submissions": 0
+}

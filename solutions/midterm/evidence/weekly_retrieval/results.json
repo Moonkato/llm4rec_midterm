@@ -1,0 +1,58 @@
+{
+  "status": "complete",
+  "results": [
+    {
+      "model": "frozen_v3_expanded24",
+      "eval": {
+        "scores": {
+          "all80": 0.5870359347442681,
+          "top5_count80": 0.4077211199294533
+        },
+        "delta_vs_original_v3": {
+          "all80": 0.0005436507936507073,
+          "top5_count80": 0.00030820105820106303
+        }
+      },
+      "later": {
+        "scores": {
+          "all80": 0.4954122574955908,
+          "top5_count80": 0.3617164902998236
+        },
+        "delta_vs_original_v3": {
+          "all80": -3.174603174610491e-05,
+          "top5_count80": -0.00015873015873019147
+        }
+      }
+    },
+    {
+      "model": "retrained_expanded24",
+      "retained_training_groups": 4310,
+      "retained_training_rows": 368386,
+      "fit_seconds": 42.07183024999904,
+      "eval": {
+        "scores": {
+          "all80": 0.5871964285714286,
+          "top5_count80": 0.40638161375661375
+        },
+        "delta_vs_original_v3": {
+          "all80": 0.0007041446208112534,
+          "top5_count80": -0.0010313051146385033
+        }
+      },
+      "later": {
+        "scores": {
+          "all80": 0.4918939594356261,
+          "top5_count80": 0.3598119488536155
+        },
+        "delta_vs_original_v3": {
+          "all80": -0.0035500440917108356,
+          "top5_count80": -0.0020632716049382993
+        }
+      }
+    }
+  ],
+  "fits": 1,
+  "wall_seconds": 152.70274816700112,
+  "peak_rss_bytes": 767279104,
+  "code_sha256": "8dcf5073ee384fdc7539e58642e9eb7bc095898f361fe4b226caf67b661041e3"
+}

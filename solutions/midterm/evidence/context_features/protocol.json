@@ -1,0 +1,56 @@
+{
+  "windows": [
+    [
+      "fit",
+      "2020-04-13 00:00:00",
+      "2020-05-18 00:00:00",
+      true
+    ],
+    [
+      "eval",
+      "2020-05-18 00:00:00",
+      "2020-07-27 00:00:00",
+      false
+    ],
+    [
+      "later",
+      "2020-06-22 00:00:00",
+      "2020-07-27 00:00:00",
+      false
+    ]
+  ],
+  "features": [
+    "log_count30",
+    "log_count80",
+    "log_decay60_count30",
+    "log_future_airings_per_day",
+    "log_past_airings_per_day",
+    "log_personal_schedule_score",
+    "log_pop_viewers",
+    "log_user_count",
+    "days_since_last_watch30",
+    "log_count10",
+    "log_count50",
+    "log_decay7_count30",
+    "log_decay28_count30",
+    "log_distinct_watched_airing_days",
+    "log_user_distinct_items",
+    "channel_affinity",
+    "hour_affinity",
+    "channel_hour_product",
+    "log_exposure_ratio_smoothed10"
+  ],
+  "training_runs": 0,
+  "submissions": 0,
+  "labels": "maximum single stored clipped overlap fragment >80% full airing duration",
+  "fragment_caveat": "old boundary fragments are not rejoined without original session identity",
+  "history": "all actual labelled interactions before each cutoff; MAX per user-airing across stored splits",
+  "candidate_pool": "union top100 personal schedule frequency, top30 train popularity, top30 positive channel-hour score",
+  "context": "user >30% airing count share by channel/hour multiplied by forecast item airing share; context rank is channel affinity * hour affinity",
+  "days_feature": "distinct dates of watched airing starts, not original session dates",
+  "future_allowed": "only item IDs, channel, airing time, duration; no future behaviour as features and no future metadata",
+  "fallback": "cold users use historical >30% unique viewer popularity, numeric ID ties",
+  "format": "X float32; y binary; group_offsets contiguous user groups; row_item_indices index item_ids; Unicode identifiers preserve precision",
+  "validation": "forecast truth stored separately for evaluation; fit window labels alone intended for training",
+  "code_sha256": "2f220704e5b5efc67d1e26988f78d3e35949d2a14c43941ebe240a40119e5cec"
+}

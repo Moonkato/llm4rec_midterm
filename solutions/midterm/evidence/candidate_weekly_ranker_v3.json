@@ -1,0 +1,46 @@
+{
+  "status": "submitted manually by user; Complete (after deadline)",
+  "proposed_submission_name": "gleb_alektorov_midterm_03_weekly_lambdarank",
+  "file": "solutions/midterm/candidates/weekly_ranker_v3.csv",
+  "rows": 1260,
+  "cold_users": 3,
+  "changed_ranked_lists_vs_v2": 1113,
+  "changed_top1_vs_v2": 256,
+  "changed_item_sets_vs_v2": 736,
+  "model": "frozen LightGBM LambdaRank top5_count80,24features,417trees",
+  "training_labels": "Apr13-May18 only; unchanged model from validated run",
+  "inference_history": "All available sessions before2020-07-27; forecast schedule July27-Oct19 IDs/channel/time/duration only",
+  "test_labels_used": false,
+  "additional_fits": 0,
+  "submissions_added": 0,
+  "checks": [
+    "template order and string IDs",
+    "1260uniqueusers",
+    "5unique nonzero IDs per user",
+    "all recommendations eligible and retrieved",
+    "cold fallback",
+    "finite features and scores",
+    "CSV readback"
+  ],
+  "local_scores": {
+    "eval": {
+      "all80": 0.5864922839506174,
+      "top5_count80": 0.40741291887125225
+    },
+    "later": {
+      "all80": 0.4954440035273369,
+      "top5_count80": 0.3618752204585538
+    }
+  },
+  "limitations": "Official preference construction unknown; local periods repeatedly explored; no guaranteed Kaggle improvement",
+  "sha256": {
+    "solutions/midterm/candidates/weekly_ranker_v3.csv": "d89ae53ef29f7981d322204a77c98bf144c266280642d3be25b04fe2596263a5",
+    "solutions/midterm/cache/context_features/test.npz": "96b5139c209b539b2b1e93b9139072c396fdee6ed1ad4a6b76134b9b55136eed",
+    "solutions/midterm/cache/test_weekly/test_row_features.npy": "c1f3076cef5cd71be3e107f76d9274d769ab57cdfec60374598f453cfb379041",
+    "solutions/midterm/cache/deep_temporal/top5_count80_24features.txt": "4baaa2ce66d3e5706f7171e2d5b8902f1dbba052ecb31bf034e04cc138034cb3",
+    "solutions/midterm/tools/export_weekly_ranker.py": "c693460a37500f0f231a0ae48dc050976bd82b38e9f48402b49286a8f67d8d4d",
+    "solutions/midterm/tools/build_weekly_context.py": "d34d6860330452e1093490025c2c5290d1f21d52f0cb6bd85bd6fa44efd9155d"
+  },
+  "wall_seconds": 4.221173334000923,
+  "submission_result": "evidence/submissions/third_submission_user_report.json"
+}

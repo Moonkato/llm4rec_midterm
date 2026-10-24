@@ -1,0 +1,14 @@
+[
+  {
+    "model": "recent_only",
+    "fit_rows": 402365,
+    "later_map5": 0.4674325396825396,
+    "fit_and_score_seconds": 4.031992124997487
+  },
+  {
+    "model": "early_plus_recent",
+    "fit_rows": 721539,
+    "later_map5": 0.4628311287477954,
+    "fit_and_score_seconds": 7.502327542002604
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "window": "test",
+  "users": 1260,
+  "rows": 147457,
+  "features": 19,
+  "positive_rate": null,
+  "labels_available": false,
+  "cold_users": 3,
+  "candidate_oracle_map5": null,
+  "wall_seconds": 39.58620858299764,
+  "npz_sha256": "96b5139c209b539b2b1e93b9139072c396fdee6ed1ad4a6b76134b9b55136eed"
+}

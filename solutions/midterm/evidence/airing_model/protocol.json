@@ -1,0 +1,66 @@
+{
+  "model": "one binary LightGBM event model; no secondary ranker",
+  "windows": [
+    [
+      "fit",
+      "2020-04-13 00:00:00",
+      "2020-05-18 00:00:00"
+    ],
+    [
+      "eval",
+      "2020-05-18 00:00:00",
+      "2020-07-27 00:00:00"
+    ],
+    [
+      "later",
+      "2020-06-22 00:00:00",
+      "2020-07-27 00:00:00"
+    ]
+  ],
+  "features": "base19 plus ['airing_channel', 'airing_weekday', 'airing_hour_sin', 'airing_hour_cos', 'log_duration_bin_seconds', 'boundary_overlap_fraction', 'history_channel_time_fraction', 'history_joint_slot_propensity', 'session_duration_survival80', 'log_channel_sessions', 'channel_history_missing', 'historical_count80_per_airing_smoothed', 'historical_count30_per_airing_smoothed', 'user_count30_per_history_day']",
+  "parameters": {
+    "objective": "binary",
+    "num_leaves": 15,
+    "learning_rate": 0.05,
+    "min_data_in_leaf": 100,
+    "lambda_l2": 10,
+    "num_iterations": 300,
+    "max_bin": 63,
+    "num_threads": 1,
+    "seed": 20261023
+  },
+  "universe": "each original v3 user-item candidate crossed with its supplied forecast airings; keep all recorded qualifying positives inside this universe",
+  "target": "one MAX clipped stored overlap strictly>80% full airing duration; artificial split fragments not rejoined; absence means no recorded qualifying airing, not dislike",
+  "negative_sampling": "independent Bernoulli q=.01 implemented binomial sample count then uniform without replacement among negatives; positive event indices excluded",
+  "sample_weights": "positive1, sampled negative100; no class balancing, no is_unbalance, no scale_pos_weight",
+  "duration": "ceil full duration/300)*300 for model features and survival threshold; labels always use exact duration",
+  "historical_exposure_rates": "(count80+0.1)/(pastairings+1), (count30+0.1)/(pastairings+1), usercount30/historydays; pastairings=expm1(base4)*historydays",
+  "context": "history only: user-channel raw session length distribution uncapped, clipped before cutoff; joint channel/weekday/hour seconds use proportional3600s session cap and propensity<=1",
+  "collapse_key": [
+    "item",
+    "channel",
+    "weekday",
+    "civil_start_hour",
+    "duration_bin_seconds",
+    "exact_boundary_overlap_fraction"
+  ],
+  "exactness": "All varying event features use this tuple; sum probabilities multiplied by identical-tuple multiplicity equals full event scoring for chosen features.",
+  "hard_constraint": "event probability forced0 when exact forecast-clipped/full-duration fraction<=.8; recorded strict80 completion impossible within window",
+  "aggregation": "sum event probabilities = expected qualifying airing count; no independence assumption and no probability-any claim",
+  "primary": "rank expected count on original candidates, common cold popularity fallback",
+  "diagnostic": "prespecified equal RRF60 of expectedcount and frozen v3 samepool scores",
+  "calibration": "inverse-inclusion weights correct sampled objective; weighted training logloss is descriptive only, not heldout calibration",
+  "fits": 1,
+  "submissions": 0,
+  "budget": "20min2GB1CPU",
+  "source_sha256": "b64e1928fd0f665d4eb6eb9536a229a5dbff06432f479c2515a1f34476054b35",
+  "input_hashes": {
+    "midterm/data/dataset11-30.csv": "8c9e5f058157041e5c33f13e64dc1625a5177cc6d5e434ba18cd8a69afafb53b",
+    "solutions/midterm/cache/interactions.sqlite": "631498c231bb1aec21583b6dd0c811b296c5993361ebcb3b7fc2e6e871c51a18",
+    "solutions/midterm/cache/context_features/fit.npz": "0ed8052cb26e51db7fe7842c551964122549244e5a2d627931494ffb9d150080",
+    "solutions/midterm/cache/context_features/eval.npz": "691303bc06e39ef01577a3a9bd9bb3079de49325cddadc331b658a18ceb133e7",
+    "solutions/midterm/cache/context_features/later.npz": "bfda6b3cd049fab056a8ba241d6a5fa8bdfadbd7d6937636ffc6f1964a655896",
+    "solutions/midterm/cache/deep_temporal/top5_count80_24features_eval_scores.npy": "34b2bcdbf18bfd76808c0622a905748746faaeeabe9bcaf4432a10c774fb5573",
+    "solutions/midterm/cache/deep_temporal/top5_count80_24features_later_scores.npy": "7d74002d5d594a43f8a1e42dfdc710ba49d8dee724e3262d39e6fa2718880625"
+  }
+}

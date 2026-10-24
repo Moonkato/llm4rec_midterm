@@ -1,0 +1,41 @@
+Latest completed experiments
+
+Original 180-second labels: best saved-score hybrid MAP@5=0.799545.
+Frozen personal/popularity fusion on later overlapping temporal window:0.712513 vs personal0.705098. This is robustness, not independent test.
+
+External first-hand participant account describes >80% single-session viewing. Official scorer still unconfirmed.
+Strict sensitivity uses maximum raw overlap fragment, clipped by temporal split, >80% full airing duration. Does not sum interrupted sessions. All1260 users,24 empty truth.
+Personal frequency with >30% training qualification:0.532067.
+Frequency adjusted by square root of forecast/train airing rate:0.547735.
+All results exploratory, local, and selection uses holdout. Do not equate with Kaggle scores.
+
+No Kaggle submissions (0/4). No new ALS/model training in this continuation.
+Next supervised reranker budget30min/4GB requested; await approval.
+
+Approved next round completed with simple methods:
+10 formula ablations3.49sec; best strict local MAP0.55156173.
+Nine-feature L2 logistic model fit on204404 actual earlier-window candidate observations, no synthetic labels. Fit cutoffApr13 labels untilMay18; evaluate May18July27. Runtime17.31sec,37iterations, convergence successful. Strict MAP0.57560119.
+Paired bootstrap improvement vs sqrt schedule formula:0.027866, conditional95% interval[0.021028,0.034557]; not Kaggle confidence or model-selection correction.
+Strict later-window simple baseline: pop0.370386,personal0.453332,schedule0.458410. Overlapping windows: robustness only.
+Preparing frozen-model candidate CSV; still0submissions.
+
+Context round complete:3HGB models,31.49sec,262979584bytes peakRSS.
+Old9 HGB MAP(main,later)=.57910957,.47692328.
+Context19 shallow=.58573876,.48245613; deeper=.58668496,.47455908.
+Equal RRF60 mixture frozen logistic+shallow context=.58430952,.48810825. Selection exploratory on overlapping windows.
+No new CSV/submission;1 of4 submissions used.
+
+History normalization completed without refitting. Counts calibrated to35dayhistory; decay effective mass normalization assumes stationary event rate.
+Normalized HGB main.58109458 later.48813867; frozen logistic virtually unchanged.
+Equal fusion with original logistic: main.57981636 later.48943739; vs previous equal fusion.58430952/.48810825, a tradeoff rather than consistent win.
+No new submission or learned models. Retain prior comparator; normalization not a major improvement.
+
+Multiwindow round: new training snapshots endJune22, evaluationJune22July27 only. MainMay18July27 invalid for these models because it overlaps fitting labels.
+Recent-only HGB .46743254; pooled early+recent .46283113; pooled template-user-only .46433466. All worse than frozen logistic .48232760 and equal fusion .48810825. Reject candidate change; no new submission. Three fits added.
+
+Parallel hypothesis round completed with3helpers. Pairwise random/hard, dropping partial-view negatives failed; filtering no-positive early training groups improved main/later. Filtered equalrows .58927271/.49188117. Raw-context22features .58903241/.49191182, negligible change. Filtered pooled .48609546 later, below filteredearly.
+Best proposed2ndcandidate equalRRF60 originallogistic+filteredcontext: main.58547575/later.49270569. CSV candidates/filtered_context_v2.csv prepared1260rows,5uniqueIDs. NOT submitted;1of4 submissions used. Weights examined on reused windows; Kaggle gain unknown.
+
+Second Kaggle userreported scores.42939/.44481; ordering assumed; deltas+.00246/+.00023. Two submissions remaining.
+Collaborative retrieval features: top50userCF, shrunktop100itemcosine; HGB23 features .58805159/.48688117 no gain.
+Official user excerpt mostpreferred5 prompted target sensitivity; truth cardinality/formula still undisclosed. Two LambdaRank fits on all80 and top5count80. Top5count80 model: broad MAP .58886618/.49334480; top5count80 MAP .40783444/.35797443 vs v2 .39923765/.35658664. Small exploratory gains, no3rdsubmission.
