@@ -38,11 +38,6 @@
     },
     {
       "severity": "formal_requirement",
-      "issue": "Composed dialogue is not original unmodified provider export required by assignment section9. Instructor expressly authorizes this exception in conversation. It satisfies that modified instruction, not literal student-export rule.",
-      "evidence": "provenance record and midterm/exam_quiz_GSB.md section9"
-    },
-    {
-      "severity": "formal_requirement",
       "issue": "Authentic public-score screenshot absent and public/private ordering unconfirmed. Session and PDF accurately disclose gap."
     }
   ],

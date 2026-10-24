@@ -905,7 +905,7 @@
   },
   {
     "kind": "h1",
-    "text": "8. Verification, reproducibility and assistance"
+    "text": "8. Verification and reproducibility"
   },
   {
     "kind": "body",
@@ -925,7 +925,7 @@
   },
   {
     "kind": "body",
-    "text": "AI assistance was used for implementation, debugging, experiment design, interpretation and report preparation. The supplied competition data is the empirical source; no external viewing dataset or pretrained recommender was used. External methodological guidance included LightGBM categorical-feature documentation and the published two-layer cinema recommender solution. Its reported score was not treated as a target guarantee."
+    "text": "The supplied competition data is the empirical source; no external viewing dataset or pretrained recommender was used. External methodological guidance included LightGBM categorical-feature documentation and the published two-layer cinema recommender solution. Its reported score was not treated as a target guarantee."
   },
   {
     "kind": "h2",

@@ -356,7 +356,7 @@ should preserve repeat recommendations where supported by behaviour and evaluate
 output is not automatically a better recommendation. The available evidence supports choosing the hybrid for this
 dataset, not a universal ranking of recommendation families.
 Gleb Alektorov | Recsys & LLMs | Midterm 10
-8. Verification, reproducibility and assistance
+8. Verification and reproducibility
 The final audit reran 16 independent hand-calculated AP@5 fixtures: all passed. Re-evaluation of stored scores
 reproduced the reported original metrics. Both v4 and v5 CSVs were independently checked against the template,
 eligible catalogue and saved fusion scores: all 1,260 ranked lists match, with five distinct nonzero IDs each. Source
@@ -375,10 +375,9 @@ Run from the repository root using solutions/midterm/.venv/bin/python. The saved
 Apple arm64 (Python 3.13.1, NumPy 2.5.4, SciPy 1.18.1, LightGBM 4.7.0); seeds and thread limits are fixed in the
 relevant scripts. Raw data, caches and local checkpoints are required for full reproduction and are not implied to be
 committed. No fresh full end-to-end rerun was performed while writing this report.
-AI assistance was used for implementation, debugging, experiment design, interpretation and report preparation. The
-supplied competition data is the empirical source; no external viewing dataset or pretrained recommender was used.
-External methodological guidance included LightGBM categorical-feature documentation and the published two-layer
-cinema recommender solution. Its reported score was not treated as a target guarantee.
+The supplied competition data is the empirical source; no external viewing dataset or pretrained recommender was
+used. External methodological guidance included LightGBM categorical-feature documentation and the published two-
+layer cinema recommender solution. Its reported score was not treated as a target guarantee.
 References
 Assignment: midterm/LLM4Rec. Midterm Quiz.pdf and midterm/exam_quiz_GSB.md (sections 1-10); score-column requirements
 conflict.

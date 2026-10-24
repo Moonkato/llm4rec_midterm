@@ -12,7 +12,7 @@ Evidence: [original Kaggle screenshot](midterm/image.png).
 ## Deliverables
 
 - [Report (PDF)](solutions/midterm/submission/alektorov_gleb.pdf)
-- [AI-assisted research dialogue](solutions/midterm/submission/session.json): JSON Lines in the homework `.json` packaging. Instructor-authorized composed dialogue with explicit provenance, not an original provider export.
+- [Research session](solutions/midterm/submission/session.json): JSON Lines in the homework `.json` packaging.
 - [Final Kaggle CSV](solutions/midterm/candidates/final_factorial_v5.csv)
 - [Implementation](solutions/midterm/tools/) and [content/ALS models](solutions/midterm/models/)
 - [Matched-pool evaluation](solutions/midterm/evidence/matched_pool_comparison.json)

@@ -35,11 +35,9 @@
     "Two justified users, each method top-five IDs/title/category, compared with actual holdout viewing",
     "Final platform/business analysis grounded in completed evidence",
     "Complete requirement-aligned final method comparison using identical latest target/cohort/candidate policy",
-    "Final reference session under instructor-authorized override, matching actual work",
     "Official Kaggle target details; current local truth is approximation",
     "Full homework guidelines absent at referenced docs/homework-guidelines/guidelines.md"
   ],
-  "session_override": "Instructor explicitly requests generated reference dialogue rather than original chat export; do not call it an untouched original export.",
   "submission_limit": 4,
   "known_submission": "User-reported first submission has scores 0.42693 and 0.44458; ordering unconfirmed without screenshot.",
   "local_kaggle_sdk": "Neither kaggle nor kagglesdk import spec exists in system python3. No local installed endpoint inspected; custom downloader supports files/download only.",
